@@ -30,6 +30,7 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 | `c4-component.mmd` | Mermaid flowchart, C4-styled | Backend components and dependencies | `server.js`, `routes/api/*`, `middleware/*`, `controllers/*`, `utils/*`, `model/*` |
 | `c4-component-frontend.mmd` | Mermaid flowchart, C4-styled | Frontend components (extra view; frontend is large enough to warrant one) | `App.jsx`, `Components/`, `pages/`, `redux/` |
 | `use-case-diagram.puml` | PlantUML use case | Actors, system boundary, include/extend, external actors | controllers and routes |
+| `use-case-diagram-organized.svg` | Hand-authored SVG | Re-laid-out version of the use case diagram: groups stacked beside their actors, one connector rail per actor, include/extend use cases beside their base use case, external systems on the right, notes and legend in a panel. Same use cases and relationships as `use-case-diagram.puml`; the SVG is its own source | same evidence as `use-case-diagram.puml` |
 | `class-diagram.puml` | PlantUML class | Domain model: the three Mongoose models, enums, embedded `StatusHistoryEntry`, multiplicities | `model/*.js` |
 | `class-diagram-modules.puml` | PlantUML class | Backend function modules (controllers, middleware, helpers) and which models they use | `require()` statements across `Server/` |
 | `entity-relationship-diagram.mmd` | Mermaid ER | MongoDB collections, refs, embedded `statusHistory`, indexes | `model/User.js`, `Job.js`, `Application.js` |

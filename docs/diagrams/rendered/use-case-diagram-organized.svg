@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1780 1861" width="1780" height="1861" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#333" stroke-width="1.5"/></marker><marker id="gen" viewBox="0 0 14 12" refX="13" refY="6" markerWidth="14" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1 L13,6 L1,11 z" fill="#fff" stroke="#111" stroke-width="1.5"/></marker></defs>
+<rect width="1780" height="1861" fill="#fff"/>
+<text x="870.0" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#111">UML Use Case Diagram - JobPortal BD (implemented functionality only)</text>
+<rect x="255" y="76" width="1210" height="251" rx="8" fill="#eaf7ea" stroke="#5a9a5a" stroke-width="1.5"/>
+<text x="271" y="100" text-anchor="start" font-size="14" font-weight="700" fill="#111">Public browsing (no login)</text>
+<rect x="255" y="341" width="1210" height="485" rx="8" fill="#e8f0fb" stroke="#5b7fb5" stroke-width="1.5"/>
+<text x="271" y="365" text-anchor="start" font-size="14" font-weight="700" fill="#111">Account and authentication</text>
+<rect x="255" y="840" width="1210" height="199" rx="8" fill="#fff6dc" stroke="#c8a43a" stroke-width="1.5"/>
+<text x="271" y="864" text-anchor="start" font-size="14" font-weight="700" fill="#111">Applicant functions</text>
+<rect x="255" y="1053" width="1210" height="251" rx="8" fill="#fbe9f0" stroke="#c0577f" stroke-width="1.5"/>
+<text x="271" y="1077" text-anchor="start" font-size="14" font-weight="700" fill="#111">Company (Recruiter) functions</text>
+<rect x="255" y="1318" width="1210" height="355" rx="8" fill="#fdeaea" stroke="#c25b5b" stroke-width="1.5"/>
+<text x="271" y="1342" text-anchor="start" font-size="14" font-weight="700" fill="#111">Admin functions</text>
+<rect x="236" y="62" width="1256" height="1625" rx="10" fill="none" stroke="#222" stroke-width="2"/>
+<text x="236" y="56" text-anchor="start" font-size="11" font-style="italic" fill="#555">System boundary: JobPortal BD</text>
+<ellipse cx="455" cy="138" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="134.75" text-anchor="middle" font-size="12" fill="#111">Browse and paginate jobs</text>
+<text x="455" y="149.25" text-anchor="middle" font-size="12" fill="#111">(optionally by company)</text>
+<ellipse cx="455" cy="190" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="194.0" text-anchor="middle" font-size="12" fill="#111">View latest jobs</text>
+<ellipse cx="455" cy="242" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="246.0" text-anchor="middle" font-size="12" fill="#111">View job details by slug</text>
+<ellipse cx="455" cy="294" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="298.0" text-anchor="middle" font-size="12" fill="#111">Browse companies</text>
+<ellipse cx="455" cy="403" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="399.75" text-anchor="middle" font-size="12" fill="#111">Register account</text>
+<text x="455" y="414.25" text-anchor="middle" font-size="12" fill="#111">(applicant or company)</text>
+<ellipse cx="455" cy="481" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="485.0" text-anchor="middle" font-size="12" fill="#111">Verify e-mail with OTP</text>
+<ellipse cx="455" cy="533" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="537.0" text-anchor="middle" font-size="12" fill="#111">Log in</text>
+<ellipse cx="455" cy="585" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="589.0" text-anchor="middle" font-size="12" fill="#111">Request password-reset OTP</text>
+<ellipse cx="455" cy="637" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="641.0" text-anchor="middle" font-size="12" fill="#111">Reset password</text>
+<ellipse cx="455" cy="689" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="693.0" text-anchor="middle" font-size="12" fill="#111">View own profile</text>
+<ellipse cx="455" cy="741" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="745.0" text-anchor="middle" font-size="12" fill="#111">Log out</text>
+<ellipse cx="455" cy="793" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="797.0" text-anchor="middle" font-size="12" fill="#111">Edit profile</text>
+<ellipse cx="815" cy="481" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="485.0" text-anchor="middle" font-size="12" fill="#111">Resend OTP</text>
+<ellipse cx="815" cy="637" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="641.0" text-anchor="middle" font-size="12" fill="#111">Verify reset OTP</text>
+<ellipse cx="815" cy="793" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="797.0" text-anchor="middle" font-size="12" fill="#111">Upload profile photo / logo</text>
+<ellipse cx="455" cy="902" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="906.0" text-anchor="middle" font-size="12" fill="#111">Apply for a job</text>
+<ellipse cx="455" cy="954" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="958.0" text-anchor="middle" font-size="12" fill="#111">View own applications and status</text>
+<ellipse cx="455" cy="1006" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1010.0" text-anchor="middle" font-size="12" fill="#111">Withdraw application</text>
+<ellipse cx="815" cy="902" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="898.75" text-anchor="middle" font-size="12" fill="#111">Upload resume</text>
+<text x="815" y="913.25" text-anchor="middle" font-size="12" fill="#111">(PDF, DOC, DOCX, max 5 MB)</text>
+<ellipse cx="455" cy="1115" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1119.0" text-anchor="middle" font-size="12" fill="#111">Post a job</text>
+<ellipse cx="455" cy="1167" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1171.0" text-anchor="middle" font-size="12" fill="#111">Edit a job</text>
+<ellipse cx="455" cy="1219" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1223.0" text-anchor="middle" font-size="12" fill="#111">View own jobs</text>
+<ellipse cx="455" cy="1271" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1275.0" text-anchor="middle" font-size="12" fill="#111">Pause / resume a job</text>
+<ellipse cx="815" cy="1115" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1111.75" text-anchor="middle" font-size="12" fill="#111">View candidates</text>
+<text x="815" y="1126.25" text-anchor="middle" font-size="12" fill="#111">(optionally per job)</text>
+<ellipse cx="815" cy="1167" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1171.0" text-anchor="middle" font-size="12" fill="#111">Update candidate status</text>
+<ellipse cx="815" cy="1219" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1223.0" text-anchor="middle" font-size="12" fill="#111">Remove candidate</text>
+<ellipse cx="815" cy="1271" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1275.0" text-anchor="middle" font-size="12" fill="#111">Delete own job</text>
+<ellipse cx="1245" cy="1167" rx="130" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1245" y="1163.75" text-anchor="middle" font-size="12" fill="#111">Add interview /</text>
+<text x="1245" y="1178.25" text-anchor="middle" font-size="12" fill="#111">exam note</text>
+<ellipse cx="455" cy="1380" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1384.0" text-anchor="middle" font-size="12" fill="#111">View platform statistics</text>
+<ellipse cx="455" cy="1432" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1436.0" text-anchor="middle" font-size="12" fill="#111">View recent users</text>
+<ellipse cx="455" cy="1484" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1488.0" text-anchor="middle" font-size="12" fill="#111">List / search applicants</text>
+<ellipse cx="455" cy="1536" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1540.0" text-anchor="middle" font-size="12" fill="#111">Add applicant</text>
+<ellipse cx="455" cy="1588" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1592.0" text-anchor="middle" font-size="12" fill="#111">Flag / unflag applicant</text>
+<ellipse cx="455" cy="1640" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="455" y="1644.0" text-anchor="middle" font-size="12" fill="#111">List / search companies</text>
+<ellipse cx="815" cy="1380" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1384.0" text-anchor="middle" font-size="12" fill="#111">List all job posts</text>
+<ellipse cx="815" cy="1432" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1436.0" text-anchor="middle" font-size="12" fill="#111">Close job post</text>
+<ellipse cx="815" cy="1484" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1488.0" text-anchor="middle" font-size="12" fill="#111">Add company</text>
+<ellipse cx="815" cy="1536" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1540.0" text-anchor="middle" font-size="12" fill="#111">Delete applicant</text>
+<ellipse cx="815" cy="1588" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1592.0" text-anchor="middle" font-size="12" fill="#111">Delete company</text>
+<ellipse cx="815" cy="1640" rx="150" ry="21" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="815" y="1644.0" text-anchor="middle" font-size="12" fill="#111">Delete any job post</text>
+<ellipse cx="1245" cy="1588" rx="140" ry="24" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1245" y="1584.75" text-anchor="middle" font-size="12" fill="#111">Delete related applications</text>
+<text x="1245" y="1599.25" text-anchor="middle" font-size="12" fill="#111">and resume files</text>
+<line x1="455" y1="424" x2="455" y2="460" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="503" y="446.0" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;include&gt;&gt;</text>
+<line x1="665" y1="481" x2="605" y2="481" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="635.0" y="475" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;extend&gt;&gt;</text>
+<line x1="605" y1="637" x2="665" y2="637" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="635.0" y="631" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;include&gt;&gt;</text>
+<line x1="665" y1="793" x2="605" y2="793" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="635.0" y="787" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;extend&gt;&gt;</text>
+<line x1="605" y1="902" x2="665" y2="902" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="635.0" y="896" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;include&gt;&gt;</text>
+<line x1="1115" y1="1167" x2="965" y2="1167" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="1040.0" y="1161" text-anchor="middle" font-size="10.5" font-style="italic" fill="#333">&lt;&lt;extend&gt;&gt;</text>
+<line x1="965" y1="1536" x2="1113" y2="1569.8" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<line x1="965" y1="1588" x2="1105" y2="1588.0" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<line x1="965" y1="1640" x2="1113" y2="1606.2" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="1035.0" y="1574" text-anchor="middle" font-size="10.5" font-style="italic" fill="#111">&lt;&lt;include&gt;&gt;</text>
+<path d="M965,1271 L1245,1271 L1245,1563" fill="none" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="1279" y="1266" text-anchor="middle" font-size="10.5" font-style="italic" fill="#111">&lt;&lt;include&gt;&gt;</text>
+<line x1="246" y1="138" x2="246" y2="637" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="138" x2="305" y2="138" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="190" x2="305" y2="190" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="242" x2="305" y2="242" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="294" x2="305" y2="294" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="403" x2="305" y2="403" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="481" x2="305" y2="481" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="533" x2="305" y2="533" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="585" x2="305" y2="585" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="637" x2="305" y2="637" stroke="#333" stroke-width="1.2"/>
+<line x1="113" y1="387.5" x2="246" y2="387.5" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="689" x2="246" y2="793" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="689" x2="305" y2="689" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="741" x2="305" y2="741" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="793" x2="305" y2="793" stroke="#333" stroke-width="1.2"/>
+<line x1="113" y1="741.0" x2="246" y2="741.0" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="902" x2="246" y2="1006" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="902" x2="305" y2="902" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="954" x2="305" y2="954" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1006" x2="305" y2="1006" stroke="#333" stroke-width="1.2"/>
+<line x1="113" y1="954.0" x2="246" y2="954.0" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1089" x2="632" y2="1089" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1089" x2="246" y2="1271" stroke="#333" stroke-width="1.4"/>
+<line x1="632" y1="1089" x2="632" y2="1271" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1115" x2="305" y2="1115" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1167" x2="305" y2="1167" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1219" x2="305" y2="1219" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1271" x2="305" y2="1271" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1115" x2="665" y2="1115" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1167" x2="665" y2="1167" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1219" x2="665" y2="1219" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1271" x2="665" y2="1271" stroke="#333" stroke-width="1.2"/>
+<line x1="113" y1="1193.0" x2="246" y2="1193.0" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1354" x2="632" y2="1354" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1354" x2="246" y2="1640" stroke="#333" stroke-width="1.4"/>
+<line x1="632" y1="1354" x2="632" y2="1640" stroke="#333" stroke-width="1.4"/>
+<line x1="246" y1="1380" x2="305" y2="1380" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1432" x2="305" y2="1432" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1484" x2="305" y2="1484" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1536" x2="305" y2="1536" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1588" x2="305" y2="1588" stroke="#333" stroke-width="1.2"/>
+<line x1="246" y1="1640" x2="305" y2="1640" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1380" x2="665" y2="1380" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1432" x2="665" y2="1432" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1484" x2="665" y2="1484" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1536" x2="665" y2="1536" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1588" x2="665" y2="1588" stroke="#333" stroke-width="1.2"/>
+<line x1="632" y1="1640" x2="665" y2="1640" stroke="#333" stroke-width="1.2"/>
+<line x1="113" y1="1510.0" x2="246" y2="1510.0" stroke="#333" stroke-width="1.4"/>
+<circle cx="95" cy="363.5" r="9" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="372.5" x2="95" y2="393.5" stroke="#111" stroke-width="1.8"/>
+<line x1="79" y1="379.5" x2="111" y2="379.5" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="393.5" x2="82" y2="411.5" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="393.5" x2="108" y2="411.5" stroke="#111" stroke-width="1.8"/>
+<text x="95" y="427.5" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Visitor</text>
+<text x="95" y="441.5" text-anchor="middle" font-size="12" font-weight="700" fill="#111">(unauthenticated)</text>
+<circle cx="95" cy="717.0" r="9" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="726.0" x2="95" y2="747.0" stroke="#111" stroke-width="1.8"/>
+<line x1="79" y1="733.0" x2="111" y2="733.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="747.0" x2="82" y2="765.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="747.0" x2="108" y2="765.0" stroke="#111" stroke-width="1.8"/>
+<text x="95" y="781.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Authenticated</text>
+<text x="95" y="795.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">User</text>
+<circle cx="95" cy="930.0" r="9" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="939.0" x2="95" y2="960.0" stroke="#111" stroke-width="1.8"/>
+<line x1="79" y1="946.0" x2="111" y2="946.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="960.0" x2="82" y2="978.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="960.0" x2="108" y2="978.0" stroke="#111" stroke-width="1.8"/>
+<text x="95" y="994.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Applicant</text>
+<circle cx="95" cy="1169.0" r="9" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1178.0" x2="95" y2="1199.0" stroke="#111" stroke-width="1.8"/>
+<line x1="79" y1="1185.0" x2="111" y2="1185.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1199.0" x2="82" y2="1217.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1199.0" x2="108" y2="1217.0" stroke="#111" stroke-width="1.8"/>
+<text x="95" y="1233.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Company</text>
+<text x="95" y="1247.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">(Recruiter)</text>
+<circle cx="95" cy="1486.0" r="9" fill="#fff" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1495.0" x2="95" y2="1516.0" stroke="#111" stroke-width="1.8"/>
+<line x1="79" y1="1502.0" x2="111" y2="1502.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1516.0" x2="82" y2="1534.0" stroke="#111" stroke-width="1.8"/>
+<line x1="95" y1="1516.0" x2="108" y2="1534.0" stroke="#111" stroke-width="1.8"/>
+<text x="95" y="1550.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Admin</text>
+<line x1="95" y1="707.0" x2="95" y2="447.5" stroke="#111" stroke-width="1.5" marker-end="url(#gen)"/>
+<line x1="34" y1="741.0" x2="34" y2="1510.0" stroke="#111" stroke-width="1.5"/>
+<line x1="77" y1="954.0" x2="34" y2="954.0" stroke="#111" stroke-width="1.5"/>
+<line x1="77" y1="1193.0" x2="34" y2="1193.0" stroke="#111" stroke-width="1.5"/>
+<line x1="77" y1="1510.0" x2="34" y2="1510.0" stroke="#111" stroke-width="1.5"/>
+<line x1="34" y1="741.0" x2="78" y2="741.0" stroke="#111" stroke-width="1.5" marker-end="url(#gen)"/>
+<line x1="1478" y1="403" x2="1478" y2="585" stroke="#555" stroke-width="1.4"/>
+<line x1="1478" y1="403" x2="605" y2="403" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="481" x2="965" y2="481" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="585" x2="605" y2="585" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="494.0" x2="1612" y2="494.0" stroke="#555" stroke-width="1.4"/>
+<line x1="1478" y1="793" x2="1478" y2="1588" stroke="#555" stroke-width="1.4"/>
+<line x1="1478" y1="793" x2="965" y2="793" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="902" x2="965" y2="902" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="1588" x2="1385" y2="1588" stroke="#555" stroke-width="1.2"/>
+<line x1="1478" y1="1094.3333333333333" x2="1612" y2="1094.3333333333333" stroke="#555" stroke-width="1.4"/>
+<circle cx="1665" cy="470.0" r="9" fill="#fff" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="479.0" x2="1665" y2="500.0" stroke="#444" stroke-width="1.8"/>
+<line x1="1649" y1="486.0" x2="1681" y2="486.0" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="500.0" x2="1652" y2="518.0" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="500.0" x2="1678" y2="518.0" stroke="#444" stroke-width="1.8"/>
+<text x="1665" y="532.0" text-anchor="middle" font-size="11" font-style="italic" fill="#444">&lt;&lt;system&gt;&gt;</text>
+<text x="1665" y="546.0" text-anchor="middle" font-size="12" fill="#111">Gmail SMTP</text>
+<text x="1665" y="560.0" text-anchor="middle" font-size="12" fill="#111">(external)</text>
+<circle cx="1665" cy="1070.3333333333333" r="9" fill="#fff" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="1079.3333333333333" x2="1665" y2="1100.3333333333333" stroke="#444" stroke-width="1.8"/>
+<line x1="1649" y1="1086.3333333333333" x2="1681" y2="1086.3333333333333" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="1100.3333333333333" x2="1652" y2="1118.3333333333333" stroke="#444" stroke-width="1.8"/>
+<line x1="1665" y1="1100.3333333333333" x2="1678" y2="1118.3333333333333" stroke="#444" stroke-width="1.8"/>
+<text x="1665" y="1132.3333333333333" text-anchor="middle" font-size="11" font-style="italic" fill="#444">&lt;&lt;system&gt;&gt;</text>
+<text x="1665" y="1146.3333333333333" text-anchor="middle" font-size="12" fill="#111">Cloudinary</text>
+<text x="1665" y="1160.3333333333333" text-anchor="middle" font-size="12" fill="#111">(external)</text>
+<rect x="236" y="1709" width="900" height="132" rx="6" fill="#fffde7" stroke="#bfb36b"/>
+<text x="250" y="1731" text-anchor="start" font-size="13" font-weight="700" fill="#111">Notes</text>
+<text x="250" y="1753" text-anchor="start" font-size="11" fill="#111">- Forgot / reset password is a 3-step flow: request OTP -&gt; verify code -&gt; set new password (ForgotPassword, VerifyOtp, ResetPassword).</text>
+<text x="250" y="1770" text-anchor="start" font-size="11" fill="#111">- Verify reset OTP is checked twice by the server: in VerifyEmail (from = forgot) and again inside ResetPassword.</text>
+<text x="250" y="1787" text-anchor="start" font-size="11" fill="#111">- The note field is requested by the client only when the new status is exam or interview (RecruiterDashboard.setStatus).</text>
+<text x="250" y="1804" text-anchor="start" font-size="11" fill="#111">- Cascade delete = delete the Application documents and their Cloudinary resume files; it is not wrapped in a database transaction.</text>
+<text x="250" y="1821" text-anchor="start" font-size="11" fill="#111">- Withdraw application and Remove candidate each delete one application and its resume file; they do not use the cascade.</text>
+<rect x="1160" y="1709" width="332" height="132" rx="6" fill="#fff" stroke="#999"/>
+<text x="1174" y="1731" text-anchor="start" font-size="13" font-weight="700" fill="#111">Legend</text>
+<line x1="1174" y1="1753" x2="1234" y2="1753" stroke="#333" stroke-width="1.4"/>
+<text x="1244" y="1757" text-anchor="start" font-size="11" fill="#111">association (actor uses the use case)</text>
+<line x1="1174" y1="1775" x2="1234" y2="1775" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<text x="1244" y="1779" text-anchor="start" font-size="11" fill="#111">&lt;&lt;include&gt;&gt; / &lt;&lt;extend&gt;&gt; (arrow points to</text>
+<text x="1244" y="1792" text-anchor="start" font-size="11" fill="#111">the included or the extended use case)</text>
+<line x1="1174" y1="1813" x2="1234" y2="1813" stroke="#111" stroke-width="1.5" marker-end="url(#gen)"/>
+<text x="1244" y="1817" text-anchor="start" font-size="11" fill="#111">actor generalization (child to parent)</text>
