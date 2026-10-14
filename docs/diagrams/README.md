@@ -22,6 +22,7 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 | File | Type / language | Represents | Main evidence |
 |---|---|---|---|
 | `three-tier-architecture.mmd` | Mermaid flowchart | Logical presentation / application / data tiers and external services | `Client/src`, `Server/server.js`, `routes/`, `controllers/`, `model/` |
+| `three-tier-architecture-classic.svg` | Hand-authored SVG | The same three tiers in the textbook block style (User, Client, Web Server, DBMS with database); the SVG is its own source | same evidence as `three-tier-architecture.mmd` |
 | `c4-system-context.mmd` | Mermaid flowchart, C4-styled | System, four human actors, Gmail SMTP, Cloudinary | roles in `User.js`; `mailService.js`; `uploadToCloudinary.js` |
 | `c4-container.mmd` | Mermaid flowchart, C4-styled | SPA, REST API, MongoDB, external systems with protocols | `package.json` files, `baseApi.js`, `dbConnection.js` |
 | `c4-component.mmd` | Mermaid flowchart, C4-styled | Backend components and dependencies | `server.js`, `routes/api/*`, `middleware/*`, `controllers/*`, `utils/*`, `model/*` |

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" width="1100" height="400" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000">
+  <title>Three-tier architecture - JobPortal BD (classic style)</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 12 10" refX="11" refY="5" markerWidth="14" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#000"/></marker>
+    <marker id="al" viewBox="0 0 12 10" refX="1" refY="5" markerWidth="12" markerHeight="10" orient="auto"><path d="M12,0 L0,5 L12,10 z" fill="#000"/></marker>
+  </defs>
+  <rect width="1100" height="400" fill="#fff"/>
+  <text x="550" y="30" text-anchor="middle" font-size="22" font-weight="bold">Three-Tier Architecture - JobPortal BD</text>
+
+  <!-- outer frame -->
+  <rect x="15" y="50" width="1070" height="285" fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- User -->
+  <circle cx="85" cy="192" r="40" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="85" y="199" text-anchor="middle">User</text>
+
+  <!-- Tier 1: client -->
+  <rect x="190" y="75" width="220" height="235" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="300" y="130" text-anchor="middle">Client</text>
+  <text x="300" y="172" text-anchor="middle">running</text>
+  <text x="300" y="214" text-anchor="middle">web browser</text>
+  <text x="300" y="256" text-anchor="middle" font-size="16" font-style="italic">React 19 single-page app</text>
+  <text x="300" y="280" text-anchor="middle" font-size="16" font-style="italic">(Redux Toolkit / RTK Query)</text>
+
+  <!-- Tier 2: web server -->
+  <rect x="490" y="75" width="230" height="235" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="605" y="130" text-anchor="middle">Web Server</text>
+  <text x="605" y="172" text-anchor="middle">running</text>
+  <text x="605" y="214" text-anchor="middle">web application</text>
+  <text x="605" y="256" text-anchor="middle" font-size="16" font-style="italic">Node.js + Express 5 REST API</text>
+  <text x="605" y="280" text-anchor="middle" font-size="16" font-style="italic">(/api/v1, JWT, business logic)</text>
+
+  <!-- Tier 3: DBMS -->
+  <rect x="800" y="75" width="270" height="235" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="865" y="140" text-anchor="middle">Database</text>
+  <text x="865" y="167" text-anchor="middle">Management</text>
+  <text x="865" y="194" text-anchor="middle">System</text>
+  <text x="865" y="221" text-anchor="middle">(DBMS)</text>
+  <text x="865" y="262" text-anchor="middle" font-size="15" font-style="italic">MongoDB</text>
+  <text x="865" y="282" text-anchor="middle" font-size="15" font-style="italic">+ Mongoose</text>
+  <!-- database cylinder -->
+  <path d="M938,112 v150 a37,13 0 0 0 74,0 v-150" fill="#fff" stroke="#000" stroke-width="2"/>
+  <ellipse cx="975" cy="112" rx="37" ry="13" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="975" y="178" text-anchor="middle" font-size="17">Database</text>
+  <text x="975" y="202" text-anchor="middle" font-size="13" font-style="italic">users</text>
+  <text x="975" y="219" text-anchor="middle" font-size="13" font-style="italic">jobs</text>
+  <text x="975" y="236" text-anchor="middle" font-size="13" font-style="italic">applications</text>
+
+  <!-- two-way arrows (upper: request, lower: response) -->
+  <line x1="128" y1="178" x2="186" y2="178" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="190" y1="206" x2="130" y2="206" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="412" y1="178" x2="488" y2="178" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="488" y1="206" x2="412" y2="206" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="722" y1="178" x2="798" y2="178" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="798" y1="206" x2="722" y2="206" stroke="#000" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- arrow captions -->
+  <text x="450" y="162" text-anchor="middle" font-size="13" font-style="italic">request</text>
+  <text x="450" y="228" text-anchor="middle" font-size="13" font-style="italic">response</text>
+  <text x="760" y="162" text-anchor="middle" font-size="13" font-style="italic">query</text>
+  <text x="760" y="228" text-anchor="middle" font-size="13" font-style="italic">documents</text>
+
+  <!-- tier labels -->
+  <text x="300" y="365" text-anchor="middle" font-size="18" font-weight="bold">Tier 1 - Presentation</text>
+  <text x="605" y="365" text-anchor="middle" font-size="18" font-weight="bold">Tier 2 - Application</text>
+  <text x="935" y="365" text-anchor="middle" font-size="18" font-weight="bold">Tier 3 - Data</text>
+  <text x="550" y="388" text-anchor="middle" font-size="13" font-style="italic">Logical view. The application also calls Cloudinary (files) and Gmail SMTP (OTP e-mail).</text>
+</svg>
