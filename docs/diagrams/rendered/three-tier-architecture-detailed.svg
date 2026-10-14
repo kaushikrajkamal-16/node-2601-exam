@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1436" width="1400" height="1436" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs>
+<rect width="1400" height="1436" fill="#fff"/>
+<text x="540" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#111">Users</text>
+<text x="540" y="52" text-anchor="middle" font-size="12" fill="#444">Visitor, Applicant, Company (Recruiter), Admin  (admin account is created by the seed script)</text>
+<circle cx="540" cy="85" r="15" fill="none" stroke="#1f2937" stroke-width="3"/><path d="M508,128 a32,28 0 0 1 64,0 z" fill="none" stroke="#1f2937" stroke-width="3"/>
+<line x1="540" y1="134" x2="540" y2="162" stroke="#111" stroke-width="1.8" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<path d="M502,205 a16,16 0 0 1 8,-29 a20,20 0 0 1 36,-6 a17,17 0 0 1 26,12 a14,14 0 0 1 -6,23 z" fill="#8ecbff" stroke="#3b82c4" stroke-width="1.5"/>
+<text x="540" y="197" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Internet</text>
+<line x1="540" y1="214" x2="540" y2="272" stroke="#111" stroke-width="1.8" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<rect x="510.0" y="233" width="60" height="20" fill="#fff" fill-opacity="0.95"/>
+<text x="540" y="248" text-anchor="middle" font-size="13" font-weight="700" fill="#111">HTTPS</text>
+<rect x="40" y="275" width="1000" height="210" fill="#f8cecc" stroke="#b85450" stroke-width="1.6"/>
+<text x="540.0" y="297" text-anchor="middle" font-size="14" font-weight="700" fill="#111">CLIENT TIER - Presentation Layer</text>
+<rect x="60" y="312" width="225" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="172.5" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Web Client (Browser)</text>
+<text x="172.5" y="359" text-anchor="middle" font-size="12" fill="#111">React 19 single-page app</text>
+<text x="172.5" y="376" text-anchor="middle" font-size="12" fill="#111">built with Vite</text>
+<text x="172.5" y="393" text-anchor="middle" font-size="12" fill="#111">Redux Toolkit / RTK Query</text>
+<text x="172.5" y="410" text-anchor="middle" font-size="12" fill="#111">(state, cache, API calls)</text>
+<text x="172.5" y="427" text-anchor="middle" font-size="12" fill="#111">Tailwind CSS 4 styling</text>
+<rect x="305" y="312" width="225" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="417.5" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Pages and Layouts</text>
+<text x="417.5" y="359" text-anchor="middle" font-size="12" fill="#111">Public: Home, Jobs, Job Details,</text>
+<text x="417.5" y="376" text-anchor="middle" font-size="12" fill="#111">Companies, About, Contact</text>
+<text x="417.5" y="393" text-anchor="middle" font-size="12" fill="#111">Auth: Login, Register, Verify OTP,</text>
+<text x="417.5" y="410" text-anchor="middle" font-size="12" fill="#111">Forgot / Reset Password</text>
+<text x="417.5" y="427" text-anchor="middle" font-size="12" fill="#111">Dashboards: Applicant, Recruiter, Admin</text>
+<rect x="550" y="312" width="225" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="662.5" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Routing and Access Guard</text>
+<text x="662.5" y="359" text-anchor="middle" font-size="12" fill="#111">React Router</text>
+<text x="662.5" y="376" text-anchor="middle" font-size="12" fill="#111">ProtectedRoute: calls GET /auth/getme,</text>
+<text x="662.5" y="393" text-anchor="middle" font-size="12" fill="#111">redirects to /login or to the</text>
+<text x="662.5" y="410" text-anchor="middle" font-size="12" fill="#111">user's own dashboard by role</text>
+<text x="662.5" y="427" text-anchor="middle" font-size="12" fill="#111">(UX only; server enforces roles)</text>
+<rect x="795" y="312" width="225" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="907.5" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#111">API Modules and Forms</text>
+<text x="907.5" y="359" text-anchor="middle" font-size="12" fill="#111">authApi, publicApi, applicantApi,</text>
+<text x="907.5" y="376" text-anchor="middle" font-size="12" fill="#111">companyApi, adminApi</text>
+<text x="907.5" y="393" text-anchor="middle" font-size="12" fill="#111">Modals: Apply (resume upload),</text>
+<text x="907.5" y="410" text-anchor="middle" font-size="12" fill="#111">Post Job, Edit Profile,</text>
+<text x="907.5" y="427" text-anchor="middle" font-size="12" fill="#111">Add Applicant / Add Company</text>
+<line x1="540" y1="485" x2="540" y2="580" stroke="#111" stroke-width="1.8" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<rect x="375.0" y="515" width="330" height="20" fill="#fff" fill-opacity="0.95"/>
+<text x="540" y="530" text-anchor="middle" font-size="12" font-weight="700" fill="#111">REST over HTTP(S): JSON and multipart/form-data</text>
+<rect x="375.0" y="536" width="330" height="20" fill="#fff" fill-opacity="0.95"/>
+<text x="540" y="551" text-anchor="middle" font-size="12" font-weight="700" fill="#111">httpOnly accessToken cookie, CORS with credentials</text>
+<g transform="translate(0,-25)">
+<rect x="40" y="605" width="1000" height="470" fill="#b9c6d2" stroke="#6b7f92" stroke-width="1.6"/>
+<text x="540.0" y="627" text-anchor="middle" font-size="14" font-weight="700" fill="#111">APPLICATION TIER - Business Logic Layer</text>
+<rect x="240" y="640" width="600" height="92" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="540.0" y="662" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">EXPRESS 5 REST API PIPELINE  (Node.js, base path /api/v1, port 5000)</text>
+<text x="540.0" y="687" text-anchor="middle" font-size="12" fill="#111">CORS (CLIENT_URL), JSON parser, cookie-parser</text>
+<text x="540.0" y="704" text-anchor="middle" font-size="12" fill="#111">Routers: /auth, /applicant, /company, /admin, public /jobs and /companies</text>
+<text x="540.0" y="721" text-anchor="middle" font-size="12" fill="#111">Global error handler (multer and other errors, HTTP 400)</text>
+<line x1="540" y1="732" x2="540" y2="762" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="50" y="762" width="980" height="210" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.6"/>
+<text x="540" y="782" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Application Server (Node.js runtime)</text>
+<rect x="80" y="798" width="215" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="187.5" y="820" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Security Middleware</text>
+<text x="187.5" y="845" text-anchor="middle" font-size="12" fill="#111">authMiddleware: verifies JWT</text>
+<text x="187.5" y="862" text-anchor="middle" font-size="12" fill="#111">cookie, loads the user</text>
+<text x="187.5" y="879" text-anchor="middle" font-size="12" fill="#111">roleMiddleware: allows only</text>
+<text x="187.5" y="896" text-anchor="middle" font-size="12" fill="#111">applicant | company | admin</text>
+<text x="187.5" y="913" text-anchor="middle" font-size="12" fill="#111">bcrypt hashing, JWT 1 day</text>
+<rect x="315" y="798" width="215" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="422.5" y="820" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Upload Middleware (multer)</text>
+<text x="422.5" y="845" text-anchor="middle" font-size="12" fill="#111">In-memory storage, max 5 MB</text>
+<text x="422.5" y="862" text-anchor="middle" font-size="12" fill="#111">Resumes: PDF, DOC, DOCX</text>
+<text x="422.5" y="879" text-anchor="middle" font-size="12" fill="#111">Photos / logos: PNG, JPG, WebP</text>
+<text x="422.5" y="896" text-anchor="middle" font-size="12" fill="#111">Rejects other types with</text>
+<text x="422.5" y="913" text-anchor="middle" font-size="12" fill="#111">HTTP 400</text>
+<rect x="550" y="798" width="215" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="657.5" y="820" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Controllers (business logic)</text>
+<text x="657.5" y="845" text-anchor="middle" font-size="12" fill="#111">auth, applicant, company,</text>
+<text x="657.5" y="862" text-anchor="middle" font-size="12" fill="#111">admin, public jobs</text>
+<text x="657.5" y="879" text-anchor="middle" font-size="12" fill="#111">Validation, OTP create / check,</text>
+<text x="657.5" y="896" text-anchor="middle" font-size="12" fill="#111">status rules, slug generation,</text>
+<text x="657.5" y="913" text-anchor="middle" font-size="12" fill="#111">cascade deletes</text>
+<rect x="785" y="798" width="215" height="160" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="892.5" y="820" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Utility Services</text>
+<text x="892.5" y="845" text-anchor="middle" font-size="12" fill="#111">mailService (Nodemailer)</text>
+<text x="892.5" y="862" text-anchor="middle" font-size="12" fill="#111">uploadToCloudinary</text>
+<text x="892.5" y="879" text-anchor="middle" font-size="12" fill="#111">helpers: OTP, JWT,</text>
+<text x="892.5" y="896" text-anchor="middle" font-size="12" fill="#111">slug, formatJob,</text>
+<text x="892.5" y="913" text-anchor="middle" font-size="12" fill="#111">statusLabel</text>
+<line x1="295" y1="878" x2="315" y2="878" stroke="#111" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="530" y1="878" x2="550" y2="878" stroke="#111" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="765" y1="878" x2="785" y2="878" stroke="#111" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="80" y="990" width="215" height="72" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="187.5" y="1012" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Global Error Handler</text>
+<text x="187.5" y="1037" text-anchor="middle" font-size="12" fill="#111">Returns { success:false,</text>
+<text x="187.5" y="1054" text-anchor="middle" font-size="12" fill="#111">message } with a status</text>
+<rect x="315" y="990" width="450" height="72" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="540.0" y="1012" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Mongoose ODM Models (run inside the Node process)</text>
+<text x="540.0" y="1037" text-anchor="middle" font-size="12" fill="#111">User, Job, Application: schemas, indexes,</text>
+<text x="540.0" y="1054" text-anchor="middle" font-size="12" fill="#111">password-hash hook, ComparePassword()</text>
+<rect x="790" y="990" width="215" height="72" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="897.5" y="1012" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Configuration (.env)</text>
+<text x="897.5" y="1037" text-anchor="middle" font-size="12" fill="#111">PORT, BASE_URL, CLIENT_URL,</text>
+<text x="897.5" y="1054" text-anchor="middle" font-size="12" fill="#111">JWT_SEC, MONGO_URI (names)</text>
+<line x1="657" y1="958" x2="657" y2="990" stroke="#111" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="690" y="978" text-anchor="start" font-size="11" fill="#111">uses</text>
+<rect x="1110" y="740" width="265" height="290" fill="#e1fbff" stroke="#36a3b8" stroke-width="1.6"/>
+<text x="1242.5" y="762" text-anchor="middle" font-size="14" font-weight="700" fill="#111">THIRD-PARTY SERVICES</text>
+<rect x="1130" y="775" width="225" height="88" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="1242.5" y="797" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Cloudinary</text>
+<text x="1242.5" y="822" text-anchor="middle" font-size="12" fill="#111">Photos, logos, resumes</text>
+<text x="1242.5" y="839" text-anchor="middle" font-size="12" fill="#111">HTTPS, Cloudinary SDK</text>
+<text x="1242.5" y="856" text-anchor="middle" font-size="12" fill="#111">upload / delete files</text>
+<rect x="1130" y="890" width="225" height="88" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="1242.5" y="912" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Gmail SMTP</text>
+<text x="1242.5" y="937" text-anchor="middle" font-size="12" fill="#111">OTP e-mails: registration</text>
+<text x="1242.5" y="954" text-anchor="middle" font-size="12" fill="#111">and password reset</text>
+<text x="1242.5" y="971" text-anchor="middle" font-size="12" fill="#111">SMTP port 587, STARTTLS</text>
+<line x1="1000" y1="819" x2="1128" y2="819" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="1000" y1="934" x2="1128" y2="934" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1065" y="811" text-anchor="middle" font-size="11" fill="#111">files</text>
+<text x="1065" y="926" text-anchor="middle" font-size="11" fill="#111">OTP</text>
+<line x1="350" y1="1062" x2="350" y2="1178" stroke="#111" stroke-width="1.8" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<rect x="235.0" y="1102" width="230" height="20" fill="#fff" fill-opacity="0.95"/>
+<text x="350" y="1117" text-anchor="middle" font-size="12" font-weight="700" fill="#111">Read / write via Mongoose ODM</text>
+<rect x="235.0" y="1123" width="230" height="20" fill="#fff" fill-opacity="0.95"/>
+<text x="350" y="1138" text-anchor="middle" font-size="12" font-weight="700" fill="#111">(MongoDB connection: MONGO_URI)</text>
+<rect x="40" y="1178" width="1000" height="270" fill="#fff2cc" stroke="#d6b656" stroke-width="1.6"/>
+<text x="540.0" y="1200" text-anchor="middle" font-size="14" font-weight="700" fill="#111">DATABASE TIER - Data Storage Layer</text>
+<path d="M85,1222 v95 a35,12 0 0 0 70,0 v-95" fill="#d9ecff" stroke="#3b6ea5" stroke-width="2"/><ellipse cx="120" cy="1222" rx="35" ry="12" fill="#eaf4ff" stroke="#3b6ea5" stroke-width="2"/>
+<text x="120" y="1350" text-anchor="middle" font-size="12" font-weight="700" fill="#111">MongoDB (NoSQL)</text>
+<text x="120" y="1366" text-anchor="middle" font-size="12" fill="#111">primary database</text>
+<rect x="190" y="1215" width="250" height="112" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="315.0" y="1237" text-anchor="middle" font-size="13" font-weight="700" fill="#111">users</text>
+<text x="315.0" y="1262" text-anchor="middle" font-size="12" fill="#111">name, email (unique), password (hash),</text>
+<text x="315.0" y="1279" text-anchor="middle" font-size="12" fill="#111">role, isVerified, OTP + expiry,</text>
+<text x="315.0" y="1296" text-anchor="middle" font-size="12" fill="#111">phone, photo, department, batch,</text>
+<text x="315.0" y="1313" text-anchor="middle" font-size="12" fill="#111">isFlagged, industry, address, ...</text>
+<rect x="455" y="1215" width="250" height="112" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="580.0" y="1237" text-anchor="middle" font-size="13" font-weight="700" fill="#111">jobs</text>
+<text x="580.0" y="1262" text-anchor="middle" font-size="12" fill="#111">title, slug (unique), department,</text>
+<text x="580.0" y="1279" text-anchor="middle" font-size="12" fill="#111">type, mode, location, salary,</text>
+<text x="580.0" y="1296" text-anchor="middle" font-size="12" fill="#111">deadline, skills, requirements,</text>
+<text x="580.0" y="1313" text-anchor="middle" font-size="12" fill="#111">status: active | paused | closed</text>
+<rect x="720" y="1215" width="250" height="112" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="845.0" y="1237" text-anchor="middle" font-size="13" font-weight="700" fill="#111">applications</text>
+<text x="845.0" y="1262" text-anchor="middle" font-size="12" fill="#111">job, applicant, company (references)</text>
+<text x="845.0" y="1279" text-anchor="middle" font-size="12" fill="#111">resume (Cloudinary URL), resumeName</text>
+<text x="845.0" y="1296" text-anchor="middle" font-size="12" fill="#111">status: pending ... rejected (6 values)</text>
+<text x="845.0" y="1313" text-anchor="middle" font-size="12" fill="#111">statusHistory[] embedded</text>
+<rect x="190" y="1338" width="780" height="92" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="580.0" y="1360" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Constraints and relationships</text>
+<text x="580.0" y="1385" text-anchor="middle" font-size="12" fill="#111">Unique: users.email, jobs.slug, applications (job + applicant). Embedded: statusHistory.</text>
+<text x="580.0" y="1402" text-anchor="middle" font-size="12" fill="#111">References (job to company, application to job and applicant) are enforced in code,</text>
+<text x="580.0" y="1419" text-anchor="middle" font-size="12" fill="#111">not by MongoDB.</text>
+<rect x="1110" y="1090" width="265" height="190" fill="#fff" stroke="#999" stroke-width="1"/>
+<text x="1242" y="1110" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Legend</text>
+<rect x="1125" y="1124" width="26" height="15" fill="#f8cecc" stroke="#b85450"/>
+<text x="1162" y="1136" text-anchor="start" font-size="12" fill="#111">Presentation tier (browser)</text>
+<rect x="1125" y="1148" width="26" height="15" fill="#b9c6d2" stroke="#6b7f92"/>
+<text x="1162" y="1160" text-anchor="start" font-size="12" fill="#111">Application tier (Node.js API)</text>
+<rect x="1125" y="1172" width="26" height="15" fill="#fff2cc" stroke="#d6b656"/>
+<text x="1162" y="1184" text-anchor="start" font-size="12" fill="#111">Data tier (MongoDB)</text>
+<rect x="1125" y="1196" width="26" height="15" fill="#e1fbff" stroke="#36a3b8"/>
+<text x="1162" y="1208" text-anchor="start" font-size="12" fill="#111">External services</text>
+<line x1="1128" y1="1230" x2="1170" y2="1230" stroke="#111" stroke-width="1.8" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<text x="1180" y="1234" text-anchor="start" font-size="11" fill="#111">two-way request / response</text>
+<line x1="1128" y1="1252" x2="1170" y2="1252" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="1180" y="1256" text-anchor="start" font-size="11" fill="#111">one-way call</text>
+<text x="1242" y="1274" text-anchor="middle" font-size="10.5" font-style="italic" fill="#555">Logical view; hosting not confirmed</text>
+</g>
+</svg>
