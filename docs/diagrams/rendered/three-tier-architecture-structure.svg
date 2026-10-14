@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="960" height="250" font-family="'Times New Roman', Times, serif" font-size="19" fill="#000">
+  <title>Three-tier architecture - JobPortal BD</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 18 14" refX="17" refY="7" markerWidth="18" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L18,7 L0,14 z" fill="#000"/></marker>
+  </defs>
+  <rect width="960" height="250" fill="#fff"/>
+  <rect x="5" y="8" width="945" height="234" fill="#fff" stroke="#000" stroke-width="2"/>
+
+  <!-- User -->
+  <circle cx="75" cy="125" r="30" fill="#fff" stroke="#000" stroke-width="1.5"/>
+  <text x="75" y="131" text-anchor="middle">User</text>
+
+  <!-- Client -->
+  <rect x="180" y="30" width="170" height="190" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="265" y="76" text-anchor="middle">Client</text>
+  <text x="265" y="118" text-anchor="middle">running</text>
+  <text x="265" y="160" text-anchor="middle">web browser</text>
+
+  <!-- Web server -->
+  <rect x="395" y="30" width="170" height="190" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="480" y="76" text-anchor="middle">Web Server</text>
+  <text x="480" y="118" text-anchor="middle">running</text>
+  <text x="480" y="160" text-anchor="middle">web application</text>
+
+  <!-- DBMS -->
+  <rect x="610" y="30" width="330" height="190" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="685" y="86" text-anchor="middle">Database</text>
+  <text x="685" y="112" text-anchor="middle">Management</text>
+  <text x="685" y="138" text-anchor="middle">System</text>
+  <text x="685" y="164" text-anchor="middle">(DBMS)</text>
+  <path d="M790,70 v110 a40,14 0 0 0 80,0 v-110" fill="#fff" stroke="#000" stroke-width="2"/>
+  <ellipse cx="830" cy="70" rx="40" ry="14" fill="#fff" stroke="#000" stroke-width="2"/>
+  <text x="830" y="130" text-anchor="middle">Database</text>
+
+  <!-- two-way arrows -->
+  <line x1="108" y1="112" x2="176" y2="112" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="180" y1="136" x2="112" y2="136" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="352" y1="112" x2="391" y2="112" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="395" y1="136" x2="356" y2="136" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="567" y1="112" x2="606" y2="112" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="610" y1="136" x2="571" y2="136" stroke="#000" stroke-width="3" marker-end="url(#ar)"/>
+</svg>
