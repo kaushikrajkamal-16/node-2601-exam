@@ -1,0 +1,56 @@
+---
+title: "C4 Level 3 - Components of the REST API container (Server/)"
+---
+flowchart TB
+    spa["<b>Single-Page Application</b><br/>[Container: React]"]
+    db[("<b>MongoDB</b><br/>[Container]<br/>users, jobs, applications")]
+    smtp["<b>Gmail SMTP</b><br/>[External]"]
+    cloud["<b>Cloudinary</b><br/>[External]"]
+
+    subgraph api["REST API container"]
+        direction TB
+        entry["<b>server.js</b><br/>[Express app]<br/>CORS, JSON body, cookie-parser,<br/>DB connect, router, error handler"]
+        routes["<b>Routers</b> (routes/api)<br/>[express.Router]<br/>auth, applicant, company, admin, job<br/>mounted at BASE_URL /api/v1"]
+        subgraph mws["Middleware"]
+            direction LR
+            authmw["<b>authMiddleware</b><br/>JWT cookie verify,<br/>loads User into req.user"]
+            rolemw["<b>roleMiddleware</b><br/>allows listed roles, else 403"]
+            uploadmw["<b>upload</b> [multer, memory]<br/>uploadImage, uploadResume (5 MB)"]
+        end
+        subgraph ctrls["Controllers = business logic"]
+            direction LR
+            authc["<b>authController</b><br/>register, verify, login, logout,<br/>OTP, reset, getme, updateprofile"]
+            appc["<b>applicantController</b><br/>apply, my applications, withdraw"]
+            compc["<b>companyController</b><br/>job CRUD, pause, candidates,<br/>status, delete candidate"]
+            adminc["<b>adminController</b><br/>stats, users, applicants,<br/>companies, job moderation"]
+            jobc["<b>jobController</b><br/>public jobs and companies"]
+        end
+        subgraph utils["Utilities"]
+            direction LR
+            helpers["<b>utils/helpers</b><br/>OTP, JWT, slug, validation,<br/>formatJob, statusLabel"]
+            mail["<b>utils/mail</b> [Nodemailer]<br/>sendMail + OTP template"]
+            store["<b>utils/uploadToCloudinary</b><br/>upload, delete"]
+        end
+        models["<b>Mongoose models</b> (model/)<br/>User, Job, Application<br/>schemas, indexes, password hash hook"]
+    end
+
+    spa -- "HTTP JSON / multipart" --> entry
+    entry --> routes
+    routes --> mws
+    mws --> ctrls
+    routes -. "public and auth routes" .-> ctrls
+    authmw -- "findById" --> models
+    ctrls -- "queries / saves" --> models
+    ctrls -- "uses" --> helpers
+    authc -- "sends OTP" --> mail
+    authc & appc & compc & adminc -- "files" --> store
+    models -- "Mongoose" --> db
+    mail -- "SMTP" --> smtp
+    store -- "HTTPS" --> cloud
+
+    classDef comp fill:#85bbf0,stroke:#5d82a8,color:#000;
+    classDef cont fill:#438dd5,stroke:#2e6295,color:#fff;
+    classDef ext fill:#999,stroke:#6b6b6b,color:#fff;
+    class entry,routes,authmw,rolemw,uploadmw,authc,appc,compc,adminc,jobc,helpers,mail,store,models comp;
+    class spa,db cont;
+    class smtp,cloud ext;

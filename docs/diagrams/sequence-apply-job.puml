@@ -1,0 +1,72 @@
+@startuml sequence-apply-job
+title Apply for a Job (resume upload)
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+
+actor "Applicant" as U
+participant "JobsDetails.jsx" as JD
+participant "ApplyModal.jsx\n(applicantApi.applyJob)" as FE
+participant "Express router\n/applicant" as R
+participant "authMiddleware\n+ roleMiddleware('applicant')" as MW
+participant "multer\nuploadResume.single('resume')" as MU
+participant "applicantController\nApplyJob" as AC
+participant "uploadToCloudinary" as UP
+participant "Cloudinary" as C
+database "MongoDB\njobs, applications" as DB
+
+U -> JD : click "Apply"
+alt not logged in (no user from getme)
+  JD -> JD : navigate("/login")
+else logged in, role != applicant
+  JD -> JD : do not open modal (client-side guard)
+else applicant (and not alreadyApplied via GET /applicant/applications)
+  JD -> FE : open ApplyModal
+  U -> FE : choose file
+  alt file > 5 MB
+    FE -> U : alert "File is too big. Max size is 5MB."
+  else
+    FE -> R : POST /api/v1/applicant/apply/:jobId (multipart, field "resume", cookie)
+    R -> MW : router.use(authMiddleware, roleMiddleware)
+    alt no/invalid token or user deleted
+      MW --> FE : 401
+    else role != applicant
+      MW --> FE : 403 "You are not allowed to do this."
+    else ok
+      MW -> MU : next()
+      alt mimetype not pdf/doc/docx or size > 5 MB
+        MU --> FE : error handler in server.js -> 400 {message}
+      else file accepted into memory
+        MU -> AC : ApplyJob(req, res)
+        alt jobId not a valid ObjectId
+          AC --> FE : 400 "Invalid job id."
+        else req.file missing
+          AC --> FE : 400 "Please upload your resume..."
+        else
+          AC -> DB : Job.findById(jobId)
+          alt job not found
+            AC --> FE : 404 "Job not found."
+          else status != "active"
+            AC --> FE : 400 "This job is not taking applications right now."
+          else deadline < now
+            AC --> FE : 400 "The deadline for this job has passed."
+          else
+            AC -> DB : Application.findOne({job, applicant: req.user._id})
+            alt already applied
+              AC --> FE : 409 "You have already applied to this job."
+            else first application
+              AC -> UP : uploadToCloudinary(file, "jobportal/resumes")
+              UP -> C : upload_stream(resource_type "auto")
+              C --> UP : secure_url, public_id, resource_type
+              UP --> AC : {url, publicId, resourceType}
+              AC -> DB : Application.create({job, applicant, company: job.company,\nresume, resumePublicId, resumeType, resumeName,\nstatus:"pending", statusHistory:[pending]})
+              AC --> FE : 201 {application}
+              FE -> FE : invalidate "MyApplications"; close modal
+            end
+          end
+        end
+      end
+    end
+  end
+end
+@enduml

@@ -1,0 +1,121 @@
+@startuml class-diagram
+title UML Class / Domain Model - JobPortal BD
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide empty members
+
+legend top left
+  Modeling choice: the backend is functional JavaScript (CommonJS modules + Mongoose schemas),
+  not an OO class hierarchy. Entities below are the Mongoose models (persistent domain).
+  Controllers, middleware and utilities are in class-diagram-modules.puml.
+  Associations are ObjectId references resolved in application code (populate);
+  MongoDB does not enforce them. User has no subclasses: "role" is an enum field.
+endlegend
+
+enum Role {
+  applicant
+  company
+  admin
+}
+enum JobStatus {
+  active
+  paused
+  closed
+}
+enum ApplicationStatus {
+  pending
+  shortlisted
+  exam
+  interview
+  approved
+  rejected
+}
+enum OtpPurpose {
+  verify
+  reset
+}
+
+class User <<Mongoose model, collection users>> {
+  _id : ObjectId
+  name : String
+  initials : String
+  email : String {unique}
+  password : String {bcrypt hash}
+  role : Role = applicant
+  isVerified : Boolean = false
+  emailverifyotp : String
+  emailverifyotpExpiry : Date
+  resetotp : String
+  resetotpExpiry : Date
+  otpPurpose : OtpPurpose
+  phone : String
+  photo : String
+  photoPublicId : String
+  department : String  <<applicant>>
+  batch : String  <<applicant>>
+  isFlagged : Boolean = false  <<applicant>>
+  industry : String  <<company>>
+  description : String  <<company>>
+  address : String  <<company>>
+  website : String  <<company>>
+  office : String  <<admin>>
+  createdAt : Date
+  updatedAt : Date
+  --
+  ComparePassword(plain : String) : Promise<Boolean>
+  <<pre save>> hash password if modified (bcrypt, 10 rounds)
+}
+
+class Job <<Mongoose model, collection jobs>> {
+  _id : ObjectId
+  title : String
+  slug : String {unique}
+  department : String
+  type : String
+  mode : String
+  location : String
+  level : String
+  salary : String
+  salaryPeriod : String = "month"
+  deadline : Date
+  about : String
+  skills : String[]
+  requirements : String[]
+  benefits : String[]
+  ctaTitle : String
+  status : JobStatus = active
+  createdAt : Date
+  updatedAt : Date
+}
+
+class Application <<Mongoose model, collection applications>> {
+  _id : ObjectId
+  resume : String  {Cloudinary URL}
+  resumePublicId : String
+  resumeType : String = "image"
+  resumeName : String
+  status : ApplicationStatus = pending
+  interviewNote : String
+  createdAt : Date
+  updatedAt : Date
+  {static} unique index (job, applicant)
+}
+
+class StatusHistoryEntry <<embedded subdocument>> {
+  status : String
+  changedAt : Date = now
+}
+
+User "1" <-- "0..*" Job : company
+User "0..1" <-- "0..*" Job : moderatedBy (admin)
+User "0..1" <-- "0..*" User : addedBy (admin)
+Job "1" <-- "0..*" Application : job
+User "1" <-- "0..*" Application : applicant
+User "1" <-- "0..*" Application : company (denormalised from Job.company)
+Application "1" *-- "0..*" StatusHistoryEntry : statusHistory
+
+User ..> Role
+User ..> OtpPurpose
+Job ..> JobStatus
+Application ..> ApplicationStatus
+@enduml

@@ -1,0 +1,30 @@
+---
+title: "Three-Tier Architecture - JobPortal BD (logical view)"
+---
+%%{init: {"flowchart": {"wrappingWidth": 560, "nodeSpacing": 40, "rankSpacing": 60}}}%%
+flowchart TB
+    user(["<b>Users</b><br/>Visitor, Applicant, Company (Recruiter), Admin"])
+
+    pt["<b>1. PRESENTATION TIER</b><br/><i>React 19 single-page app, runs in the browser</i><br/><br/>Pages and layouts: Home, Jobs, Companies, Login, Register, dashboards<br/>Components: modals, Navbar, Sidebar, ProtectedRoute<br/>State and API clients: Redux Toolkit / RTK Query<br/>(authApi, publicApi, applicantApi, companyApi, adminApi)"]
+
+    at["<b>2. APPLICATION TIER</b><br/><i>Node.js + Express 5 REST API (base path /api/v1)</i><br/><br/>Pipeline: CORS, JSON parser, cookie-parser, routes<br/>Security: authMiddleware (JWT cookie), roleMiddleware, multer uploads<br/>Controllers: auth, applicant, company, admin, public jobs<br/>Business logic: validation, OTP, status rules, cascade deletes"]
+
+    dt["<b>3. DATA TIER</b><br/><i>MongoDB through Mongoose</i><br/><br/>Models: User, Job, Application<br/>Collections: users, jobs, applications"]
+
+    cld["<b>Cloudinary</b><br/>photos, logos, resumes"]
+    smtp["<b>Gmail SMTP</b><br/>OTP e-mails"]
+
+    user -->|"HTTPS"| pt
+    pt <-->|"REST over HTTP: JSON and multipart requests / JSON responses<br/>httpOnly accessToken cookie"| at
+    at <-->|"Mongoose queries / documents"| dt
+    at -->|"upload and delete files"| cld
+    at -->|"send OTP"| smtp
+
+    classDef tier fill:#eef4ff,stroke:#2563eb,stroke-width:2px,color:#0b1c30;
+    classDef data fill:#f0fdf4,stroke:#15803d,stroke-width:2px,color:#0b1c30;
+    classDef ext fill:#fff7ed,stroke:#c2410c,color:#0b1c30;
+    classDef usr fill:#08427b,stroke:#052e56,color:#fff;
+    class pt,at tier;
+    class dt data;
+    class cld,smtp ext;
+    class user usr;

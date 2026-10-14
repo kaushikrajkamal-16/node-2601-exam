@@ -1,0 +1,72 @@
+---
+title: "DFD Level 1 - Major processes and data stores: JobPortal BD (two-way arrows = request and response flows)"
+---
+flowchart LR
+    subgraph ENT["External entities"]
+        direction TB
+        V["Visitor"]
+        A["Applicant"]
+        C["Company (Recruiter)"]
+        AD["Admin"]
+    end
+
+    subgraph PROC["Processes"]
+        direction TB
+        P1(("1.0<br/>Register and<br/>authenticate"))
+        P2(("2.0<br/>Manage own<br/>profile"))
+        P3(("3.0<br/>Browse public<br/>jobs and companies"))
+        P4(("4.0<br/>Apply and track<br/>applications"))
+        P5(("5.0<br/>Manage<br/>job posts"))
+        P6(("6.0<br/>Review<br/>candidates"))
+        P7(("7.0<br/>Administer<br/>platform"))
+    end
+
+    subgraph STORES["Data stores (MongoDB collections)"]
+        direction TB
+        D1[("D1 Users")]
+        D2[("D2 Jobs")]
+        D3[("D3 Applications")]
+    end
+
+    subgraph EXT["External services"]
+        direction TB
+        MAIL["Gmail SMTP"]
+        CLD["Cloudinary"]
+    end
+
+    V <-->|"credentials, OTP, new password / login result, session cookie"| P1
+    V <-->|"list, detail, company queries / job cards, details, company list"| P3
+    A <-->|"profile data, photo / updated profile"| P2
+    C <-->|"company profile, logo / updated profile"| P2
+    A <-->|"resume, job choice, withdraw / applications with status"| P4
+    C <-->|"job data, edit, pause, delete / own jobs with counts"| P5
+    C <-->|"filter, new status, note, remove / candidates with resume links"| P6
+    AD <-->|"add, flag, close, delete, filters / statistics and lists"| P7
+
+    P1 <-->|"user record, OTP, password hash"| D1
+    P2 <-->|"profile fields"| D1
+    P3 <-->|"company fields"| D1
+    P3 <-->|"job records"| D2
+    P4 <-->|"job status, deadline"| D2
+    P4 <-->|"application records"| D3
+    P5 <-->|"job records"| D2
+    P5 -->|"delete applications of deleted job"| D3
+    P6 <-->|"application records, status history"| D3
+    P6 -->|"applicant summary lookup"| D1
+    P7 <-->|"all user records"| D1
+    P7 <-->|"all job records"| D2
+    P7 <-->|"all application records"| D3
+
+    P1 -->|"OTP e-mail"| MAIL
+    P2 <-->|"photo / logo, URL"| CLD
+    P4 <-->|"resume file / URL"| CLD
+    P5 -->|"delete resume files"| CLD
+    P6 -->|"delete resume file"| CLD
+    P7 -->|"delete photos and resumes"| CLD
+
+    classDef proc fill:#eef4ff,stroke:#2563eb,color:#0b1c30;
+    classDef store fill:#f0fdf4,stroke:#15803d,color:#0b1c30;
+    classDef ext fill:#fff7ed,stroke:#c2410c,color:#0b1c30;
+    class P1,P2,P3,P4,P5,P6,P7 proc;
+    class D1,D2,D3 store;
+    class V,A,C,AD,MAIL,CLD ext;

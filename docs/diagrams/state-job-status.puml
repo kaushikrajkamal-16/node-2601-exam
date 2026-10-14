@@ -1,0 +1,32 @@
+@startuml state-job-status
+title State Machine - Job.status lifecycle
+skinparam shadowing false
+hide empty description
+
+[*] --> active : CreateJob (POST /company/jobs/create)
+
+active --> paused : company TogglePauseJob\nor UpdateJob {status:"paused"}
+paused --> active : company TogglePauseJob\nor UpdateJob {status:"active"}
+active --> closed : admin CloseJob
+paused --> closed : admin CloseJob
+closed --> active : company UpdateJob {status:"active"}\n(permitted by code, see note)
+
+active --> [*] : company DeleteJob / admin DeleteJob / company deleted
+paused --> [*] : same deletions
+closed --> [*] : same deletions
+
+note right of closed
+  TogglePauseJob explicitly rejects closed jobs
+  (400 "This job was closed by the admin.").
+  UpdateJob has no such check, so a company can send
+  status "active" for a closed job. Observed in code;
+  see implementation-gaps.md.
+end note
+
+note left of active
+  Only "active" jobs are returned by GET /jobs and /jobs/latest,
+  and only "active" jobs accept applications.
+  Passing the deadline does NOT change status; ApplyJob checks
+  the date, and the admin list derives a "Closed" label from daysLeft.
+end note
+@enduml

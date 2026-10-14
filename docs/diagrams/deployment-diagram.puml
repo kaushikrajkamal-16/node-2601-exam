@@ -1,0 +1,57 @@
+@startuml deployment-diagram
+title UML Deployment Diagram - JobPortal BD (what the repository confirms about runtime)
+skinparam shadowing false
+skinparam defaultTextAlignment center
+
+legend right
+  Artifacts, connections and ports : confirmed by code, scripts or configuration
+  <<unconfirmed host>> : the machine or service hosting this part cannot be
+  determined from the repository
+  Dashed arrows : supporting relationships (serving, one-off seeding)
+  The repository contains NO Dockerfile, docker-compose, CI/CD workflow,
+  hosting manifest (Vercel, Netlify, Render, Procfile ...) or deployment documentation.
+  Only local-development defaults are verifiable.
+endlegend
+
+node "User device" as device {
+  node "Web browser" as browser <<execution environment>> {
+    artifact "React SPA bundle\n(Client/ build or Vite dev output)" as spa
+  }
+}
+
+node "Static asset host / Vite dev server" as webhost <<unconfirmed host>> {
+  artifact "Client/\nnpm run dev (Vite, default :5173)\nnpm run build / preview" as clientsrc
+}
+
+node "Application host" as apphost <<unconfirmed host>> {
+  node "Node.js runtime" as nodert <<execution environment>> {
+    artifact "Server/server.js\n(npm start / dev = nodemon)\nExpress 5, port PORT (default 5000)\nroutes under BASE_URL = /api/v1" as api
+    artifact "Server/utils/seed.js\n(npm run seed, one-off admin creation)" as seed
+  }
+}
+
+node "Database host" as dbhost <<unconfirmed host>> {
+  database "MongoDB\n(connection via MONGO_URI)\ncollections: users, jobs, applications" as mongo
+}
+
+cloud "Cloudinary (SaaS)" as cloud
+cloud "Gmail SMTP (smtp.gmail.com:587)" as smtp
+
+clientsrc ..> spa : served to browser
+spa --> api : HTTP/REST (JSON, multipart)\nVITE_API_URL, default http://localhost:5000/api/v1\nCORS origin CLIENT_URL, default http://localhost:5173\ncredentials: include (cookie)
+api --> mongo : MongoDB protocol (Mongoose)
+seed ..> mongo : create first admin
+api --> cloud : HTTPS (Cloudinary SDK)
+api --> smtp : SMTP, STARTTLS (Nodemailer)
+
+note bottom of apphost
+  Whether web host, application host and database host are the same machine,
+  separate servers or managed services (e.g. a hosted MongoDB) cannot be
+  determined. server.js sets DNS resolvers 8.8.8.8 and 1.1.1.1, which suggests
+  a DNS-based (possibly SRV) MongoDB connection string, but this is an inference only.
+end note
+note bottom of cloud
+  Credentials for MongoDB, Cloudinary, SMTP and JWT come from environment variables
+  (Server/.env, excluded by .gitignore). Values are intentionally not documented.
+end note
+@enduml

@@ -1,0 +1,23 @@
+---
+title: "DFD Level 0 - Context: JobPortal BD (data flows only, no control flow; two-way arrows = input and output flows)"
+---
+flowchart LR
+    V["Visitor"]
+    A["Applicant"]
+    C["Company (Recruiter)"]
+    AD["Admin"]
+    P0(("0<br/>JobPortal BD<br/>system"))
+    MAIL["Gmail SMTP"]
+    CLD["Cloudinary"]
+
+    V <-->|"in: registration data, credentials, OTP, new password<br/>out: public listings, login result, session cookie"| P0
+    A <-->|"in: resume, profile data, photo, withdraw request<br/>out: own applications and status, profile"| P0
+    C <-->|"in: job data, status and notes, company profile<br/>out: own jobs, candidate list"| P0
+    AD <-->|"in: new users, flag, close, delete commands<br/>out: statistics and lists"| P0
+    P0 -->|"OTP e-mail"| MAIL
+    P0 <-->|"out: files, delete requests<br/>in: file URL, public id"| CLD
+
+    classDef ent fill:#fff7ed,stroke:#c2410c,color:#0b1c30;
+    classDef proc fill:#eef4ff,stroke:#2563eb,color:#0b1c30;
+    class V,A,C,AD,MAIL,CLD ent;
+    class P0 proc;

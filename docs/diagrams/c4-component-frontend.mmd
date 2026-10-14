@@ -1,0 +1,48 @@
+---
+title: "C4 Level 3 - Components of the Single-Page Application container (Client/src)"
+---
+flowchart TB
+    user(["<b>Browser user</b><br/>[Person]"])
+    api["<b>REST API</b><br/>[Container: Express]<br/>/api/v1"]
+
+    subgraph spa["Single-Page Application container"]
+        direction TB
+        app["<b>App.jsx + main.jsx</b><br/>Route table, Redux Provider,<br/>BrowserRouter"]
+        layouts["<b>Rootlayout</b><br/>MainLayout (Navbar + Footer)<br/>DashboardLayout (Sidebar)"]
+        guard["<b>ProtectedRoute</b><br/>useGetMeQuery; redirect to /login<br/>or to the user's own dashboard"]
+        subgraph pages["Pages"]
+            direction LR
+            pub["<b>Public pages</b><br/>Home, Jobs, JobsDetails,<br/>Companies, About, Contact"]
+            authp["<b>Auth pages</b><br/>Login, Registration, VerifyOtp,<br/>ForgotPassword, ResetPassword"]
+            appd["<b>Applicant dashboard</b><br/>ApplicantDashboard,<br/>ApplicantApplication"]
+            recd["<b>Recruiter dashboard</b><br/>RecruiterDashboard"]
+            admd["<b>Admin dashboard</b><br/>AdminDashboard, ManageApplicants,<br/>ManageCompanies, ManageJobPosts"]
+        end
+        modals["<b>Modals</b><br/>ApplyModal, PostJobModal, EditProfileModal,<br/>AddApplicantModal, AddCompanyModal"]
+        rtk["<b>RTK Query clients</b> (redux/)<br/>baseApi, authApi, publicApi, applicantApi,<br/>companyApi, adminApi: hooks, cache, tag invalidation"]
+        utils["<b>utils/helpers</b><br/>getError, formatDate, dashboardPath,<br/>STATUS_OPTIONS"]
+    end
+
+    user -- "navigates" --> app
+    app --> layouts
+    app --> guard
+    layouts --> pub
+    layouts --> authp
+    guard -- "role applicant" --> appd
+    guard -- "role company" --> recd
+    guard -- "role admin" --> admd
+    pub -- "ApplyModal" --> modals
+    recd -- "PostJobModal, EditProfileModal" --> modals
+    admd -- "Add modals" --> modals
+    guard -- "useGetMeQuery" --> rtk
+    pages -- "query and mutation hooks" --> rtk
+    modals -- "mutations" --> rtk
+    pages -. "uses" .-> utils
+    rtk -- "fetchBaseQuery<br/>[HTTP/JSON, cookie]" --> api
+
+    classDef comp fill:#85bbf0,stroke:#5d82a8,color:#000;
+    classDef cont fill:#438dd5,stroke:#2e6295,color:#fff;
+    classDef person fill:#08427b,stroke:#052e56,color:#fff;
+    class app,layouts,guard,pub,authp,appd,recd,admd,modals,rtk,utils comp;
+    class api cont;
+    class user person;

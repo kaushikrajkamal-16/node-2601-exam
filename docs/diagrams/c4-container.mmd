@@ -1,0 +1,27 @@
+---
+title: "C4 Level 2 - Containers: JobPortal BD (SPA, REST API and database are the containers; logical split is not proof of separate hosting)"
+---
+flowchart TB
+    users(["<b>Users</b><br/>[Persons]<br/>Visitor, Applicant, Company (Recruiter), Admin"])
+
+    subgraph boundary["JobPortal BD"]
+        spa["<b>Single-Page Application</b><br/>[Container: React 19, Vite, React Router,<br/>Redux Toolkit / RTK Query, Tailwind 4]<br/>Runs in the browser. Public pages and<br/>role-specific dashboards. Source: Client/"]
+        api["<b>REST API</b><br/>[Container: Node.js, Express 5, Mongoose,<br/>JWT, multer, Nodemailer]<br/>Authentication, authorization, business rules,<br/>validation, uploads. PORT default 5000,<br/>base path /api/v1. Source: Server/"]
+        db[("<b>MongoDB database</b><br/>[Container: MongoDB]<br/>Collections: users, jobs, applications.<br/>Host not confirmed by the repository")]
+    end
+
+    smtp["<b>Gmail SMTP</b><br/>[External System]<br/>OTP e-mails"]
+    cloud["<b>Cloudinary</b><br/>[External System]<br/>Photos, logos, resumes"]
+
+    users -- "Uses [HTTPS]" --> spa
+    spa -- "API calls, JSON / multipart<br/>[HTTP/REST, httpOnly cookie, CORS]" --> api
+    api -- "Reads and writes documents<br/>[Mongoose]" --> db
+    api -- "Sends OTP mail<br/>[SMTP 587]" --> smtp
+    api -- "Uploads and deletes media<br/>[HTTPS, Cloudinary SDK]" --> cloud
+
+    classDef person fill:#08427b,stroke:#052e56,color:#fff;
+    classDef cont fill:#438dd5,stroke:#2e6295,color:#fff;
+    classDef ext fill:#999,stroke:#6b6b6b,color:#fff;
+    class users person;
+    class spa,api,db cont;
+    class smtp,cloud ext;
