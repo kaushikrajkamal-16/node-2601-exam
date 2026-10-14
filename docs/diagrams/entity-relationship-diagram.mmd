@@ -1,0 +1,84 @@
+---
+title: "Entity-Relationship Diagram - MongoDB collections (Mongoose schemas). References are application-level ObjectId refs, NOT database-enforced foreign keys."
+---
+erDiagram
+    USER {
+        ObjectId _id PK
+        String name "required, trim"
+        String initials
+        String email UK "required, unique, lowercase"
+        String password "bcrypt hash, pre-save hook"
+        String role "enum applicant|company|admin, default applicant"
+        Boolean isVerified "default false"
+        String emailverifyotp
+        Date emailverifyotpExpiry
+        String otpPurpose "enum verify|reset"
+        String resetotp
+        Date resetotpExpiry
+        String phone
+        String photo "Cloudinary URL"
+        String photoPublicId
+        String department "applicant"
+        String batch "applicant"
+        Boolean isFlagged "applicant, default false"
+        String industry "company"
+        String description "company"
+        String address "company"
+        String website "company"
+        String office "admin"
+        ObjectId addedBy FK "ref User, optional, app-level"
+        Date createdAt
+        Date updatedAt
+    }
+
+    JOB {
+        ObjectId _id PK
+        ObjectId company FK "ref User, required, app-level"
+        String title "required, trim"
+        String slug UK "unique index"
+        String department
+        String type
+        String mode
+        String location
+        String level
+        String salary
+        String salaryPeriod "default month"
+        Date deadline
+        String about
+        String[] skills
+        String[] requirements
+        String[] benefits
+        String ctaTitle
+        String status "enum active|paused|closed, default active"
+        ObjectId moderatedBy FK "ref User, optional, app-level"
+        Date createdAt
+        Date updatedAt
+    }
+
+    APPLICATION {
+        ObjectId _id PK
+        ObjectId job FK "ref Job, required, app-level"
+        ObjectId applicant FK "ref User, required, app-level"
+        ObjectId company FK "ref User, required, copy of Job.company"
+        String resume "Cloudinary URL, required"
+        String resumePublicId
+        String resumeType "default image"
+        String resumeName
+        String status "enum pending|shortlisted|exam|interview|approved|rejected"
+        String interviewNote
+        Date createdAt
+        Date updatedAt
+    }
+
+    STATUS_HISTORY_ENTRY {
+        String status
+        Date changedAt "default now"
+    }
+
+    USER ||--o{ JOB : "posts (company)"
+    USER |o--o{ JOB : "moderates (moderatedBy)"
+    USER |o--o{ USER : "adds (addedBy)"
+    JOB ||--o{ APPLICATION : "receives"
+    USER ||--o{ APPLICATION : "submits (applicant)"
+    USER ||--o{ APPLICATION : "owns candidates (company)"
+    APPLICATION ||--o{ STATUS_HISTORY_ENTRY : "embeds statusHistory[]"

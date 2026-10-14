@@ -1,0 +1,62 @@
+@startuml sequence-admin-delete-company
+title Admin Moderation: Delete a Company (cascade) and Close a Job
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+
+actor "Admin" as U
+participant "ManageCompanies.jsx /\nManageJobPosts.jsx\n(adminApi)" as FE
+participant "authMiddleware\n+ roleMiddleware('admin')" as MW
+participant "adminController" as AD
+participant "uploadToCloudinary" as UP
+participant "Cloudinary" as C
+database "MongoDB\nusers, jobs, applications" as DB
+
+== DELETE /api/v1/admin/companies/delete/:id ==
+U -> FE : confirm delete
+FE -> MW : DELETE /admin/companies/delete/:id (cookie)
+alt 401 / 403 (not logged in or role != admin)
+  MW --> FE : error
+else
+  MW -> AD : DeleteCompany
+  alt invalid ObjectId
+    AD --> FE : 400 "Invalid user id."
+  else
+    AD -> DB : User.findOneAndDelete({_id: id, role: "company"})
+    alt not found
+      AD --> FE : 404 "Company not found."
+    else deleted
+      AD -> DB : Application.find({company: company._id})
+      loop each application
+        AD -> UP : deleteFromCloudinary(resumePublicId, resumeType)
+        UP -> C : uploader.destroy (errors are logged, not thrown)
+      end
+      AD -> DB : Application.deleteMany({company})
+      AD -> DB : Job.deleteMany({company})
+      AD -> UP : deleteFromCloudinary(photoPublicId)
+      UP -> C : uploader.destroy
+      AD --> FE : 200 "Company and its jobs deleted successfully."
+      FE -> FE : invalidate Companies, AdminStats, AdminUsers, AdminJobs, Jobs
+    end
+  end
+end
+note over AD
+  Steps run one after another without a transaction;
+  a failure midway can leave partial deletion.
+end note
+
+== PATCH /api/v1/admin/jobs/close/:id ==
+U -> FE : click "Close"
+FE -> MW : PATCH /admin/jobs/close/:id
+MW -> AD : CloseJob
+alt invalid id
+  AD --> FE : 400 "Invalid job id."
+else
+  AD -> DB : Job.findByIdAndUpdate(id, {status:"closed", moderatedBy: req.user._id})
+  alt not found
+    AD --> FE : 404 "Job not found."
+  else
+    AD --> FE : 200 {job:{id,status,moderatedBy}}
+  end
+end
+@enduml

@@ -1,0 +1,40 @@
+@startuml state-application-status
+title State Machine - Application.status lifecycle
+skinparam shadowing false
+hide empty description
+
+[*] --> pending : ApplyJob (POST /applicant/apply/:jobId)
+
+state "Status != approved" as NotApproved {
+  state pending
+  state shortlisted
+  state exam
+  state interview
+  state rejected
+}
+state approved
+
+note right of NotApproved
+  UpdateApplicationStatus (PATCH /company/candidates/status/:id)
+  accepts any of the six values from any current value.
+  The code enforces NO ordering (e.g. pending -> approved is allowed).
+  Each real change appends {status, changedAt} to statusHistory;
+  setting the same status again changes nothing.
+end note
+
+NotApproved --> approved : company sets "approved"
+approved --> NotApproved : company sets another status
+NotApproved --> NotApproved : company sets another non-approved status
+
+NotApproved --> [*] : applicant WithdrawApplication\n[status != approved] / delete resume + document
+approved --> [*] : company DeleteCandidate / delete resume + document
+NotApproved --> [*] : company DeleteCandidate
+NotApproved --> [*] : cascade: Job, company or applicant deleted
+approved --> [*] : cascade: Job, company or applicant deleted
+
+note bottom of approved
+  Explicitly enforced prohibition: applicant withdrawal of an
+  approved application returns 400
+  "You can't withdraw an approved application."
+end note
+@enduml

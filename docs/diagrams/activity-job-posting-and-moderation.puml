@@ -1,0 +1,62 @@
+@startuml activity-job-posting-and-moderation
+title Activity Diagram - Job Post Creation, Pausing and Admin Moderation
+skinparam shadowing false
+|Company|
+start
+:Open "Post a Job" (PostJobModal);
+:Enter title, salary, deadline, optional fields;
+|React client|
+if (title, salary and deadline filled?) then (no)
+  :Show message, stay in modal;
+  stop
+endif
+:POST /company/jobs/create;
+|REST API|
+if (Authenticated company?) then (no)
+  :401 / 403;
+  stop
+endif
+if (title, salary, deadline present?) then (no)
+  :400;
+  stop
+elseif (Deadline valid and in the future?) then (no)
+  :400 "Deadline must be a valid future date";
+  stop
+endif
+:Generate slug (title + company + random suffix);
+:Create Job (status = active);
+:201 Created;
+|Public visitors|
+:Job appears in GET /jobs and /jobs/latest\n(only status = active are listed);
+|Company|
+partition "Managing the job" {
+  if (Action?) then (pause / resume)
+    |REST API|
+    if (Job belongs to company?) then (no)
+      :404;
+    elseif (status = closed?) then (yes)
+      :400 "closed by the admin";
+    else (no)
+      :Toggle active <-> paused;
+    endif
+  elseif (edit) then (edit)
+    |REST API|
+    :PUT /company/jobs/update/:id\n(validates deadline and status in {active, paused});
+  else (delete)
+    |REST API|
+    :Delete Job, delete its Applications\nand resume files;
+  endif
+}
+|Admin|
+partition "Moderation" {
+  :Review all jobs (GET /admin/jobs);
+  if (Close or delete?) then (close)
+    |REST API|
+    :Set status = closed, moderatedBy = admin;
+  else (delete)
+    |REST API|
+    :Delete Job and its Applications\nand resume files;
+  endif
+}
+stop
+@enduml

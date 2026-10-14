@@ -1,0 +1,165 @@
+@startuml use-case-diagram
+title UML Use Case Diagram - JobPortal BD (implemented functionality only)
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Visitor\n(unauthenticated)" as Visitor
+actor "Authenticated User" as AuthUser
+actor "Applicant" as Applicant
+actor "Company\n(Recruiter)" as Company
+actor "Admin" as Admin
+actor "Gmail SMTP\n(external)" as SMTP <<system>>
+actor "Cloudinary\n(external)" as Cloud <<system>>
+
+' Actor generalization (role is a single field on User: applicant | company | admin)
+Visitor <|-- AuthUser
+AuthUser <|-- Applicant
+AuthUser <|-- Company
+AuthUser <|-- Admin
+
+rectangle "JobPortal BD" {
+
+  package "Public browsing" {
+    usecase "Browse / paginate jobs\n(optionally by company)" as UC_Jobs
+    usecase "View latest jobs" as UC_Latest
+    usecase "View job details by slug" as UC_JobDetail
+    usecase "Browse companies" as UC_Companies
+  }
+
+  package "Account and authentication" {
+    usecase "Register account\n(applicant or company)" as UC_Register
+    usecase "Verify e-mail with OTP" as UC_VerifyEmail
+    usecase "Resend OTP" as UC_Resend
+    usecase "Log in" as UC_Login
+    usecase "Log out" as UC_Logout
+    usecase "Request password-reset OTP" as UC_Forgot
+    usecase "Verify reset OTP" as UC_VerifyReset
+    usecase "Reset password" as UC_Reset
+    usecase "View own profile" as UC_GetMe
+    usecase "Edit profile" as UC_Profile
+    usecase "Upload profile photo / logo" as UC_Photo
+  }
+
+  package "Applicant functions" {
+    usecase "Apply for a job" as UC_Apply
+    usecase "Upload resume\n(PDF/DOC/DOCX, max 5 MB)" as UC_Resume
+    usecase "View own applications\nand status" as UC_MyApps
+    usecase "Withdraw application" as UC_Withdraw
+  }
+
+  package "Company (Recruiter) functions" {
+    usecase "Post a job" as UC_PostJob
+    usecase "Edit a job" as UC_EditJob
+    usecase "View own jobs" as UC_MyJobs
+    usecase "Pause / resume a job" as UC_Pause
+    usecase "Delete own job" as UC_DelJob
+    usecase "View candidates\n(optionally per job)" as UC_Cand
+    usecase "Update candidate status" as UC_Status
+    usecase "Add interview / exam note" as UC_Note
+    usecase "Remove candidate" as UC_DelCand
+  }
+
+  package "Admin functions" {
+    usecase "View platform statistics" as UC_Stats
+    usecase "View recent users" as UC_Users
+    usecase "List / search applicants" as UC_AdmApplicants
+    usecase "Add applicant" as UC_AddApplicant
+    usecase "Flag / unflag applicant" as UC_Flag
+    usecase "Delete applicant" as UC_DelApplicant
+    usecase "List / search companies" as UC_AdmCompanies
+    usecase "Add company" as UC_AddCompany
+    usecase "Delete company" as UC_DelCompany
+    usecase "List all job posts" as UC_AdmJobs
+    usecase "Close job post" as UC_Close
+    usecase "Delete any job post" as UC_AdmDelJob
+    usecase "Delete related applications\nand resume files" as UC_Cascade
+  }
+}
+
+' Visitor
+Visitor --> UC_Jobs
+Visitor --> UC_Latest
+Visitor --> UC_JobDetail
+Visitor --> UC_Companies
+Visitor --> UC_Register
+Visitor --> UC_VerifyEmail
+Visitor --> UC_Login
+Visitor --> UC_Forgot
+Visitor --> UC_Reset
+
+' Any authenticated user
+AuthUser --> UC_Logout
+AuthUser --> UC_GetMe
+AuthUser --> UC_Profile
+
+' Applicant
+Applicant --> UC_Apply
+Applicant --> UC_MyApps
+Applicant --> UC_Withdraw
+
+' Company
+Company --> UC_PostJob
+Company --> UC_EditJob
+Company --> UC_MyJobs
+Company --> UC_Pause
+Company --> UC_DelJob
+Company --> UC_Cand
+Company --> UC_Status
+Company --> UC_DelCand
+
+' Admin
+Admin --> UC_Stats
+Admin --> UC_Users
+Admin --> UC_AdmApplicants
+Admin --> UC_AddApplicant
+Admin --> UC_Flag
+Admin --> UC_DelApplicant
+Admin --> UC_AdmCompanies
+Admin --> UC_AddCompany
+Admin --> UC_DelCompany
+Admin --> UC_AdmJobs
+Admin --> UC_Close
+Admin --> UC_AdmDelJob
+
+' include: mandatory sub-behaviour
+UC_Register ..> UC_VerifyEmail : <<include>>
+UC_Apply ..> UC_Resume : <<include>>
+UC_Reset ..> UC_VerifyReset : <<include>>
+UC_DelApplicant ..> UC_Cascade : <<include>>
+UC_DelCompany ..> UC_Cascade : <<include>>
+UC_AdmDelJob ..> UC_Cascade : <<include>>
+UC_DelJob ..> UC_Cascade : <<include>>
+
+' extend: optional behaviour
+UC_Resend .u.> UC_VerifyEmail : <<extend>>
+UC_Photo .u.> UC_Profile : <<extend>>
+UC_Note .u.> UC_Status : <<extend>>
+
+' External actors
+UC_Register -- SMTP
+UC_Resend -- SMTP
+UC_Forgot -- SMTP
+UC_Resume -- Cloud
+UC_Photo -- Cloud
+UC_Cascade -- Cloud
+
+note bottom of UC_Forgot
+  Forgot / reset is a 3-step flow in the client
+  (ForgotPassword -> VerifyOtp -> ResetPassword).
+  Backend VerifyEmail(from="forgot") only checks the code;
+  ResetPassword re-checks it. See sequence-password-reset.puml.
+end note
+
+note right of UC_Note
+  Client prompts for a note only when the new
+  status is "exam" or "interview"
+  (RecruiterDashboard.setStatus).
+end note
+
+note bottom of UC_Cascade
+  Application documents plus their Cloudinary resume files
+  (company DeleteJob; admin deleteApplications helper).
+  Not wrapped in a DB transaction.
+end note
+@enduml

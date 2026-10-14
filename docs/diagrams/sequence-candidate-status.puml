@@ -1,0 +1,62 @@
+@startuml sequence-candidate-status
+title Company Reviews a Candidate: Update Application Status
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+
+actor "Company (Recruiter)" as U
+participant "RecruiterDashboard.jsx\n(companyApi)" as FE
+participant "authMiddleware\n+ roleMiddleware('company')" as MW
+participant "companyController\nUpdateApplicationStatus" as CC
+database "MongoDB\napplications" as DB
+
+== Load candidates: GET /api/v1/company/candidates?job=<id|all> ==
+U -> FE : open dashboard / change job filter
+FE -> MW : GET /company/candidates[?job=id] (cookie)
+MW -> CC : GetCandidates (auth + role company passed)
+alt job param not a valid ObjectId
+  CC --> FE : 400 "Invalid job id."
+else
+  CC -> DB : Application.find({company: req.user._id[, job]})\n.populate(applicant, job).sort(createdAt desc)
+  CC --> FE : 200 {total, candidates[]}
+end
+
+== Change status: PATCH /api/v1/company/candidates/status/:id ==
+U -> FE : pick new status
+opt status is "exam" or "interview" (client-side)
+  FE -> U : prompt for note (date, time, place)
+  alt user cancels prompt
+    FE -> FE : stop, no request is sent
+  end
+end
+FE -> MW : PATCH /company/candidates/status/:id {status, interviewNote?}
+alt 401 / 403
+  MW --> FE : error (no token, invalid token, role != company)
+else
+  MW -> CC : UpdateApplicationStatus
+  alt :id not a valid ObjectId
+    CC --> FE : 400 "Invalid application id."
+  else status not in the six allowed values
+    CC --> FE : 400 "Status must be one of: ..."
+  else
+    CC -> DB : Application.findOne({_id: id, company: req.user._id})
+    alt not found / belongs to another company
+      CC --> FE : 404 "Application not found."
+    else found
+      opt newStatus differs from current status
+        CC -> CC : status = newStatus; statusHistory.push({status})
+      end
+      opt interviewNote provided
+        CC -> CC : interviewNote = trimmed text
+      end
+      CC -> DB : application.save()
+      CC --> FE : 200 {application:{id,status,statusLabel,interviewNote,statusHistory}}
+      FE -> FE : invalidate "Candidates", "MyJobs"\n(hired count changes)
+    end
+  end
+end
+note over CC
+  No transition rules: any of the six statuses may be set from any other.
+  Applicant sees the result via GET /applicant/applications.
+end note
+@enduml

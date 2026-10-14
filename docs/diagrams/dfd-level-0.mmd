@@ -1,0 +1,28 @@
+---
+title: "DFD Level 0 - Context: JobPortal BD (data flows only, no control flow)"
+---
+flowchart LR
+    V["External entity<br/>Visitor"]
+    A["External entity<br/>Applicant"]
+    C["External entity<br/>Company (Recruiter)"]
+    AD["External entity<br/>Admin"]
+    MAIL["External entity<br/>Gmail SMTP"]
+    CLD["External entity<br/>Cloudinary"]
+
+    P0(("0<br/>JobPortal BD<br/>system"))
+
+    V -- "registration data, login credentials, OTP code,<br/>password-reset request, new password" --> P0
+    P0 -- "public job and company listings,<br/>verification and login results, session cookie" --> V
+
+    A -- "resume file, profile data and photo,<br/>withdraw request" --> P0
+    P0 -- "own applications with status and interview notes,<br/>profile" --> A
+
+    C -- "job details, job edits and pause requests,<br/>candidate status and notes, company profile and logo" --> P0
+    P0 -- "own jobs with applicant counts,<br/>candidate list with resume links" --> C
+
+    AD -- "new applicant or company data,<br/>flag, close and delete commands" --> P0
+    P0 -- "statistics, user, applicant, company and job lists" --> AD
+
+    P0 -- "OTP e-mail (recipient, OTP, subject)" --> MAIL
+    P0 -- "files to store, delete requests" --> CLD
+    CLD -- "file URL, public id, resource type" --> P0

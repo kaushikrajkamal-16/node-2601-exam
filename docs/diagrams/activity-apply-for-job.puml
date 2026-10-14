@@ -1,0 +1,80 @@
+@startuml activity-apply-for-job
+title Activity Diagram - Apply for a Job (business rules across client, API and external storage)
+skinparam shadowing false
+|Applicant|
+start
+:Open job details page (/jobs/:slug);
+|React client|
+:Load job (GET /jobs/:slug) and, if role = applicant,\nown applications (GET /applicant/applications);
+if (Job status is "active" and not already applied?) then (yes)
+else (no)
+  :"Apply" button disabled;
+  |Applicant|
+  stop
+endif
+|Applicant|
+:Click "Apply for this Job";
+|React client|
+if (Logged in?) then (no)
+  :Alert + redirect to /login;
+  stop
+elseif (Role is applicant?) then (no)
+  :Alert "Only applicants can apply for jobs.";
+  stop
+else (yes)
+endif
+:Open ApplyModal;
+|Applicant|
+:Choose resume file;
+|React client|
+if (File larger than 5 MB?) then (yes)
+  :Alert "File is too big";
+  stop
+endif
+:POST /applicant/apply/:jobId\nmultipart field "resume";
+|REST API|
+if (Valid session cookie and user exists?) then (no)
+  :401;
+  stop
+elseif (role = applicant?) then (no)
+  :403;
+  stop
+endif
+if (Type is pdf / doc / docx and size <= 5 MB?) then (no)
+  :400 via global error handler;
+  stop
+endif
+if (jobId valid and file present?) then (no)
+  :400;
+  stop
+endif
+if (Job exists?) then (no)
+  :404;
+  stop
+elseif (Job status = active?) then (no)
+  :400 "not taking applications";
+  stop
+elseif (Deadline not passed?) then (no)
+  :400 "deadline has passed";
+  stop
+elseif (Already applied to this job?) then (yes)
+  :409 conflict;
+  stop
+endif
+|Cloudinary|
+:Store resume (folder jobportal/resumes);
+|REST API|
+:Create Application\nstatus = pending, statusHistory = [pending];
+:201 Created;
+|React client|
+:Invalidate MyApplications cache; close modal;
+|Applicant|
+:See application in "My Applications";
+stop
+note right
+  The unique index (job, applicant) also guards
+  against duplicates at database level.
+  If Application.create fails after the upload,
+  the Cloudinary file is not removed (see gaps).
+end note
+@enduml

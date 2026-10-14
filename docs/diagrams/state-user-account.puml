@@ -1,0 +1,32 @@
+@startuml state-user-account
+title State Machine - User account (isVerified, OTP and isFlagged)
+skinparam shadowing false
+hide empty description
+
+[*] --> Unverified : Registration (applicant / company)\nOTP stored, valid 10 minutes
+[*] --> Verified : seed script (admin) or admin AddApplicant / AddCompany\n(isVerified = true, no OTP)
+
+state Unverified {
+  [*] --> OtpPending
+  OtpPending --> OtpPending : ResendOtp(from "register") / new OTP + mail
+}
+
+Unverified --> Verified : VerifyEmail [OTP matches and not expired]
+Unverified --> Unverified : login attempt / rejected "not verified"
+Unverified --> Verified : ResetPassword [reset OTP valid]\n(code sets isVerified = true)
+
+state Verified {
+  [*] --> Normal
+  Normal --> Flagged : admin ToggleFlagApplicant (applicants only)
+  Flagged --> Normal : admin ToggleFlagApplicant
+  Normal --> Normal : login / UpdateProfile / ForgotPassword + ResetPassword
+}
+
+Verified --> [*] : admin DeleteApplicant / DeleteCompany
+Unverified --> [*] : admin DeleteApplicant / DeleteCompany
+
+note right of Flagged
+  isFlagged is stored and shown in the admin list only.
+  No login, apply or other check reads it.
+end note
+@enduml

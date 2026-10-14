@@ -1,0 +1,25 @@
+C4Container
+    title Container Diagram - JobPortal BD (C4 level 2)
+
+    Person(visitor, "Visitor", "Unauthenticated user")
+    Person(applicant, "Applicant", "Registered job seeker")
+    Person(company, "Company (Recruiter)", "Registered employer")
+    Person(admin, "Admin", "Platform administrator")
+
+    System_Boundary(sysb, "JobPortal BD") {
+        Container(spa, "Single-Page Application", "React 19, Vite, React Router, Redux Toolkit (RTK Query), Tailwind CSS 4", "Runs in the user's browser. Renders public pages and role-specific dashboards. Source: Client/")
+        Container(api, "REST API", "Node.js, Express 5, Mongoose, JWT, multer", "Authentication, authorization, business rules, validation, file-upload handling. Listens on PORT (default 5000), routes under BASE_URL=/api/v1. Source: Server/")
+        ContainerDb(db, "MongoDB database", "MongoDB (accessed through Mongoose, MONGO_URI)", "Collections users, jobs, applications. Hosting location is not confirmed by the repository.")
+    }
+
+    System_Ext(cloudinary, "Cloudinary", "Media storage for photos, logos, resumes")
+    System_Ext(smtp, "Gmail SMTP", "Outgoing mail for OTP codes")
+
+    Rel(visitor, spa, "Uses", "HTTPS")
+    Rel(applicant, spa, "Uses", "HTTPS")
+    Rel(company, spa, "Uses", "HTTPS")
+    Rel(admin, spa, "Uses", "HTTPS")
+    Rel(spa, api, "API calls (JSON and multipart)", "HTTP/REST, httpOnly accessToken cookie, CORS with credentials")
+    Rel(api, db, "Reads and writes documents", "MongoDB wire protocol via Mongoose")
+    Rel(api, cloudinary, "Uploads and deletes media", "HTTPS, Cloudinary SDK")
+    Rel(api, smtp, "Sends OTP mail", "SMTP 587 (STARTTLS), Nodemailer")

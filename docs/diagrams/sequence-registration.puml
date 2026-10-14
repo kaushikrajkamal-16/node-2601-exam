@@ -1,0 +1,92 @@
+@startuml sequence-registration
+title Registration and E-mail Verification (OTP)
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+
+actor "Visitor" as U
+participant "Registration.jsx /\nVerifyOtp.jsx\n(authApi)" as FE
+participant "authController" as AC
+participant "helpers" as H
+database "MongoDB\nusers" as DB
+participant "mailService\n(Nodemailer)" as M
+participant "Gmail SMTP" as SMTP
+
+== POST /api/v1/auth/register ==
+U -> FE : choose role (applicant / employer), fill form
+FE -> AC : POST /auth/register {role, fullName, email, password}
+AC -> AC : name = name || fullName; cleanEmail()
+alt name, email or password missing
+  AC --> FE : 400 "Name, email, and password are required."
+else
+  AC -> H : isValidEmail(email)
+  alt invalid
+    AC --> FE : 400 "Email is not valid."
+  else valid
+    alt password shorter than 8
+      AC --> FE : 400 "Password must be at least 8 characters."
+    else
+      AC -> H : isStrongPassword(password)
+      alt weak password
+        AC --> FE : 400 "Password needs an uppercase letter, ..."
+      else strong
+        AC -> AC : "employer" mapped to "company"
+        alt role present and not applicant / company (e.g. admin)
+          AC --> FE : 400 "Invalid role. Must be applicant or company."
+        else
+          AC -> DB : User.findOne({email})
+          alt e-mail exists
+            AC --> FE : 409 "An account with this email already exists."
+          else new e-mail
+            AC -> H : generateOTP()  (6 digits)
+            AC -> DB : User.create({... role, emailverifyotp,\notpPurpose:"verify", expiry now+10min})\npre-save hook bcrypt-hashes password
+            AC -> M : sendMail({email, subject, otp})
+            M -> SMTP : SMTP send (smtp.gmail.com:587)
+            SMTP --> M : accepted
+            M --> AC : done
+            AC --> FE : 201 {user:{id,name,initials,email,role}}
+            FE -> FE : navigate("/verifyOtp", {email, from:"register"})
+          end
+        end
+      end
+    end
+  end
+end
+note right of AC
+  If sendMail throws, the catch block returns 500 although
+  the User document has already been created (unverified).
+end note
+
+== POST /api/v1/auth/verifyEmail (from = "register") ==
+U -> FE : enter 6-digit code
+FE -> AC : POST /auth/verifyEmail {email, otp, from:"register"}
+AC -> DB : User.findOne({email})
+alt not found
+  AC --> FE : 404 "No account found with this email."
+else user.isVerified already
+  AC --> FE : 400 "Email is already verified. Please log in."
+else code differs
+  AC --> FE : 400 "Wrong OTP..."
+else emailverifyotpExpiry < now
+  AC --> FE : 400 "OTP has expired..."
+else code correct and in time
+  AC -> DB : user.isVerified = true; clear emailverifyotp, expiry, otpPurpose; save()
+  AC --> FE : 200 "Email verified successfully..."
+  FE -> FE : navigate("/login")
+end
+
+== POST /api/v1/auth/resendOtp (optional) ==
+U -> FE : click "Resend code"
+FE -> AC : POST /auth/resendOtp {email, from:"register"}
+AC -> DB : User.findOne({email})
+alt not found
+  AC --> FE : 404
+else already verified (from != "forgot")
+  AC --> FE : 400 "Email is already verified."
+else
+  AC -> DB : save new emailverifyotp (+10 min), otpPurpose "verify"
+  AC -> M : sendMail()
+  M -> SMTP : SMTP send
+  AC --> FE : 200 "A new 6-digit code was sent to your email."
+end
+@enduml

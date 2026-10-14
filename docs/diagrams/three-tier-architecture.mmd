@@ -1,0 +1,59 @@
+---
+title: "Logical Three-Tier Architecture - JobPortal BD (logical view only; see deployment-diagram.puml for what is confirmed about runtime placement)"
+---
+flowchart TB
+    user(["Browser user<br/>Visitor / Applicant / Company / Admin"])
+
+    subgraph PT["PRESENTATION TIER - React 19 SPA (Vite, React Router, Redux Toolkit / RTK Query)"]
+        direction TB
+        layouts["Layouts<br/>MainLayout, DashboardLayout"]
+        guard["ProtectedRoute<br/>calls GET /auth/getme, redirects by role"]
+        pages["Pages<br/>Public: Home, Jobs, JobsDetails, Companies, About, Contact<br/>Auth: Login, Registration, VerifyOtp, ForgotPassword, ResetPassword<br/>Dashboards: Applicant, Recruiter, Admin"]
+        modals["Modals and widgets<br/>ApplyModal, PostJobModal, EditProfileModal,<br/>AddApplicantModal, AddCompanyModal, Navbar, Sidebar"]
+        rtk["RTK Query API clients (redux/)<br/>baseApi + authApi, publicApi, applicantApi,<br/>companyApi, adminApi<br/>fetchBaseQuery, credentials: include"]
+        layouts --> pages
+        guard --> pages
+        pages --> modals
+        pages --> rtk
+        modals --> rtk
+        guard --> rtk
+    end
+
+    subgraph AT["APPLICATION TIER - Node.js + Express 5 REST API (Server/server.js)"]
+        direction TB
+        mw0["Global middleware<br/>cors (CLIENT_URL, credentials), express.json, cookie-parser"]
+        router["Routers mounted at BASE_URL (/api/v1)<br/>auth, applicant, company, admin, job (public)"]
+        sec["Security middleware<br/>authMiddleware (JWT cookie, loads User)<br/>roleMiddleware (role check)"]
+        upl["Upload middleware<br/>multer memoryStorage: uploadImage, uploadResume (5 MB)"]
+        ctrl["Controllers = business logic and validation<br/>authController, applicantController, companyController,<br/>adminController, jobController"]
+        util["Utilities<br/>helpers (OTP, JWT, slug, formatJob),<br/>mailService, uploadToCloudinary"]
+        err["Error handler<br/>(multer errors and other thrown errors, HTTP 400)"]
+        mw0 --> router --> sec --> ctrl
+        router --> upl --> ctrl
+        ctrl --> util
+        ctrl -.-> err
+    end
+
+    subgraph DT["DATA TIER"]
+        direction TB
+        models["Mongoose models (Server/model)<br/>User, Job, Application"]
+        mongo[("MongoDB<br/>collections: users, jobs, applications<br/>via Mongoose, MONGO_URI")]
+        models --> mongo
+    end
+
+    subgraph EXT["EXTERNAL SERVICES (outside the three tiers)"]
+        cloud["Cloudinary<br/>photos, logos, resumes"]
+        smtp["Gmail SMTP via Nodemailer<br/>smtp.gmail.com:587"]
+    end
+
+    user -- "HTTP(S) page load, user interaction" --> PT
+    rtk -- "REST over HTTP, JSON or multipart/form-data<br/>httpOnly cookie accessToken" --> mw0
+    ctrl -- "Mongoose queries and saves" --> models
+    util -- "SMTP: OTP e-mails" --> smtp
+    util -- "HTTPS upload_stream / destroy" --> cloud
+    ctrl -. "JSON response" .-> rtk
+
+    classDef tier fill:#eef4ff,stroke:#2563eb,color:#0b1c30;
+    classDef ext fill:#fff7ed,stroke:#c2410c,color:#0b1c30;
+    class PT,AT,DT tier;
+    class EXT,cloud,smtp ext;

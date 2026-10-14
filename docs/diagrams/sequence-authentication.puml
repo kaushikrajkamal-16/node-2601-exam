@@ -1,0 +1,88 @@
+@startuml sequence-authentication
+title Authentication: Login, Session Check (route guard) and Logout
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+
+actor "User" as U
+participant "Login.jsx\n(+ authApi RTK Query)" as FE
+participant "Express app\n(cors, json, cookie-parser)" as APP
+participant "authController" as AC
+participant "helpers\n(generateAccessToken)" as H
+database "MongoDB\nusers" as DB
+participant "ProtectedRoute\n(useGetMeQuery)" as PR
+participant "authMiddleware" as AM
+
+== Login: POST /api/v1/auth/login ==
+U -> FE : submit email + password
+FE -> APP : POST /auth/login {email, password}\ncredentials: include
+APP -> AC : login(req, res)
+AC -> AC : cleanEmail(); check email and password present
+alt missing field / invalid email format
+  AC --> FE : 400 {success:false, message}
+else valid input
+  AC -> DB : User.findOne({email})
+  alt user not found
+    AC --> FE : 400 "User not found"
+  else user found
+    alt user.isVerified == false
+      AC --> FE : 400 "Your email is not verified..."
+      note right of FE
+        Client matches the text "not verified", alerts, calls
+        POST /auth/resendOtp {from:"register"} and navigates to /verifyOtp
+        (see sequence-registration.puml)
+      end note
+    else verified
+      AC -> AC : user.ComparePassword(password)  (bcrypt.compare)
+      alt password mismatch
+        AC --> FE : 400 "Password is incorrect"
+      else match
+        AC -> H : generateAccessToken({_id, email, role})\njwt.sign(JWT_SEC, expiresIn 1d)
+        H --> AC : accessToken
+        AC --> FE : 200 {user:{id,name,initials,email,role,photo}, accessToken}\nSet-Cookie: accessToken (httpOnly, sameSite=lax, 1 day)
+        FE -> FE : invalidate tag "Me"; navigate(dashboardPath(role))
+      end
+    end
+  end
+end
+
+== Session check on every dashboard open: GET /api/v1/auth/getme ==
+U -> PR : open /dashboard/{applicant|recruiter|admin}
+PR -> APP : GET /auth/getme (cookie sent)
+APP -> AM : authMiddleware
+alt no accessToken cookie
+  AM --> PR : 401 "Access token missing. Please log in."
+else cookie present
+  AM -> AM : jwt.verify(token, JWT_SEC)
+  alt invalid / expired token
+    AM --> PR : 401 "Invalid or expired access token."
+  else valid
+    AM -> DB : User.findById(decoded._id).select("-password")
+    alt user deleted
+      AM --> PR : 401 "User not found. Please log in again."
+    else found
+      AM -> AC : next() with req.user set
+      AC -> DB : User.findById(req.user._id) (excluding password, OTP fields)
+      AC --> PR : 200 {user}
+    end
+  end
+end
+alt isError or no user
+  PR -> PR : Navigate to /login
+else role differs from required role
+  PR -> PR : Navigate to dashboardPath(user.role)
+else role matches
+  PR -> PR : render the dashboard
+end
+note over PR, AM
+  Authorization on the server is enforced separately by roleMiddleware(...) on the
+  applicant / company / admin routers. ProtectedRoute is a UX redirect only.
+end note
+
+== Logout: POST /api/v1/auth/logout ==
+U -> FE : click Logout (Navbar / Sidebar)
+FE -> APP : POST /auth/logout
+APP -> AC : Logout (no authMiddleware on this route)
+AC --> FE : 200 {message}\nclearCookie("accessToken")
+FE -> FE : baseApi.util.resetApiState(); navigate("/login")
+@enduml

@@ -1,0 +1,90 @@
+# JobPortal BD - Architecture and UML Diagrams
+
+Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js server (`Server.zip`). The source code was the only source of truth; nothing was added for completeness. Application code was not modified. Only files under `docs/diagrams/` were created.
+
+> **Rendering status: NOT rendered or syntax-checked by a tool.**
+> No Mermaid CLI, PlantUML jar or Graphviz was available in the environment, and installing packages was not approved. Every diagram was written and reviewed by hand only. The `rendered/` directory is empty. See "Validation status" below.
+
+## Application summary
+
+| Aspect | Finding |
+|---|---|
+| Frontend | React 19 + Vite 8, Tailwind CSS 4, React Router, Redux Toolkit / RTK Query (JavaScript + JSX, no TypeScript) |
+| Backend | Node.js, Express 5, Mongoose 9, JWT in an httpOnly cookie, multer, Nodemailer, Cloudinary SDK (CommonJS JavaScript) |
+| Database | MongoDB: collections `users`, `jobs`, `applications` |
+| Roles | applicant, company (recruiter), admin (created by `npm run seed` or by another admin) |
+| Architecture style | Routes -> middleware -> controllers (business logic) -> Mongoose models. **There is no separate service or repository layer.** Controllers contain the logic and call models and `utils/*` directly. |
+| Source layout | `Server/` and `Client/src/` inside the two archives. They are **not part of this repository**, so line numbers in `traceability.md` refer to the uploaded copies. |
+
+## Diagram index
+
+| File | Type / language | Represents | Main evidence |
+|---|---|---|---|
+| `three-tier-architecture.mmd` | Mermaid flowchart | Logical presentation / application / data tiers and external services | `Client/src`, `Server/server.js`, `routes/`, `controllers/`, `model/` |
+| `c4-system-context.mmd` | Mermaid C4Context | System, four human actors, Gmail SMTP, Cloudinary | roles in `User.js`; `mailService.js`; `uploadToCloudinary.js` |
+| `c4-container.mmd` | Mermaid C4Container | SPA, REST API, MongoDB, external systems with protocols | `package.json` files, `baseApi.js`, `dbConnection.js` |
+| `c4-component.mmd` | Mermaid C4Component | Backend components and dependencies | `server.js`, `routes/api/*`, `middleware/*`, `controllers/*`, `utils/*`, `model/*` |
+| `c4-component-frontend.mmd` | Mermaid C4Component | Frontend components (extra view; frontend is large enough to warrant one) | `App.jsx`, `Components/`, `pages/`, `redux/` |
+| `use-case-diagram.puml` | PlantUML use case | Actors, system boundary, include/extend, external actors | controllers and routes |
+| `class-diagram.puml` | PlantUML class | Domain model (Mongoose models) plus functional modules | `model/*.js`, `utils/*` |
+| `entity-relationship-diagram.mmd` | Mermaid ER | MongoDB collections, refs, embedded `statusHistory`, indexes | `model/User.js`, `Job.js`, `Application.js` |
+| `sequence-authentication.puml` | PlantUML sequence | Login, session check (route guard), logout | `authController.js`, `authMiddleware.js`, `ProtectedRoute.jsx` |
+| `sequence-registration.puml` | PlantUML sequence | Register, verify e-mail OTP, resend | `authController.js` |
+| `sequence-password-reset.puml` | PlantUML sequence | Forgot, verify, reset | `authController.js`, `VerifyOtp.jsx` |
+| `sequence-apply-job.puml` | PlantUML sequence | Apply with resume upload (primary applicant workflow) | `applicantController.js`, `upload.js`, `ApplyModal.jsx` |
+| `sequence-candidate-status.puml` | PlantUML sequence | Company reviews candidates, changes status (primary company workflow) | `companyController.js`, `RecruiterDashboard.jsx` |
+| `sequence-admin-delete-company.puml` | PlantUML sequence | Admin cascade deletion, job close | `adminController.js` |
+| `activity-apply-for-job.puml` | PlantUML activity (swimlanes) | All business rules from click to stored application | as above |
+| `activity-job-posting-and-moderation.puml` | PlantUML activity (swimlanes) | Job creation, pause/edit/delete, admin close | `companyController.js`, `adminController.js` |
+| `state-application-status.puml` | PlantUML state | `Application.status` lifecycle | `Application.js`, `UpdateApplicationStatus`, `WithdrawApplication` |
+| `state-job-status.puml` | PlantUML state | `Job.status` lifecycle | `Job.js`, `TogglePauseJob`, `UpdateJob`, `CloseJob` |
+| `state-user-account.puml` | PlantUML state | Verification and flag states | `User.js`, auth and admin controllers |
+| `dfd-level-0.mmd` | Mermaid flowchart (DFD) | Context-level data flows | whole system |
+| `dfd-level-1.mmd` | Mermaid flowchart (DFD) | 7 processes and 3 data stores | controllers, models |
+| `deployment-diagram.puml` | PlantUML deployment | Only what the repo confirms (local dev defaults) | `server.js`, `baseApi.js`, scripts |
+| `api-interaction-map.mmd` | Mermaid flowchart | 36 routes with callers, handlers, guards, entities | `routes/api/*`, `redux/*` |
+| `traceability.md` | Markdown | Element-to-source evidence table | - |
+| `implementation-gaps.md` | Markdown | Observed inconsistencies and unverifiable areas | - |
+
+## Modeling choices and limitations
+
+- **Logical tiers only.** The three-tier diagram shows responsibilities. Nothing in the repository says the tiers run on separate servers.
+- **C4 containers.** The SPA, the REST API and MongoDB are treated as three containers because each is a separately started or hosted unit by its own `package.json`/runtime. Frontend/backend separation alone would not justify that; the separate start-up scripts and the CORS/HTTP boundary do.
+- **Class diagram.** The code has no business classes. Entities are Mongoose models. `User` is one class with a `role` enum (not subclasses), and role-specific fields are tagged `<<applicant>>`, `<<company>>`, `<<admin>>`. Controllers are shown as `<<module>>` boxes only to expose real dependencies.
+- **ERD.** MongoDB enforces no foreign keys. The "FK" markers mean *Mongoose `ref` to another collection*, validated only in application code. The only enforced constraints are unique indexes on `users.email`, `jobs.slug`, and `(job, applicant)` on `applications`.
+- **Use case diagram.** `Visitor` is the base actor; authenticated users and the three roles specialise it. `include` / `extend` are used only where one behaviour truly embeds or optionally augments another.
+- **Deployment.** No Dockerfile, Compose, CI/CD or hosting manifest exists, so hosts are marked unconfirmed. Only local defaults (ports 5000 and 5173) are drawn as facts.
+- **No Level 2 DFD** and **no stand-alone authentication-flow diagram** were produced: Level 1 is already readable, and `sequence-authentication.puml` covers authentication and authorization.
+- **No registration-approval, notification or background-job diagrams:** the code has none (no scheduler, queue or notification service). OTP e-mail is sent synchronously inside the request.
+- **Incomplete / partial features:** `isFlagged` is stored but never enforced; job deadline expiry has no automatic effect on status; there is no application-status ordering.
+- **Security representation:** only controls found in code are shown (see `implementation-gaps.md` section C). `ProtectedRoute` is shown as a UX redirect; real authorization is `roleMiddleware` on the server.
+
+## Validation status
+
+| Check | Result |
+|---|---|
+| Syntax checked with Mermaid CLI | **Not performed** (tool not available; install not approved) |
+| Syntax checked with PlantUML | **Not performed** (no jar or Graphviz available) |
+| Rendered to SVG/PNG | **None**. `rendered/` is empty by design: no export is claimed |
+| Manual review | Done: terminology, endpoint names, status values and counts were cross-checked against source (36/36 routes, 3 collections, 6 application statuses, 3 job statuses) |
+| Secrets | Only environment variable *names* were read. No values, tokens, URIs or credentials appear in these files |
+
+Risk areas for the first render: the Mermaid `C4*` diagrams are an experimental Mermaid feature and may need layout tuning; long labels in `api-interaction-map.mmd` may need a wider canvas; PlantUML activity diagrams with lane switches inside branches should be checked visually.
+
+## How to preview or render
+
+Mermaid (`.mmd`):
+- Paste into <https://mermaid.live>, or use the VS Code extension "Markdown Preview Mermaid Support" / "Mermaid Preview".
+- CLI (not run here): `npx @mermaid-js/mermaid-cli -i three-tier-architecture.mmd -o rendered/three-tier-architecture.svg`
+
+PlantUML (`.puml`):
+- VS Code extension "PlantUML", or paste into <https://www.plantuml.com/plantuml>.
+- CLI (not run here; needs Java and Graphviz): `java -jar plantuml.jar -tsvg -o rendered *.puml`
+
+## Suggested reading order for a report
+
+1. `c4-system-context` -> `c4-container` -> `three-tier-architecture` -> `c4-component`
+2. `use-case-diagram`, `entity-relationship-diagram`, `class-diagram`
+3. `sequence-*`, `activity-*`, `state-*`
+4. `dfd-level-0`, `dfd-level-1`, `deployment-diagram`, `api-interaction-map`
+5. `implementation-gaps.md` for limitations

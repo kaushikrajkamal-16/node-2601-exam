@@ -1,0 +1,138 @@
+---
+title: "API Interaction Map - frontend modules to backend endpoints (all paths relative to /api/v1 = BASE_URL; VITE_API_URL points at it)"
+---
+flowchart LR
+    subgraph FE["FRONTEND (Client/src): component -> RTK Query hook"]
+        direction TB
+        f_login["Login.jsx<br/>useLoginMutation, useResendOtpMutation"]
+        f_reg["Registration.jsx<br/>useRegisterMutation"]
+        f_otp["VerifyOtp.jsx<br/>useVerifyEmailMutation, useResendOtpMutation"]
+        f_forgot["ForgotPassword.jsx<br/>useForgotPasswordMutation"]
+        f_reset["ResetPassword.jsx<br/>useResetPasswordMutation"]
+        f_me["ProtectedRoute, Navbar, Sidebar, dashboards, JobsDetails<br/>useGetMeQuery"]
+        f_logout["Navbar, Sidebar<br/>useLogoutMutation"]
+        f_prof["EditProfileModal, RecruiterDashboard<br/>useUpdateProfileMutation"]
+        f_jobs["Jobs.jsx<br/>useGetJobsQuery"]
+        f_latest["JobsLatest.jsx<br/>useGetLatestJobsQuery"]
+        f_detail["JobsDetails.jsx<br/>useGetJobBySlugQuery"]
+        f_comp["Companies.jsx<br/>useGetCompaniesQuery"]
+        f_apply["ApplyModal.jsx<br/>useApplyJobMutation"]
+        f_myapps["ApplicantDashboard, ApplicantApplication, JobsDetails<br/>useGetMyApplicationsQuery"]
+        f_wd["ApplicantApplication.jsx<br/>useWithdrawApplicationMutation"]
+        f_rjobs["RecruiterDashboard<br/>useGetMyJobsQuery, useTogglePauseJobMutation,<br/>useDeleteJobMutation"]
+        f_post["PostJobModal.jsx<br/>useCreateJobMutation, useUpdateJobMutation"]
+        f_cand["RecruiterDashboard<br/>useGetCandidatesQuery, useUpdateCandidateStatusMutation,<br/>useDeleteCandidateMutation"]
+        f_adash["AdminDashboard<br/>useGetStatsQuery, useGetUsersQuery"]
+        f_aapp["ManageApplicants + AddApplicantModal<br/>useGetApplicantsQuery, useAddApplicantMutation,<br/>useToggleFlagApplicantMutation, useDeleteApplicantMutation"]
+        f_acomp["ManageCompanies + AddCompanyModal<br/>useGetAdminCompaniesQuery, useAddCompanyMutation,<br/>useDeleteCompanyMutation"]
+        f_ajobs["ManageJobPosts<br/>useGetAdminJobsQuery, useCloseJobMutation,<br/>useAdminDeleteJobMutation"]
+    end
+
+    subgraph PUB["PUBLIC (no login)"]
+        direction TB
+        e_reg["POST /auth/register<br/>authController.Registration<br/>User (create) + OTP mail<br/>400, 409"]
+        e_ver["POST /auth/verifyEmail<br/>authController.VerifyEmail<br/>User<br/>400, 404"]
+        e_res["POST /auth/resendOtp<br/>authController.ResendOtp<br/>User + OTP mail"]
+        e_login["POST /auth/login<br/>authController.login<br/>User; sets accessToken cookie<br/>400 (not found, unverified, wrong password)"]
+        e_forgot["POST /auth/forgotPassword<br/>authController.ForgotPassword<br/>User + OTP mail"]
+        e_rpw["POST /auth/resetpassword<br/>authController.ResetPassword<br/>User"]
+        e_jobs["GET /jobs?page&limit&company<br/>jobController.GetJobs<br/>Job (active only), User"]
+        e_latest["GET /jobs/latest?limit<br/>jobController.GetLatestJobs<br/>Job (active only)"]
+        e_slug["GET /jobs/:slug<br/>jobController.GetJobBySlug<br/>Job (any status), User<br/>404"]
+        e_comp["GET /companies<br/>jobController.GetCompanies<br/>User (verified companies), Job count"]
+    end
+
+    subgraph AUTH["ANY LOGGED-IN ROLE (authMiddleware)"]
+        direction TB
+        e_logout["POST /auth/logout<br/>authController.Logout<br/>clears cookie<br/>NOTE: no authMiddleware"]
+        e_me["GET /auth/getme<br/>authController.GetMe<br/>User<br/>401"]
+        e_up["PUT /auth/updateprofile<br/>multipart, field photo<br/>authController.UpdateProfile<br/>User + Cloudinary<br/>401, 400 (upload errors)"]
+    end
+
+    subgraph APPL["APPLICANT ONLY (authMiddleware + roleMiddleware applicant)"]
+        direction TB
+        e_apply["POST /applicant/apply/:jobId<br/>multipart, field resume<br/>applicantController.ApplyJob<br/>Job, Application + Cloudinary<br/>400, 404, 409"]
+        e_apps["GET /applicant/applications<br/>applicantController.GetMyApplications<br/>Application, Job, User"]
+        e_wd["DELETE /applicant/applications/withdraw/:id<br/>applicantController.WithdrawApplication<br/>Application + Cloudinary<br/>400 if approved, 404"]
+    end
+
+    subgraph COMP["COMPANY ONLY (authMiddleware + roleMiddleware company)"]
+        direction TB
+        e_cjobs["GET /company/jobs<br/>companyController.GetMyJobs<br/>Job, Application counts"]
+        e_ccreate["POST /company/jobs/create<br/>companyController.CreateJob<br/>Job (create)<br/>400"]
+        e_cupd["PUT /company/jobs/update/:id<br/>companyController.UpdateJob<br/>Job<br/>400, 404"]
+        e_cpause["PATCH /company/jobs/pause/:id<br/>companyController.TogglePauseJob<br/>Job<br/>400 if closed, 404"]
+        e_cdel["DELETE /company/jobs/delete/:id<br/>companyController.DeleteJob<br/>Job, Application + Cloudinary"]
+        e_ccand["GET /company/candidates?job<br/>companyController.GetCandidates<br/>Application, User, Job"]
+        e_cstat["PATCH /company/candidates/status/:id<br/>companyController.UpdateApplicationStatus<br/>Application<br/>400, 404"]
+        e_cdelc["DELETE /company/candidates/delete/:id<br/>companyController.DeleteCandidate<br/>Application + Cloudinary"]
+    end
+
+    subgraph ADM["ADMIN ONLY (authMiddleware + roleMiddleware admin)"]
+        direction TB
+        e_stats["GET /admin/stats<br/>adminController.GetStats<br/>User, Job, Application counts"]
+        e_users["GET /admin/users?page&limit&role<br/>adminController.GetUsers<br/>User"]
+        e_aapp["GET /admin/applicants?search&page&limit<br/>adminController.GetApplicants<br/>User"]
+        e_aadd["POST /admin/applicants/add<br/>adminController.AddApplicant<br/>User (create, verified)"]
+        e_aflag["PATCH /admin/applicants/flag/:id<br/>adminController.ToggleFlagApplicant<br/>User.isFlagged"]
+        e_adel["DELETE /admin/applicants/delete/:id<br/>adminController.DeleteApplicant<br/>User, Application + Cloudinary"]
+        e_acomp["GET /admin/companies?search&industry&page&limit<br/>adminController.GetCompanies<br/>User, Job counts"]
+        e_acadd["POST /admin/companies/add<br/>adminController.AddCompany<br/>User (create, verified)"]
+        e_acdel["DELETE /admin/companies/delete/:id<br/>adminController.DeleteCompany<br/>User, Job, Application + Cloudinary"]
+        e_ajobs["GET /admin/jobs?status&page&limit<br/>adminController.GetAllJobs<br/>Job, User"]
+        e_aclose["PATCH /admin/jobs/close/:id<br/>adminController.CloseJob<br/>Job.status, moderatedBy"]
+        e_ajdel["DELETE /admin/jobs/delete/:id<br/>adminController.DeleteJob<br/>Job, Application + Cloudinary"]
+    end
+
+    f_login --> e_login
+    f_login --> e_res
+    f_reg --> e_reg
+    f_otp --> e_ver
+    f_otp --> e_res
+    f_forgot --> e_forgot
+    f_reset --> e_rpw
+    f_me --> e_me
+    f_logout --> e_logout
+    f_prof --> e_up
+    f_jobs --> e_jobs
+    f_latest --> e_latest
+    f_detail --> e_slug
+    f_comp --> e_comp
+    f_apply --> e_apply
+    f_myapps --> e_apps
+    f_wd --> e_wd
+    f_rjobs --> e_cjobs
+    f_rjobs --> e_cpause
+    f_rjobs --> e_cdel
+    f_post --> e_ccreate
+    f_post --> e_cupd
+    f_cand --> e_ccand
+    f_cand --> e_cstat
+    f_cand --> e_cdelc
+    f_adash --> e_stats
+    f_adash --> e_users
+    f_aapp --> e_aapp
+    f_aapp --> e_aadd
+    f_aapp --> e_aflag
+    f_aapp --> e_adel
+    f_acomp --> e_acomp
+    f_acomp --> e_acadd
+    f_acomp --> e_acdel
+    f_ajobs --> e_ajobs
+    f_ajobs --> e_aclose
+    f_ajobs --> e_ajdel
+
+    subgraph RES["MATCHING RESULT (verified by comparing redux/*.js with routes/api/*.js)"]
+        r1["36 backend routes, 36 matched to a frontend hook.<br/>0 unmatched frontend calls.<br/>0 backend endpoints without a frontend caller.<br/>Caveat: UpdateJob accepts a status field, but PostJobModal does not send it.<br/>Prefix check: routes/index.js mounts at process.env.BASE_URL (/api/v1)."]
+    end
+
+    classDef pub fill:#f0fdf4,stroke:#15803d,color:#0b1c30;
+    classDef any fill:#eef4ff,stroke:#2563eb,color:#0b1c30;
+    classDef app fill:#fefce8,stroke:#a16207,color:#0b1c30;
+    classDef comp fill:#fdf2f8,stroke:#be185d,color:#0b1c30;
+    classDef adm fill:#fef2f2,stroke:#b91c1c,color:#0b1c30;
+    class e_reg,e_ver,e_res,e_login,e_forgot,e_rpw,e_jobs,e_latest,e_slug,e_comp pub;
+    class e_logout,e_me,e_up any;
+    class e_apply,e_apps,e_wd app;
+    class e_cjobs,e_ccreate,e_cupd,e_cpause,e_cdel,e_ccand,e_cstat,e_cdelc comp;
+    class e_stats,e_users,e_aapp,e_aadd,e_aflag,e_adel,e_acomp,e_acadd,e_acdel,e_ajobs,e_aclose,e_ajdel adm;
