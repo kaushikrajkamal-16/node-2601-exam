@@ -1,0 +1,61 @@
+flowchart TB
+    U(["Users<br/>Visitor, Applicant, Company, Admin"])
+    NET(["Internet"])
+
+    subgraph CT["CLIENT TIER - Presentation Layer"]
+        direction LR
+        C1["Web Client - Browser<br/>React 19 single-page app, Vite<br/>Redux Toolkit and RTK Query<br/>Tailwind CSS 4"]
+        C2["Pages and Layouts<br/>Public: Home, Jobs, Job Details, Companies<br/>Auth: Login, Register, Verify OTP, Reset Password<br/>Dashboards: Applicant, Recruiter, Admin"]
+        C3["Routing and Access Guard<br/>React Router<br/>ProtectedRoute calls GET /auth/getme<br/>redirects by role, UX only<br/>server enforces roles"]
+        C4["API Modules and Forms<br/>authApi, publicApi, applicantApi,<br/>companyApi, adminApi<br/>Modals: Apply, Post Job, Edit Profile,<br/>Add Applicant, Add Company"]
+    end
+
+    subgraph AT["APPLICATION TIER - Business Logic Layer"]
+        PIPE["EXPRESS 5 REST API PIPELINE<br/>Node.js, base path /api/v1, port 5000<br/>CORS, JSON parser, cookie-parser<br/>Routers: auth, applicant, company, admin, public jobs<br/>Global error handler"]
+        subgraph AS["Application Server - Node.js runtime"]
+            direction LR
+            S1["Security Middleware<br/>authMiddleware verifies JWT cookie<br/>roleMiddleware: applicant, company, admin<br/>bcrypt hashing, JWT valid 1 day"]
+            S2["Upload Middleware - multer<br/>memory storage, max 5 MB<br/>Resumes: PDF, DOC, DOCX<br/>Photos: PNG, JPG, WebP"]
+            S3["Controllers - business logic<br/>auth, applicant, company, admin, jobs<br/>validation, OTP create and check<br/>status rules, slug, cascade deletes"]
+            S4["Utility Services<br/>mailService - Nodemailer<br/>uploadToCloudinary<br/>helpers: OTP, JWT, slug"]
+            S1 --> S2 --> S3 --> S4
+        end
+        MODELS["Mongoose ODM Models<br/>User, Job, Application<br/>run inside the Node process"]
+        ERR["Global Error Handler<br/>returns success false and message"]
+        CFG["Configuration - env file<br/>PORT, BASE_URL, CLIENT_URL,<br/>JWT_SEC, MONGO_URI - names only"]
+    end
+
+    subgraph EXT["THIRD-PARTY SERVICES"]
+        CLD["Cloudinary<br/>photos, logos, resumes<br/>HTTPS, Cloudinary SDK"]
+        SMTP["Gmail SMTP<br/>OTP e-mails: registration, password reset<br/>port 587, STARTTLS"]
+    end
+
+    subgraph DT["DATABASE TIER - Data Storage Layer"]
+        direction LR
+        DB[("MongoDB - NoSQL<br/>primary database")]
+        USERS["users<br/>name, email unique, password hash,<br/>role, isVerified, OTP and expiry,<br/>profile fields, isFlagged"]
+        JOBS["jobs<br/>title, slug unique, salary, deadline,<br/>skills, status: active, paused, closed"]
+        APPS["applications<br/>job, applicant, company references,<br/>resume URL, status: 6 values,<br/>statusHistory embedded"]
+        CONS["Constraints<br/>Unique: users.email, jobs.slug,<br/>applications job plus applicant<br/>References enforced in code, not by MongoDB"]
+        DB --- USERS
+        DB --- JOBS
+        DB --- APPS
+        DB --- CONS
+    end
+
+    U <-->|"user interaction"| NET
+    NET <-->|"HTTPS"| C2
+    C4 <-->|"REST over HTTP and HTTPS<br/>JSON and multipart form-data<br/>httpOnly accessToken cookie, CORS"| PIPE
+    PIPE --> S1
+    S3 --> MODELS
+    S4 -->|"upload and delete files"| CLD
+    S4 -->|"send OTP"| SMTP
+    MODELS <-->|"Read and write via Mongoose ODM<br/>MongoDB connection MONGO_URI"| DB
+
+    style CT fill:#f8cecc,stroke:#b85450,color:#111111
+    style AT fill:#b9c6d2,stroke:#6b7f92,color:#111111
+    style AS fill:#dae8fc,stroke:#6c8ebf,color:#111111
+    style EXT fill:#e1fbff,stroke:#36a3b8,color:#111111
+    style DT fill:#fff2cc,stroke:#d6b656,color:#111111
+    classDef box fill:#ffffff,stroke:#222222,color:#111111
+    class C1,C2,C3,C4,PIPE,S1,S2,S3,S4,MODELS,ERR,CFG,CLD,SMTP,USERS,JOBS,APPS,CONS,DB box
