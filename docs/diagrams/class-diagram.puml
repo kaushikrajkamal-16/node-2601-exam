@@ -6,8 +6,8 @@ hide empty members
 
 legend top left
   Modeling choice: the backend is functional JavaScript (CommonJS modules + Mongoose schemas),
-  not an OO class hierarchy. Entities below are the Mongoose models (persistent domain);
-  <<module>> boxes are plain function modules shown only to expose real dependencies.
+  not an OO class hierarchy. Entities below are the Mongoose models (persistent domain).
+  Controllers, middleware and utilities are in class-diagram-modules.puml.
   Associations are ObjectId references resolved in application code (populate);
   MongoDB does not enforce them. User has no subclasses: "role" is an enum field.
 endlegend
@@ -118,59 +118,4 @@ User ..> Role
 User ..> OtpPurpose
 Job ..> JobStatus
 Application ..> ApplicationStatus
-
-package "Backend modules (functional)" {
-  class authController <<module>>
-  class applicantController <<module>>
-  class companyController <<module>>
-  class adminController <<module>>
-  class jobController <<module>>
-  class authMiddleware <<module>> {
-    +authMiddleware(req, res, next)
-  }
-  class roleMiddleware <<module>> {
-    +roleMiddleware(...roles)
-  }
-  class helpers <<module>> {
-    +generateOTP() : String
-    +generateAccessToken(payload) : String
-    +isValidEmail(email) : Boolean
-    +isStrongPassword(pw) : Boolean
-    +makeSlug(...parts) : String
-    +makeInitials(name) : String
-    +toList(value, sep) : String[]
-    +formatJob(job) : Object
-    +statusLabel(status) : String
-    +daysLeft(deadline) : Number
-  }
-  class mailService <<module>> {
-    +sendMail({email, subject, otp}) : Promise
-  }
-  class uploadToCloudinary <<module>> {
-    +uploadToCloudinary(file, folder) : Promise
-    +deleteFromCloudinary(publicId, type) : Promise
-  }
-}
-
-authController ..> User
-authController ..> helpers
-authController ..> mailService
-authController ..> uploadToCloudinary
-applicantController ..> Job
-applicantController ..> Application
-applicantController ..> uploadToCloudinary
-companyController ..> Job
-companyController ..> Application
-companyController ..> helpers
-companyController ..> uploadToCloudinary
-adminController ..> User
-adminController ..> Job
-adminController ..> Application
-adminController ..> uploadToCloudinary
-adminController ..> helpers
-jobController ..> Job
-jobController ..> User
-jobController ..> helpers
-authMiddleware ..> User
-note right of authMiddleware : verifies the accessToken cookie with jsonwebtoken (JWT_SEC)\nand loads User; does not use helpers
 @enduml

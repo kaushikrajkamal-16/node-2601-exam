@@ -2,8 +2,9 @@
 
 Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js server (`Server.zip`). The source code was the only source of truth; nothing was added for completeness. Application code was not modified. Only files under `docs/diagrams/` were created.
 
-> **Rendering status: NOT rendered or syntax-checked by a tool.**
-> No Mermaid CLI, PlantUML jar or Graphviz was available in the environment, and installing packages was not approved. Every diagram was written and reviewed by hand only. The `rendered/` directory is empty. See "Validation status" below.
+> **Rendering status: all 24 diagram sources rendered without errors and were inspected visually.**
+> Exports are in `rendered/` (SVG and PNG, same base names as the sources). The `.mmd` / `.puml` files remain the authoritative sources.
+> Details, tool versions and limitations are under "Validation status".
 
 ## Application summary
 
@@ -21,12 +22,13 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 | File | Type / language | Represents | Main evidence |
 |---|---|---|---|
 | `three-tier-architecture.mmd` | Mermaid flowchart | Logical presentation / application / data tiers and external services | `Client/src`, `Server/server.js`, `routes/`, `controllers/`, `model/` |
-| `c4-system-context.mmd` | Mermaid C4Context | System, four human actors, Gmail SMTP, Cloudinary | roles in `User.js`; `mailService.js`; `uploadToCloudinary.js` |
-| `c4-container.mmd` | Mermaid C4Container | SPA, REST API, MongoDB, external systems with protocols | `package.json` files, `baseApi.js`, `dbConnection.js` |
-| `c4-component.mmd` | Mermaid C4Component | Backend components and dependencies | `server.js`, `routes/api/*`, `middleware/*`, `controllers/*`, `utils/*`, `model/*` |
-| `c4-component-frontend.mmd` | Mermaid C4Component | Frontend components (extra view; frontend is large enough to warrant one) | `App.jsx`, `Components/`, `pages/`, `redux/` |
+| `c4-system-context.mmd` | Mermaid flowchart, C4-styled | System, four human actors, Gmail SMTP, Cloudinary | roles in `User.js`; `mailService.js`; `uploadToCloudinary.js` |
+| `c4-container.mmd` | Mermaid flowchart, C4-styled | SPA, REST API, MongoDB, external systems with protocols | `package.json` files, `baseApi.js`, `dbConnection.js` |
+| `c4-component.mmd` | Mermaid flowchart, C4-styled | Backend components and dependencies | `server.js`, `routes/api/*`, `middleware/*`, `controllers/*`, `utils/*`, `model/*` |
+| `c4-component-frontend.mmd` | Mermaid flowchart, C4-styled | Frontend components (extra view; frontend is large enough to warrant one) | `App.jsx`, `Components/`, `pages/`, `redux/` |
 | `use-case-diagram.puml` | PlantUML use case | Actors, system boundary, include/extend, external actors | controllers and routes |
-| `class-diagram.puml` | PlantUML class | Domain model (Mongoose models) plus functional modules | `model/*.js`, `utils/*` |
+| `class-diagram.puml` | PlantUML class | Domain model: the three Mongoose models, enums, embedded `StatusHistoryEntry`, multiplicities | `model/*.js` |
+| `class-diagram-modules.puml` | PlantUML class | Backend function modules (controllers, middleware, helpers) and which models they use | `require()` statements across `Server/` |
 | `entity-relationship-diagram.mmd` | Mermaid ER | MongoDB collections, refs, embedded `statusHistory`, indexes | `model/User.js`, `Job.js`, `Application.js` |
 | `sequence-authentication.puml` | PlantUML sequence | Login, session check (route guard), logout | `authController.js`, `authMiddleware.js`, `ProtectedRoute.jsx` |
 | `sequence-registration.puml` | PlantUML sequence | Register, verify e-mail OTP, resend | `authController.js` |
@@ -49,10 +51,12 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 ## Modeling choices and limitations
 
 - **Logical tiers only.** The three-tier diagram shows responsibilities. Nothing in the repository says the tiers run on separate servers.
+- **C4 views are drawn as C4-styled Mermaid flowcharts, not with Mermaid's experimental `C4Context` / `C4Container` / `C4Component` syntax.** The native C4 syntax was tried first and rendered badly (overlapping relationship labels, edges crossing unrelated boxes). The flowcharts keep C4 conventions: person / system / container / component stereotypes in each box and a system boundary.
 - **C4 containers.** The SPA, the REST API and MongoDB are treated as three containers because each is a separately started or hosted unit by its own `package.json`/runtime. Frontend/backend separation alone would not justify that; the separate start-up scripts and the CORS/HTTP boundary do.
-- **Class diagram.** The code has no business classes. Entities are Mongoose models. `User` is one class with a `role` enum (not subclasses), and role-specific fields are tagged `<<applicant>>`, `<<company>>`, `<<admin>>`. Controllers are shown as `<<module>>` boxes only to expose real dependencies.
+- **Class diagram.** The code has no business classes. Entities are Mongoose models. `User` is one class with a `role` enum (not subclasses), and role-specific fields are tagged `<<applicant>>`, `<<company>>`, `<<admin>>`. Controllers and utilities are shown in a separate companion diagram, `class-diagram-modules.puml`, as `<<module>>` boxes, because combining them with the domain model produced an unreadable web of dependency lines.
 - **ERD.** MongoDB enforces no foreign keys. The "FK" markers mean *Mongoose `ref` to another collection*, validated only in application code. The only enforced constraints are unique indexes on `users.email`, `jobs.slug`, and `(job, applicant)` on `applications`.
 - **Use case diagram.** `Visitor` is the base actor; authenticated users and the three roles specialise it. `include` / `extend` are used only where one behaviour truly embeds or optionally augments another.
+- **API map layout.** The 36 endpoints are grouped into five access-level slices (public, any logged-in role, applicant, company, admin). Each slice contains its frontend callers and endpoints. The diagram is intentionally tall (about 6,800 px); it is meant to be paged or scaled in a report appendix. Per-endpoint error codes are not repeated there; they are in the `sequence-*` diagrams.
 - **Deployment.** No Dockerfile, Compose, CI/CD or hosting manifest exists, so hosts are marked unconfirmed. Only local defaults (ports 5000 and 5173) are drawn as facts.
 - **No Level 2 DFD** and **no stand-alone authentication-flow diagram** were produced: Level 1 is already readable, and `sequence-authentication.puml` covers authentication and authorization.
 - **No registration-approval, notification or background-job diagrams:** the code has none (no scheduler, queue or notification service). OTP e-mail is sent synchronously inside the request.
@@ -61,25 +65,38 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 
 ## Validation status
 
+Rendered in the authoring environment with tools installed **outside the project** (in a temporary scratch folder; no project file, `package.json` or dependency was touched):
+
+| Tool | Version | Used for |
+|---|---|---|
+| `@mermaid-js/mermaid-cli` (mmdc) | 11.4.2, headless Chromium | all 9 `.mmd` files |
+| PlantUML jar | 1.2024.7, built-in Smetana layout (`-Playout=smetana`; Graphviz was not available) | all 15 `.puml` files |
+| Playwright Chromium | preinstalled | SVG to PNG export |
+
 | Check | Result |
 |---|---|
-| Syntax checked with Mermaid CLI | **Not performed** (tool not available; install not approved) |
-| Syntax checked with PlantUML | **Not performed** (no jar or Graphviz available) |
-| Rendered to SVG/PNG | **None**. `rendered/` is empty by design: no export is claimed |
-| Manual review | Done: terminology, endpoint names, status values and counts were cross-checked against source (36/36 routes, 3 collections, 6 application statuses, 3 job statuses) |
+| Mermaid syntax | 9 of 9 parsed and rendered with no errors |
+| PlantUML syntax | 15 of 15 rendered with no syntax-error output |
+| Visual inspection | The rendered images were viewed for overlap, clipping and unreadable labels. **Viewed individually:** three-tier, C4 container / context / backend component / frontend component, use case, class (both), ER, DFD 0 and 1, deployment, API map (top section), both activity diagrams, all three state diagrams, and the apply-job and candidate-status sequence diagrams. **Not viewed as images** (same generator and structure as the viewed sequence diagrams; syntax-checked only): sequence-authentication, sequence-registration, sequence-password-reset, sequence-admin-delete-company. Problems found and fixed: C4 container layout (replaced), `pending` outside its composite state, tangled class diagram (split in two), cluttered DFD Level 1 and overlapping DFD Level 0 labels (rebuilt), an over-tall API map (restructured into slices), fragmented job-posting activity diagram (redrawn), legend wording in the deployment and class diagrams |
+| Exports | 24 SVG + 24 PNG in `rendered/` |
+| Manual content review | Terminology, endpoint names, status values and counts cross-checked against source (36/36 routes, 3 collections, 6 application statuses, 3 job statuses) |
 | Secrets | Only environment variable *names* were read. No values, tokens, URIs or credentials appear in these files |
 
-Risk areas for the first render: the Mermaid `C4*` diagrams are an experimental Mermaid feature and may need layout tuning; long labels in `api-interaction-map.mmd` may need a wider canvas; PlantUML activity diagrams with lane switches inside branches should be checked visually.
+**Known rendering limitations**
+- PlantUML output used the Smetana layout engine, not Graphviz. Layout can differ slightly if re-rendered with Graphviz; content is identical.
+- Mermaid SVGs use HTML labels (`foreignObject`). They display correctly in browsers but some desktop tools (e.g. older Word or Inkscape) may drop the text. Use the PNG exports for those targets.
+- Only the top section of the API map image was viewed at full resolution; its lower slices are generated by the same template.
+- `dfd-level-1.mmd`: a few edges to Cloudinary cross the process column. This is a layout artefact of one shared external service; no labels collide.
 
 ## How to preview or render
 
 Mermaid (`.mmd`):
 - Paste into <https://mermaid.live>, or use the VS Code extension "Markdown Preview Mermaid Support" / "Mermaid Preview".
-- CLI (not run here): `npx @mermaid-js/mermaid-cli -i three-tier-architecture.mmd -o rendered/three-tier-architecture.svg`
+- CLI: `npx @mermaid-js/mermaid-cli -i three-tier-architecture.mmd -o rendered/three-tier-architecture.svg` (needs a Chromium; behind a sandbox, pass a puppeteer config with `--no-sandbox`)
 
 PlantUML (`.puml`):
 - VS Code extension "PlantUML", or paste into <https://www.plantuml.com/plantuml>.
-- CLI (not run here; needs Java and Graphviz): `java -jar plantuml.jar -tsvg -o rendered *.puml`
+- CLI (needs Java; Graphviz optional): `java -jar plantuml.jar -tsvg -o rendered *.puml`, or add `-Playout=smetana` if Graphviz is not installed
 
 ## Suggested reading order for a report
 

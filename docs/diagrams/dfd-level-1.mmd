@@ -1,69 +1,68 @@
 ---
-title: "DFD Level 1 - Major processes and data stores: JobPortal BD"
+title: "DFD Level 1 - Major processes and data stores: JobPortal BD (two-way arrows = request and response flows)"
 ---
-flowchart TB
-    V["Visitor"]
-    A["Applicant"]
-    C["Company (Recruiter)"]
-    AD["Admin"]
-    MAIL["Gmail SMTP"]
-    CLD["Cloudinary"]
+flowchart LR
+    subgraph ENT["External entities"]
+        direction TB
+        V["Visitor"]
+        A["Applicant"]
+        C["Company (Recruiter)"]
+        AD["Admin"]
+    end
 
-    P1(("1.0<br/>Register and<br/>authenticate"))
-    P2(("2.0<br/>Manage own<br/>profile"))
-    P3(("3.0<br/>Browse public<br/>jobs and companies"))
-    P4(("4.0<br/>Apply and track<br/>applications"))
-    P5(("5.0<br/>Manage job posts"))
-    P6(("6.0<br/>Review candidates"))
-    P7(("7.0<br/>Administer<br/>platform"))
+    subgraph PROC["Processes"]
+        direction TB
+        P1(("1.0<br/>Register and<br/>authenticate"))
+        P2(("2.0<br/>Manage own<br/>profile"))
+        P3(("3.0<br/>Browse public<br/>jobs and companies"))
+        P4(("4.0<br/>Apply and track<br/>applications"))
+        P5(("5.0<br/>Manage<br/>job posts"))
+        P6(("6.0<br/>Review<br/>candidates"))
+        P7(("7.0<br/>Administer<br/>platform"))
+    end
 
-    D1[("D1 Users<br/>MongoDB users")]
-    D2[("D2 Jobs<br/>MongoDB jobs")]
-    D3[("D3 Applications<br/>MongoDB applications")]
+    subgraph STORES["Data stores (MongoDB collections)"]
+        direction TB
+        D1[("D1 Users")]
+        D2[("D2 Jobs")]
+        D3[("D3 Applications")]
+    end
 
-    V -- "registration data, credentials, OTP,<br/>reset request and new password" --> P1
-    P1 -- "login result, session cookie, verification messages" --> V
-    P1 -- "OTP e-mail" --> MAIL
-    P1 <-- "user record, OTP and expiry, password hash" --> D1
+    subgraph EXT["External services"]
+        direction TB
+        MAIL["Gmail SMTP"]
+        CLD["Cloudinary"]
+    end
 
-    A -- "profile data, photo" --> P2
-    C -- "company profile, logo" --> P2
-    P2 -- "updated profile" --> A
-    P2 -- "updated profile" --> C
-    P2 <-- "profile fields, photo reference" --> D1
-    P2 -- "photo or logo, delete old file" --> CLD
-    CLD -- "photo URL and public id" --> P2
+    V <-->|"credentials, OTP, new password / login result, session cookie"| P1
+    V <-->|"list, detail, company queries / job cards, details, company list"| P3
+    A <-->|"profile data, photo / updated profile"| P2
+    C <-->|"company profile, logo / updated profile"| P2
+    A <-->|"resume, job choice, withdraw / applications with status"| P4
+    C <-->|"job data, edit, pause, delete / own jobs with counts"| P5
+    C <-->|"filter, new status, note, remove / candidates with resume links"| P6
+    AD <-->|"add, flag, close, delete, filters / statistics and lists"| P7
 
-    V -- "list, latest, detail and company queries" --> P3
-    P3 -- "job cards, job details, company list" --> V
-    P3 <-- "job records" --> D2
-    P3 <-- "company profile fields" --> D1
+    P1 <-->|"user record, OTP, password hash"| D1
+    P2 <-->|"profile fields"| D1
+    P3 <-->|"company fields"| D1
+    P3 <-->|"job records"| D2
+    P4 <-->|"job status, deadline"| D2
+    P4 <-->|"application records"| D3
+    P5 <-->|"job records"| D2
+    P5 -->|"delete applications of deleted job"| D3
+    P6 <-->|"application records, status history"| D3
+    P6 -->|"applicant summary lookup"| D1
+    P7 <-->|"all user records"| D1
+    P7 <-->|"all job records"| D2
+    P7 <-->|"all application records"| D3
 
-    A -- "resume file, job selection, withdraw request" --> P4
-    P4 -- "application list with status, confirmation" --> A
-    P4 <-- "job status and deadline" --> D2
-    P4 <-- "application records" --> D3
-    P4 -- "resume file, delete request" --> CLD
-    CLD -- "resume URL and public id" --> P4
-
-    C -- "job data, edit, pause, delete" --> P5
-    P5 -- "own jobs with applicant and hired counts" --> C
-    P5 <-- "job records" --> D2
-    P5 -- "delete applications of a deleted job" --> D3
-    P5 -- "delete resume files" --> CLD
-
-    C -- "candidate filter, new status, interview note, remove" --> P6
-    P6 -- "candidate list with resume links" --> C
-    P6 <-- "application records and status history" --> D3
-    P6 -- "applicant summary lookup" --> D1
-    P6 -- "delete resume file" --> CLD
-
-    AD -- "add, flag, close, delete commands, list filters" --> P7
-    P7 -- "statistics and lists" --> AD
-    P7 <-- "all user records" --> D1
-    P7 <-- "all job records" --> D2
-    P7 <-- "all application records" --> D3
-    P7 -- "delete photos and resumes" --> CLD
+    P1 -->|"OTP e-mail"| MAIL
+    P2 <-->|"photo / logo, URL"| CLD
+    P4 <-->|"resume file / URL"| CLD
+    P5 -->|"delete resume files"| CLD
+    P6 -->|"delete resume file"| CLD
+    P7 -->|"delete photos and resumes"| CLD
 
     classDef proc fill:#eef4ff,stroke:#2563eb,color:#0b1c30;
     classDef store fill:#f0fdf4,stroke:#15803d,color:#0b1c30;

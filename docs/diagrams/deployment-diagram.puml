@@ -4,8 +4,10 @@ skinparam shadowing false
 skinparam defaultTextAlignment center
 
 legend right
-  Solid border / solid line : confirmed by code, scripts or configuration
-  Dashed line / "unconfirmed" : not determinable from the repository
+  Artifacts, connections and ports : confirmed by code, scripts or configuration
+  <<unconfirmed host>> : the machine or service hosting this part cannot be
+  determined from the repository
+  Dashed arrows : supporting relationships (serving, one-off seeding)
   The repository contains NO Dockerfile, docker-compose, CI/CD workflow,
   hosting manifest (Vercel, Netlify, Render, Procfile ...) or deployment documentation.
   Only local-development defaults are verifiable.

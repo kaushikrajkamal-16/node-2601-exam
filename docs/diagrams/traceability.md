@@ -125,6 +125,7 @@ Frontend callers are the RTK Query definitions in `Client/src/redux/*.js` and th
 | `Application.status` enum | state-application-status | `Application.js` L32-36 | six values | Verified |
 | `statusHistory` embedded array | ERD, class | `Application.js` L42-47 | `[{status, changedAt}]` | Verified |
 | Password hashing on save (bcrypt, 10 rounds) | class | `User.js` L59-64 | `pre("save")`, `ComparePassword` | Verified |
+| Module-to-model dependencies (`require()`) | class-diagram-modules | `Server/controllers/*.js`, `middleware/authMiddleware.js` | `require("../model/...")` and `require("../utils/...")` at the top of each file | Verified |
 | Real foreign keys / referential integrity | ERD | none | MongoDB has none; cascades are manual code | **Not applicable** by design (stated in diagram title) |
 | Other indexes | ERD | grep for `index(` and `unique` | none besides the three above | Verified |
 

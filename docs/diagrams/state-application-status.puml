@@ -3,9 +3,8 @@ title State Machine - Application.status lifecycle
 skinparam shadowing false
 hide empty description
 
-[*] --> pending : ApplyJob (POST /applicant/apply/:jobId)
-
 state "Status != approved" as NotApproved {
+  [*] --> pending
   state pending
   state shortlisted
   state exam
@@ -14,23 +13,25 @@ state "Status != approved" as NotApproved {
 }
 state approved
 
+[*] --> NotApproved : ApplyJob (POST /applicant/apply/:jobId)
+
 note right of NotApproved
   UpdateApplicationStatus (PATCH /company/candidates/status/:id)
   accepts any of the six values from any current value.
   The code enforces NO ordering (e.g. pending -> approved is allowed).
   Each real change appends {status, changedAt} to statusHistory;
   setting the same status again changes nothing.
+  Moves among the five non-approved values stay inside this box.
 end note
 
-NotApproved --> approved : company sets "approved"
-approved --> NotApproved : company sets another status
-NotApproved --> NotApproved : company sets another non-approved status
+NotApproved -right-> approved : company sets "approved"
+approved -left-> NotApproved : company sets another status
 
-NotApproved --> [*] : applicant WithdrawApplication\n[status != approved] / delete resume + document
+NotApproved -down-> [*] : applicant WithdrawApplication\n[status != approved] / delete resume + document
 approved --> [*] : company DeleteCandidate / delete resume + document
-NotApproved --> [*] : company DeleteCandidate
-NotApproved --> [*] : cascade: Job, company or applicant deleted
-approved --> [*] : cascade: Job, company or applicant deleted
+NotApproved -down-> [*] : company DeleteCandidate
+NotApproved -down-> [*] : cascade: Job, company or applicant deleted
+approved -down-> [*] : cascade: Job, company or applicant deleted
 
 note bottom of approved
   Explicitly enforced prohibition: applicant withdrawal of an

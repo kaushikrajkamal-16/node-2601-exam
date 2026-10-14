@@ -1,23 +1,29 @@
-C4Context
-    title System Context - JobPortal BD (C4 level 1)
+---
+title: "C4 Level 1 - System Context: JobPortal BD"
+---
+flowchart TB
+    visitor(["<b>Visitor</b><br/>[Person]<br/>Unauthenticated user. Browses jobs and companies,<br/>registers, logs in, resets a password"])
+    applicant(["<b>Applicant</b><br/>[Person]<br/>Registered job seeker. Applies with a resume,<br/>tracks and withdraws applications, edits profile"])
+    company(["<b>Company (Recruiter)</b><br/>[Person]<br/>Registered employer. Posts and manages jobs,<br/>reviews candidates, updates their status"])
+    admin(["<b>Admin</b><br/>[Person]<br/>Platform administrator created by the seed script.<br/>Moderates users, companies and job posts"])
 
-    Person(visitor, "Visitor", "Unauthenticated user. Browses jobs and companies, registers, logs in, resets a password.")
-    Person(applicant, "Applicant", "Registered job seeker. Applies to jobs with a resume, tracks and withdraws applications, edits own profile.")
-    Person(company, "Company (Recruiter)", "Registered employer. Posts and manages jobs, reviews candidates and updates their status.")
-    Person(admin, "Admin", "Platform administrator, created by the seed script (npm run seed). Moderates users and jobs.")
+    subgraph boundary["System boundary"]
+        portal["<b>JobPortal BD Web Application</b><br/>[Software System]<br/>React SPA + Node.js/Express REST API + MongoDB.<br/>Connects applicants with companies"]
+    end
 
-    System_Boundary(sysb, "JobPortal BD") {
-        System(portal, "JobPortal BD Web Application", "React SPA plus Node.js/Express REST API and MongoDB. Connects applicants with companies.")
-    }
+    smtp["<b>Gmail SMTP</b><br/>[External System]<br/>Delivers OTP e-mails<br/>(verification and password reset)"]
+    cloud["<b>Cloudinary</b><br/>[External System]<br/>Stores profile photos, company logos<br/>and applicant resumes"]
 
-    System_Ext(smtp, "Gmail SMTP", "Sends OTP e-mails for e-mail verification and password reset (Nodemailer).")
-    System_Ext(cloudinary, "Cloudinary", "Stores profile photos, company logos and applicant resumes (PDF/DOC/DOCX).")
+    visitor -- "Browses jobs, registers, logs in<br/>[HTTPS]" --> portal
+    applicant -- "Applies to jobs, tracks applications<br/>[HTTPS]" --> portal
+    company -- "Posts jobs, reviews candidates<br/>[HTTPS]" --> portal
+    admin -- "Manages applicants, companies, jobs<br/>[HTTPS]" --> portal
+    portal -- "Sends OTP e-mails<br/>[SMTP 587]" --> smtp
+    portal -- "Uploads and deletes files<br/>[HTTPS]" --> cloud
 
-    Rel(visitor, portal, "Browses jobs and companies, registers, logs in", "HTTPS")
-    Rel(applicant, portal, "Applies to jobs, tracks applications", "HTTPS")
-    Rel(company, portal, "Posts jobs, reviews candidates", "HTTPS")
-    Rel(admin, portal, "Manages applicants, companies and job posts", "HTTPS")
-    Rel(portal, smtp, "Sends OTP e-mails", "SMTP, port 587")
-    Rel(portal, cloudinary, "Uploads and deletes files", "HTTPS, Cloudinary SDK")
-    Rel(smtp, applicant, "Delivers OTP code", "E-mail")
-    Rel(smtp, company, "Delivers OTP code", "E-mail")
+    classDef person fill:#08427b,stroke:#052e56,color:#fff;
+    classDef system fill:#1168bd,stroke:#0b4884,color:#fff;
+    classDef ext fill:#999,stroke:#6b6b6b,color:#fff;
+    class visitor,applicant,company,admin person;
+    class portal system;
+    class smtp,cloud ext;

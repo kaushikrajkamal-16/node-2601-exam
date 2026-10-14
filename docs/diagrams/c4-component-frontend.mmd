@@ -1,41 +1,48 @@
-C4Component
-    title Component Diagram - Single-Page Application container (frontend, C4 level 3)
+---
+title: "C4 Level 3 - Components of the Single-Page Application container (Client/src)"
+---
+flowchart TB
+    user(["<b>Browser user</b><br/>[Person]"])
+    api["<b>REST API</b><br/>[Container: Express]<br/>/api/v1"]
 
-    Container(api, "REST API", "Express", "/api/v1")
-    Person(user, "Browser user", "Visitor, Applicant, Company, Admin")
+    subgraph spa["Single-Page Application container"]
+        direction TB
+        app["<b>App.jsx + main.jsx</b><br/>Route table, Redux Provider,<br/>BrowserRouter"]
+        layouts["<b>Rootlayout</b><br/>MainLayout (Navbar + Footer)<br/>DashboardLayout (Sidebar)"]
+        guard["<b>ProtectedRoute</b><br/>useGetMeQuery; redirect to /login<br/>or to the user's own dashboard"]
+        subgraph pages["Pages"]
+            direction LR
+            pub["<b>Public pages</b><br/>Home, Jobs, JobsDetails,<br/>Companies, About, Contact"]
+            authp["<b>Auth pages</b><br/>Login, Registration, VerifyOtp,<br/>ForgotPassword, ResetPassword"]
+            appd["<b>Applicant dashboard</b><br/>ApplicantDashboard,<br/>ApplicantApplication"]
+            recd["<b>Recruiter dashboard</b><br/>RecruiterDashboard"]
+            admd["<b>Admin dashboard</b><br/>AdminDashboard, ManageApplicants,<br/>ManageCompanies, ManageJobPosts"]
+        end
+        modals["<b>Modals</b><br/>ApplyModal, PostJobModal, EditProfileModal,<br/>AddApplicantModal, AddCompanyModal"]
+        rtk["<b>RTK Query clients</b> (redux/)<br/>baseApi, authApi, publicApi, applicantApi,<br/>companyApi, adminApi: hooks, cache, tag invalidation"]
+        utils["<b>utils/helpers</b><br/>getError, formatDate, dashboardPath,<br/>STATUS_OPTIONS"]
+    end
 
-    Container_Boundary(spa, "Single-Page Application (Client/src)") {
-        Component(app, "App.jsx + main.jsx", "React Router, Redux Provider", "Route table, store provider")
-        Component(layouts, "Rootlayout", "MainLayout, DashboardLayout", "Navbar+Footer or Sidebar shells")
-        Component(guard, "ProtectedRoute", "Route guard", "useGetMeQuery; redirect to /login or own dashboard")
-        Component(pub, "Public pages", "Home, Jobs, JobsDetails, Companies, About, Contact", "Browse and apply entry point")
-        Component(authp, "Auth pages", "Login, Registration, VerifyOtp, ForgotPassword, ResetPassword", "Account access and recovery")
-        Component(appd, "Applicant dashboard", "ApplicantDashboard, ApplicantApplication", "Own applications")
-        Component(recd, "Recruiter dashboard", "RecruiterDashboard (886 lines)", "Jobs and candidates")
-        Component(admd, "Admin dashboard", "AdminDashboard, ManageApplicants, ManageCompanies, ManageJobPosts", "Moderation")
-        Component(modals, "Modals", "ApplyModal, PostJobModal, EditProfileModal, AddApplicantModal, AddCompanyModal", "Forms with uploads")
-        Component(rtk, "RTK Query clients", "redux/ baseApi, authApi, publicApi, applicantApi, companyApi, adminApi", "Endpoint hooks, caching, tag invalidation")
-        Component(utils, "utils/helpers", "getError, formatDate, dashboardPath, STATUS_OPTIONS", "Shared helpers")
-    }
+    user -- "navigates" --> app
+    app --> layouts
+    app --> guard
+    layouts --> pub
+    layouts --> authp
+    guard -- "role applicant" --> appd
+    guard -- "role company" --> recd
+    guard -- "role admin" --> admd
+    pub -- "ApplyModal" --> modals
+    recd -- "PostJobModal, EditProfileModal" --> modals
+    admd -- "Add modals" --> modals
+    guard -- "useGetMeQuery" --> rtk
+    pages -- "query and mutation hooks" --> rtk
+    modals -- "mutations" --> rtk
+    pages -. "uses" .-> utils
+    rtk -- "fetchBaseQuery<br/>[HTTP/JSON, cookie]" --> api
 
-    Rel(user, app, "Navigates")
-    Rel(app, layouts, "Renders")
-    Rel(app, guard, "Wraps dashboards")
-    Rel(layouts, pub, "Outlet")
-    Rel(layouts, authp, "Outlet")
-    Rel(guard, appd, "role applicant")
-    Rel(guard, recd, "role company")
-    Rel(guard, admd, "role admin")
-    Rel(pub, modals, "ApplyModal")
-    Rel(recd, modals, "PostJobModal, EditProfileModal")
-    Rel(admd, modals, "AddApplicantModal, AddCompanyModal")
-    Rel(guard, rtk, "useGetMeQuery")
-    Rel(pub, rtk, "Hooks")
-    Rel(authp, rtk, "Hooks")
-    Rel(appd, rtk, "Hooks")
-    Rel(recd, rtk, "Hooks")
-    Rel(admd, rtk, "Hooks")
-    Rel(modals, rtk, "Mutations")
-    Rel(rtk, api, "fetchBaseQuery", "HTTP/JSON, cookie")
-    Rel(pub, utils, "Uses")
-    Rel(authp, utils, "Uses")
+    classDef comp fill:#85bbf0,stroke:#5d82a8,color:#000;
+    classDef cont fill:#438dd5,stroke:#2e6295,color:#fff;
+    classDef person fill:#08427b,stroke:#052e56,color:#fff;
+    class app,layouts,guard,pub,authp,appd,recd,admd,modals,rtk,utils comp;
+    class api cont;
+    class user person;

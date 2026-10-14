@@ -1,61 +1,57 @@
 @startuml activity-job-posting-and-moderation
 title Activity Diagram - Job Post Creation, Pausing and Admin Moderation
 skinparam shadowing false
-|Company|
+
 start
-:Open "Post a Job" (PostJobModal);
-:Enter title, salary, deadline, optional fields;
-|React client|
-if (title, salary and deadline filled?) then (no)
-  :Show message, stay in modal;
-  stop
-endif
-:POST /company/jobs/create;
-|REST API|
-if (Authenticated company?) then (no)
-  :401 / 403;
-  stop
-endif
-if (title, salary, deadline present?) then (no)
-  :400;
-  stop
-elseif (Deadline valid and in the future?) then (no)
-  :400 "Deadline must be a valid future date";
-  stop
-endif
-:Generate slug (title + company + random suffix);
-:Create Job (status = active);
-:201 Created;
-|Public visitors|
-:Job appears in GET /jobs and /jobs/latest\n(only status = active are listed);
-|Company|
-partition "Managing the job" {
-  if (Action?) then (pause / resume)
-    |REST API|
-    if (Job belongs to company?) then (no)
-      :404;
-    elseif (status = closed?) then (yes)
-      :400 "closed by the admin";
-    else (no)
-      :Toggle active <-> paused;
-    endif
-  elseif (edit) then (edit)
-    |REST API|
-    :PUT /company/jobs/update/:id\n(validates deadline and status in {active, paused});
-  else (delete)
-    |REST API|
-    :Delete Job, delete its Applications\nand resume files;
+partition "Company posts a job (PostJobModal -> POST /company/jobs/create)" {
+  :Company enters title, salary, deadline and optional fields;
+  if (title, salary and deadline filled in the form?) then (no)
+    :Form shows a message, nothing is sent;
+    stop
   endif
+  if (Valid session and role = company?) then (no)
+    :API returns 401 / 403;
+    stop
+  endif
+  if (title, salary and deadline present?) then (no)
+    :API returns 400;
+    stop
+  elseif (Deadline is a valid future date?) then (no)
+    :API returns 400 "Deadline must be a valid future date";
+    stop
+  endif
+  :API generates slug (title + company + random suffix);
+  :API creates Job with status = active;
+  :API returns 201 Created;
 }
-|Admin|
-partition "Moderation" {
-  :Review all jobs (GET /admin/jobs);
-  if (Close or delete?) then (close)
-    |REST API|
-    :Set status = closed, moderatedBy = admin;
+:Job is listed publicly by GET /jobs and /jobs/latest\n(only status = active jobs are listed);
+
+partition "Company manages its own job" {
+  switch (Company action?)
+  case (pause / resume)
+    if (Job belongs to this company?) then (no)
+      :API returns 404;
+      stop
+    elseif (Job status = closed?) then (yes)
+      :API returns 400 "closed by the admin";
+      stop
+    else (no)
+      :Toggle status active <-> paused;
+    endif
+  case (edit)
+    :PUT /company/jobs/update/:id\nvalidates deadline (if sent) and status in {active, paused};
+  case (delete)
+    :Delete the Job, its Applications and their resume files;
+    stop
+  endswitch
+}
+
+partition "Admin moderation (role = admin)" {
+  :Admin lists all jobs (GET /admin/jobs, optional status filter);
+  if (Admin decision?) then (close)
+    :Set status = closed and moderatedBy = admin;
   else (delete)
-    |REST API|
-    :Delete Job and its Applications\nand resume files;
+    :Delete the Job, its Applications and their resume files;
   endif
 }
 stop

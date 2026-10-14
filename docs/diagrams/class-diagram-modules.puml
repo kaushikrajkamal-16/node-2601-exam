@@ -1,0 +1,70 @@
+@startuml class-diagram-modules
+title UML Class / Component View - Backend functional modules and the models they use
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+
+legend top left
+  Companion to class-diagram.puml. The backend is plain CommonJS modules, not classes;
+  <<module>> boxes show real require() dependencies only. Model boxes are the
+  Mongoose models from class-diagram.puml (attributes omitted here).
+endlegend
+
+class User <<Mongoose model>>
+class Job <<Mongoose model>>
+class Application <<Mongoose model>>
+
+  class authController <<module>>
+  class applicantController <<module>>
+  class companyController <<module>>
+  class adminController <<module>>
+  class jobController <<module>>
+  class authMiddleware <<module>> {
+    +authMiddleware(req, res, next)
+  }
+  class roleMiddleware <<module>> {
+    +roleMiddleware(...roles)
+  }
+  class helpers <<module>> {
+    +generateOTP() : String
+    +generateAccessToken(payload) : String
+    +isValidEmail(email) : Boolean
+    +isStrongPassword(pw) : Boolean
+    +makeSlug(...parts) : String
+    +makeInitials(name) : String
+    +toList(value, sep) : String[]
+    +formatJob(job) : Object
+    +statusLabel(status) : String
+    +daysLeft(deadline) : Number
+  }
+  class mailService <<module>> {
+    +sendMail({email, subject, otp}) : Promise
+  }
+  class uploadToCloudinary <<module>> {
+    +uploadToCloudinary(file, folder) : Promise
+    +deleteFromCloudinary(publicId, type) : Promise
+  }
+
+authController ..> User
+authController ..> helpers
+authController ..> mailService
+authController ..> uploadToCloudinary
+applicantController ..> Job
+applicantController ..> Application
+applicantController ..> uploadToCloudinary
+companyController ..> Job
+companyController ..> Application
+companyController ..> helpers
+companyController ..> uploadToCloudinary
+adminController ..> User
+adminController ..> Job
+adminController ..> Application
+adminController ..> uploadToCloudinary
+adminController ..> helpers
+jobController ..> Job
+jobController ..> User
+jobController ..> helpers
+authMiddleware ..> User
+note right of authMiddleware : verifies the accessToken cookie with jsonwebtoken (JWT_SEC)\nand loads User; does not use helpers
+@enduml
