@@ -34,7 +34,7 @@
 <rect x="54" y="261" width="300" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
 <rect x="54" y="272" width="180.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
 <rect x="54" y="290" width="112" height="28" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
-<text x="110.0" y="307.6" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="middle">Register Now  -></text>
+<text x="110.0" y="307.6" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="middle">Register Now  -&gt;</text>
 <line x1="54" y1="328" x2="370" y2="328" stroke="#bbb" stroke-width="1"/>
 <text x="54" y="348" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">500+</text>
 <text x="54" y="361" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Students Placed</text>
@@ -50,7 +50,7 @@
 <text x="40" y="388" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="bold" text-anchor="start">* VERIFIED OPPORTUNITIES</text>
 <text x="40" y="408" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">Latest Jobs</text>
 <text x="40" y="422" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Explore recently posted openings from verified employers across Bangladesh</text>
-<text x="630" y="408" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="end">View All Jobs  -></text>
+<text x="630" y="408" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="end">View All Jobs  -&gt;</text>
 <rect x="40.0" y="432" width="290.0" height="124" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
 <rect x="50.0" y="442" width="26" height="26" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
 <text x="84.0" y="454" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
@@ -264,7 +264,7 @@
 <text x="739" y="576" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="start">CTA title (if set)</text>
 <text x="739" y="590" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Applications are reviewed on a rolling basis.</text>
 <rect x="1037" y="568" width="154" height="30" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
-<text x="1114.0" y="586.42" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply for this Job  -></text>
+<text x="1114.0" y="586.42" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply for this Job  -&gt;</text>
 <text x="1191" y="608" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="end" font-style="italic">disabled: "Already Applied" / "Not Accepting Applications"</text>
 <rect x="670" y="626" width="590" height="308" rx="0" fill="#bdbdbd" stroke="#333" stroke-width="1.4" stroke-dasharray="5 4"/>
 <text x="678" y="639" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#333" font-weight="bold" text-anchor="start">Popup (ApplyModal) - dark overlay shown after clicking the Apply button</text>
@@ -376,7 +376,7 @@
 <text x="429.3235164835165" y="1329.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">12 Days left</text>
 <text x="401.4835164835165" y="1344" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
 <rect x="474.98901098901104" y="1325" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
-<text x="518.1758241758242" y="1336.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">8 Applicants (2 Hired) -></text>
+<text x="518.1758241758242" y="1336.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">8 Applicants (2 Hired) -&gt;</text>
 <rect x="569.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="586.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="603.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
@@ -392,7 +392,7 @@
 <text x="418.4035164835165" y="1361.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">Paused</text>
 <text x="401.4835164835165" y="1376" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
 <rect x="474.98901098901104" y="1357" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
-<text x="518.1758241758242" y="1368.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">3 Applicants (0 Hired) -></text>
+<text x="518.1758241758242" y="1368.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">3 Applicants (0 Hired) -&gt;</text>
 <rect x="569.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="586.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="603.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
@@ -408,11 +408,11 @@
 <text x="434.7835164835165" y="1393.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">Closed by admin</text>
 <text x="401.4835164835165" y="1408" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
 <rect x="474.98901098901104" y="1389" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
-<text x="518.1758241758242" y="1400.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">5 Applicants (1 Hired) -></text>
+<text x="518.1758241758242" y="1400.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">5 Applicants (1 Hired) -&gt;</text>
 <rect x="569.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="586.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
 <rect x="603.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
-<text x="394.0" y="1432" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle"><  1  2  ></text>
+<text x="394.0" y="1432" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">&lt;  1  2  &gt;</text>
 <rect x="158" y="1449" width="472" height="380" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
 <rect x="170" y="1459" width="22" height="22" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
 <text x="200" y="1472" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Candidates &amp; Hired Pipeline per Job</text>
@@ -512,7 +512,7 @@
 <rect x="470.6404494382023" y="1753" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
 <text x="474.6404494382023" y="1764.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
 <rect x="524.6404494382023" y="1755" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
-<text x="394.0" y="1821" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle"><  1  2  ></text>
+<text x="394.0" y="1821" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">&lt;  1  2  &gt;</text>
 <text x="335.0" y="1857" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 3 - Recruiter dashboard: profile, job posts table, candidates table with job filter</text>
 <rect x="660" y="1035" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
 <rect x="660" y="1035" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
@@ -538,7 +538,7 @@
 <rect x="671" y="1805" width="12" height="12" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
 <text x="688" y="1816" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">Logout</text>
 <rect x="788" y="1078" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
-<text x="801" y="1086" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="bold" text-anchor="start">Dashboard   >   My Applications</text>
+<text x="801" y="1086" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="bold" text-anchor="start">Dashboard   &gt;   My Applications</text>
 <text x="788" y="1111" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#222" font-weight="bold" text-anchor="start">My Applications</text>
 <text x="788" y="1124" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#555" font-weight="normal" text-anchor="start">Track, manage, and review your job applications and recruitment status across campus partner companies.</text>
 <rect x="788" y="1137" width="200" height="66" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
@@ -586,7 +586,7 @@
 <text x="930" y="1360.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
 <rect x="848" y="1371" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
 <text x="860" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
-<text x="948.8" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="948.8" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">&gt;</text>
 <text x="958.8" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Shortlisted (dd Mon)</text>
 <rect x="1128" y="1313" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
 <text x="1156.0" y="1325.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
@@ -613,9 +613,9 @@
 <text x="966" y="1464.5" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#222" font-weight="bold" text-anchor="start">Interview: dd Mon, 10:00</text>
 <rect x="848" y="1475" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
 <text x="860" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
-<text x="948.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="948.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">&gt;</text>
 <text x="958.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Shortlisted (dd Mon)</text>
-<text x="1036.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="1036.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">&gt;</text>
 <text x="1046.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Interview Scheduled (dd Mon)</text>
 <rect x="1128" y="1417" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
 <text x="1156.0" y="1429.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
@@ -639,7 +639,7 @@
 <text x="930" y="1568.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
 <rect x="848" y="1579" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
 <text x="860" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
-<text x="948.8" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="948.8" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">&gt;</text>
 <text x="958.8" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Approved (dd Mon)</text>
 <rect x="1128" y="1521" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
 <text x="1156.0" y="1533.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
