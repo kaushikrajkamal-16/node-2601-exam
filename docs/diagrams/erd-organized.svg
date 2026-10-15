@@ -1,0 +1,372 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1780 1072" width="1780" height="1072" font-family="Arial, Helvetica, sans-serif">
+<rect width="1780" height="1072" fill="#fff"/>
+<text x="890.0" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#111">Entity-Relationship Diagram - JobPortal BD (MongoDB collections)</text>
+<text x="890.0" y="55" text-anchor="middle" font-size="12" fill="#555">Crow's-foot notation. Foreign keys are ObjectId references checked in application code; MongoDB does not enforce them.</text>
+<rect x="60" y="110" width="480" height="616" rx="5" fill="#fff" stroke="#2f6aa8" stroke-width="2"/>
+<path d="M60,115 a5,5 0 0 1 5,-5 h470 a5,5 0 0 1 5,5 v39 h-480 z" fill="#2f6aa8"/>
+<text x="300.0" y="130" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">users</text>
+<text x="300.0" y="147" text-anchor="middle" font-size="11" font-style="italic" fill="#fff">collection  (one model for all three roles)</text>
+<rect x="61" y="154" width="478" height="22" fill="#f6f8fb"/>
+<rect x="66" y="158" width="30" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="81" y="169" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3261e">PK</text>
+<text x="104" y="169" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">_id</text>
+<text x="254" y="169" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="346" y="169" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="191" text-anchor="start" font-size="12.5" fill="#111">name</text>
+<text x="254" y="191" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="191" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">required, trim</text>
+<rect x="61" y="198" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="213" text-anchor="start" font-size="12.5" fill="#111">initials</text>
+<text x="254" y="213" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="213" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="66" y="224" width="30" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0" stroke-width="1"/>
+<text x="81" y="235" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="104" y="235" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">email</text>
+<text x="254" y="235" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="235" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">required, lowercase</text>
+<rect x="61" y="242" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="257" text-anchor="start" font-size="12.5" fill="#111">password</text>
+<text x="254" y="257" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="257" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">bcrypt hash</text>
+<text x="104" y="279" text-anchor="start" font-size="12.5" fill="#111">role</text>
+<text x="254" y="279" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="279" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">applicant | company | admin</text>
+<rect x="61" y="286" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="301" text-anchor="start" font-size="12.5" fill="#111">isVerified</text>
+<text x="254" y="301" text-anchor="start" font-size="11.5" fill="#555">Boolean</text>
+<text x="346" y="301" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">default false</text>
+<text x="104" y="323" text-anchor="start" font-size="12.5" fill="#111">emailverifyotp</text>
+<text x="254" y="323" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="323" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="61" y="330" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="345" text-anchor="start" font-size="12.5" fill="#111">emailverifyotpExpiry</text>
+<text x="254" y="345" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="346" y="345" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="367" text-anchor="start" font-size="12.5" fill="#111">resetotp</text>
+<text x="254" y="367" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="367" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="61" y="374" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="389" text-anchor="start" font-size="12.5" fill="#111">resetotpExpiry</text>
+<text x="254" y="389" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="346" y="389" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="411" text-anchor="start" font-size="12.5" fill="#111">otpPurpose</text>
+<text x="254" y="411" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="411" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">verify | reset</text>
+<rect x="61" y="418" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="433" text-anchor="start" font-size="12.5" fill="#111">phone</text>
+<text x="254" y="433" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="433" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="455" text-anchor="start" font-size="12.5" fill="#111">photo</text>
+<text x="254" y="455" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="455" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">Cloudinary URL</text>
+<rect x="61" y="462" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="477" text-anchor="start" font-size="12.5" fill="#111">photoPublicId</text>
+<text x="254" y="477" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="477" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="499" text-anchor="start" font-size="12.5" fill="#111">department</text>
+<text x="254" y="499" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="499" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">applicant only</text>
+<rect x="61" y="506" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="521" text-anchor="start" font-size="12.5" fill="#111">batch</text>
+<text x="254" y="521" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="521" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">applicant only</text>
+<text x="104" y="543" text-anchor="start" font-size="12.5" fill="#111">isFlagged</text>
+<text x="254" y="543" text-anchor="start" font-size="11.5" fill="#555">Boolean</text>
+<text x="346" y="543" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">applicant, default false</text>
+<rect x="61" y="550" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="565" text-anchor="start" font-size="12.5" fill="#111">industry</text>
+<text x="254" y="565" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="565" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">company only</text>
+<text x="104" y="587" text-anchor="start" font-size="12.5" fill="#111">description</text>
+<text x="254" y="587" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="587" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">company only</text>
+<rect x="61" y="594" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="609" text-anchor="start" font-size="12.5" fill="#111">address</text>
+<text x="254" y="609" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="609" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">company only</text>
+<text x="104" y="631" text-anchor="start" font-size="12.5" fill="#111">website</text>
+<text x="254" y="631" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="631" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">company only</text>
+<rect x="61" y="638" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="653" text-anchor="start" font-size="12.5" fill="#111">office</text>
+<text x="254" y="653" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="346" y="653" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">admin only</text>
+<rect x="66" y="664" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="81" y="675" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="104" y="675" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">addedBy</text>
+<text x="254" y="675" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="346" y="675" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref users, optional</text>
+<rect x="61" y="682" width="478" height="22" fill="#f6f8fb"/>
+<text x="104" y="697" text-anchor="start" font-size="12.5" fill="#111">createdAt</text>
+<text x="254" y="697" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="346" y="697" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="104" y="719" text-anchor="start" font-size="12.5" fill="#111">updatedAt</text>
+<text x="254" y="719" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="346" y="719" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="720" y="110" width="480" height="506" rx="5" fill="#fff" stroke="#3f8f3f" stroke-width="2"/>
+<path d="M720,115 a5,5 0 0 1 5,-5 h470 a5,5 0 0 1 5,5 v39 h-480 z" fill="#3f8f3f"/>
+<text x="960.0" y="130" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">jobs</text>
+<text x="960.0" y="147" text-anchor="middle" font-size="11" font-style="italic" fill="#fff">collection</text>
+<rect x="721" y="154" width="478" height="22" fill="#f6f8fb"/>
+<rect x="726" y="158" width="30" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="741" y="169" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3261e">PK</text>
+<text x="764" y="169" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">_id</text>
+<text x="914" y="169" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="169" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="726" y="180" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="741" y="191" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="764" y="191" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">company</text>
+<text x="914" y="191" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="191" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref users, required</text>
+<rect x="721" y="198" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="213" text-anchor="start" font-size="12.5" fill="#111">title</text>
+<text x="914" y="213" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="213" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">required, trim</text>
+<rect x="726" y="224" width="30" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0" stroke-width="1"/>
+<text x="741" y="235" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="764" y="235" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">slug</text>
+<text x="914" y="235" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="235" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">unique index</text>
+<rect x="721" y="242" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="257" text-anchor="start" font-size="12.5" fill="#111">department</text>
+<text x="914" y="257" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="257" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="279" text-anchor="start" font-size="12.5" fill="#111">type</text>
+<text x="914" y="279" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="279" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="286" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="301" text-anchor="start" font-size="12.5" fill="#111">mode</text>
+<text x="914" y="301" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="301" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="323" text-anchor="start" font-size="12.5" fill="#111">location</text>
+<text x="914" y="323" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="323" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="330" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="345" text-anchor="start" font-size="12.5" fill="#111">level</text>
+<text x="914" y="345" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="345" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="367" text-anchor="start" font-size="12.5" fill="#111">salary</text>
+<text x="914" y="367" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="367" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="374" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="389" text-anchor="start" font-size="12.5" fill="#111">salaryPeriod</text>
+<text x="914" y="389" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="389" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">default month</text>
+<text x="764" y="411" text-anchor="start" font-size="12.5" fill="#111">deadline</text>
+<text x="914" y="411" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1006" y="411" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="418" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="433" text-anchor="start" font-size="12.5" fill="#111">about</text>
+<text x="914" y="433" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="433" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="455" text-anchor="start" font-size="12.5" fill="#111">skills</text>
+<text x="914" y="455" text-anchor="start" font-size="11.5" fill="#555">String[]</text>
+<text x="1006" y="455" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="462" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="477" text-anchor="start" font-size="12.5" fill="#111">requirements</text>
+<text x="914" y="477" text-anchor="start" font-size="11.5" fill="#555">String[]</text>
+<text x="1006" y="477" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="499" text-anchor="start" font-size="12.5" fill="#111">benefits</text>
+<text x="914" y="499" text-anchor="start" font-size="11.5" fill="#555">String[]</text>
+<text x="1006" y="499" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="506" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="521" text-anchor="start" font-size="12.5" fill="#111">ctaTitle</text>
+<text x="914" y="521" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="521" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="543" text-anchor="start" font-size="12.5" fill="#111">status</text>
+<text x="914" y="543" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="543" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">active | paused | closed</text>
+<rect x="721" y="550" width="478" height="22" fill="#f6f8fb"/>
+<rect x="726" y="554" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="741" y="565" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="764" y="565" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">moderatedBy</text>
+<text x="914" y="565" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="565" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref users, optional</text>
+<text x="764" y="587" text-anchor="start" font-size="12.5" fill="#111">createdAt</text>
+<text x="914" y="587" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1006" y="587" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="594" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="609" text-anchor="start" font-size="12.5" fill="#111">updatedAt</text>
+<text x="914" y="609" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1006" y="609" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="720" y="688" width="480" height="334" rx="5" fill="#fff" stroke="#b8902a" stroke-width="2"/>
+<path d="M720,693 a5,5 0 0 1 5,-5 h470 a5,5 0 0 1 5,5 v39 h-480 z" fill="#b8902a"/>
+<text x="960.0" y="708" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">applications</text>
+<text x="960.0" y="725" text-anchor="middle" font-size="11" font-style="italic" fill="#fff">collection</text>
+<rect x="721" y="732" width="478" height="22" fill="#f6f8fb"/>
+<rect x="726" y="736" width="30" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="741" y="747" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3261e">PK</text>
+<text x="764" y="747" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">_id</text>
+<text x="914" y="747" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="747" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="726" y="758" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="741" y="769" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="764" y="769" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">job</text>
+<text x="914" y="769" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="769" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref jobs, required</text>
+<rect x="721" y="776" width="478" height="22" fill="#f6f8fb"/>
+<rect x="726" y="780" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="741" y="791" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="764" y="791" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">applicant</text>
+<text x="914" y="791" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="791" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref users, required</text>
+<rect x="726" y="802" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="741" y="813" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="764" y="813" text-anchor="start" font-size="12.5" font-weight="700" fill="#111">company</text>
+<text x="914" y="813" text-anchor="start" font-size="11.5" fill="#555">ObjectId</text>
+<text x="1006" y="813" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">ref users, copy of job.company</text>
+<rect x="721" y="820" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="835" text-anchor="start" font-size="12.5" fill="#111">resume</text>
+<text x="914" y="835" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="835" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">Cloudinary URL, required</text>
+<text x="764" y="857" text-anchor="start" font-size="12.5" fill="#111">resumePublicId</text>
+<text x="914" y="857" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="857" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="864" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="879" text-anchor="start" font-size="12.5" fill="#111">resumeType</text>
+<text x="914" y="879" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="879" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">default image</text>
+<text x="764" y="901" text-anchor="start" font-size="12.5" fill="#111">resumeName</text>
+<text x="914" y="901" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="901" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="908" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="923" text-anchor="start" font-size="12.5" fill="#111">status</text>
+<text x="914" y="923" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="923" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">pending ... rejected (6)</text>
+<text x="764" y="945" text-anchor="start" font-size="12.5" fill="#111">interviewNote</text>
+<text x="914" y="945" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1006" y="945" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<rect x="721" y="952" width="478" height="22" fill="#f6f8fb"/>
+<text x="764" y="967" text-anchor="start" font-size="12.5" fill="#111">createdAt</text>
+<text x="914" y="967" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1006" y="967" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="764" y="989" text-anchor="start" font-size="12.5" fill="#111">updatedAt</text>
+<text x="914" y="989" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1006" y="989" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<line x1="720" y1="996" x2="1200" y2="996" stroke="#b8902a" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="730" y="1013" text-anchor="start" font-size="11" font-style="italic" fill="#333">unique index (job, applicant)</text>
+<rect x="1330" y="718" width="330" height="88" rx="5" fill="#fff" stroke="#7a4fb0" stroke-width="2"/>
+<path d="M1330,723 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#7a4fb0"/>
+<text x="1495.0" y="738" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">statusHistory[]</text>
+<text x="1495.0" y="755" text-anchor="middle" font-size="11" font-style="italic" fill="#fff">embedded subdocument (inside applications)</text>
+<rect x="1331" y="762" width="328" height="22" fill="#f6f8fb"/>
+<text x="1344" y="777" text-anchor="start" font-size="12.5" fill="#111">status</text>
+<text x="1434" y="777" text-anchor="start" font-size="11.5" fill="#555">String</text>
+<text x="1494" y="777" text-anchor="start" font-size="10.5" font-style="italic" fill="#666"></text>
+<text x="1344" y="799" text-anchor="start" font-size="12.5" fill="#111">changedAt</text>
+<text x="1434" y="799" text-anchor="start" font-size="11.5" fill="#555">Date</text>
+<text x="1494" y="799" text-anchor="start" font-size="10.5" font-style="italic" fill="#666">default now</text>
+<line x1="540" y1="187.0" x2="720" y2="187.0" stroke="#333" stroke-width="1.6"/>
+<line x1="549" y1="179.0" x2="549" y2="195.0" stroke="#222" stroke-width="1.8"/>
+<line x1="555" y1="179.0" x2="555" y2="195.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="187.0" x2="720" y2="196.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="187.0" x2="720" y2="187.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="187.0" x2="720" y2="178.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="698.0" cy="187.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="598.0" y="168.0" width="64" height="17" rx="3" fill="#fff"/>
+<text x="630.0" y="181.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">company</text>
+<line x1="540" y1="561.0" x2="720" y2="561.0" stroke="#333" stroke-width="1.6"/>
+<line x1="549" y1="553.0" x2="549" y2="569.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="559.0" cy="561.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="561.0" x2="720" y2="570.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="561.0" x2="720" y2="561.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="561.0" x2="720" y2="552.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="698.0" cy="561.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="588.0" y="542.0" width="84" height="17" rx="3" fill="#fff"/>
+<text x="630.0" y="555.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">moderatedBy</text>
+<polyline points="540,696 658,696 658,787.0 720,787.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<polyline points="540,714 622,714 622,809.0 720,809.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="549" y1="688" x2="549" y2="704" stroke="#222" stroke-width="1.8"/>
+<line x1="555" y1="688" x2="555" y2="704" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="787.0" x2="720" y2="796.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="787.0" x2="720" y2="787.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="787.0" x2="720" y2="778.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="698.0" cy="787.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="549" y1="706" x2="549" y2="722" stroke="#222" stroke-width="1.8"/>
+<line x1="555" y1="706" x2="555" y2="722" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="809.0" x2="720" y2="818.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="809.0" x2="720" y2="809.0" stroke="#222" stroke-width="1.8"/>
+<line x1="705" y1="809.0" x2="720" y2="800.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="698.0" cy="809.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="637.0" y="754.0" width="58" height="17" rx="3" fill="#fff"/>
+<text x="666" y="767.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">applicant</text>
+<rect x="542.0" y="820.0" width="100" height="17" rx="3" fill="#fff"/>
+<text x="592" y="833.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">company (copy)</text>
+<line x1="960.0" y1="616" x2="960.0" y2="688" stroke="#333" stroke-width="1.6"/>
+<line x1="968.0" y1="625" x2="952.0" y2="625" stroke="#222" stroke-width="1.8"/>
+<line x1="968.0" y1="631" x2="952.0" y2="631" stroke="#222" stroke-width="1.8"/>
+<line x1="960.0" y1="673" x2="951.0" y2="688" stroke="#222" stroke-width="1.8"/>
+<line x1="960.0" y1="673" x2="960.0" y2="688" stroke="#222" stroke-width="1.8"/>
+<line x1="960.0" y1="673" x2="969.0" y2="688" stroke="#222" stroke-width="1.8"/>
+<circle cx="960.0" cy="666.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="965.0" y="643.0" width="34" height="17" rx="3" fill="#fff"/>
+<text x="982.0" y="656.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">job</text>
+<polyline points="60,671.0 30,671.0 30,165.0 60,165.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="45" y1="671.0" x2="60" y2="680.0" stroke="#222" stroke-width="1.8"/>
+<line x1="45" y1="671.0" x2="60" y2="671.0" stroke="#222" stroke-width="1.8"/>
+<line x1="45" y1="671.0" x2="60" y2="662.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="38.0" cy="671.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="51" y1="173.0" x2="51" y2="157.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="41.0" cy="165.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="22" y="418.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222" transform="rotate(-90 22 418.0)">addedBy  (admin added this user)</text>
+<line x1="1200" y1="745.0" x2="1330" y2="745.0" stroke="#7a4fb0" stroke-width="1.6" stroke-dasharray="6 4"/>
+<line x1="1209" y1="737.0" x2="1209" y2="753.0" stroke="#7a4fb0" stroke-width="1.8"/>
+<line x1="1215" y1="737.0" x2="1215" y2="753.0" stroke="#7a4fb0" stroke-width="1.8"/>
+<line x1="1315" y1="745.0" x2="1330" y2="754.0" stroke="#7a4fb0" stroke-width="1.8"/>
+<line x1="1315" y1="745.0" x2="1330" y2="745.0" stroke="#7a4fb0" stroke-width="1.8"/>
+<line x1="1315" y1="745.0" x2="1330" y2="736.0" stroke="#7a4fb0" stroke-width="1.8"/>
+<circle cx="1308.0" cy="745.0" r="5" fill="#fff" stroke="#7a4fb0" stroke-width="1.8"/>
+<rect x="1233.0" y="724.0" width="64" height="17" rx="3" fill="#fff"/>
+<text x="1265.0" y="737.0" text-anchor="middle" font-size="11" font-style="italic" fill="#222">embedded</text>
+<rect x="1250" y="110" width="470" height="478" rx="6" fill="#fffde7" stroke="#bfb36b"/>
+<text x="1264" y="134" text-anchor="start" font-size="14" font-weight="700" fill="#111">Legend and notes</text>
+<rect x="1264" y="144" width="30" height="14" rx="3" fill="#fde8e6" stroke="#b3261e"/>
+<text x="1279" y="155" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3261e">PK</text>
+<text x="1304" y="156" text-anchor="start" font-size="12" fill="#111">primary key (_id, created by MongoDB)</text>
+<rect x="1264" y="168" width="30" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4"/>
+<text x="1279" y="179" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="1304" y="180" text-anchor="start" font-size="12" fill="#111">foreign key: ObjectId reference to another collection</text>
+<rect x="1264" y="192" width="30" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0"/>
+<text x="1279" y="203" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="1304" y="204" text-anchor="start" font-size="12" fill="#111">unique index (users.email, jobs.slug)</text>
+<line x1="1284" y1="240" x2="1328" y2="240" stroke="#333" stroke-width="1.6"/>
+<line x1="1293" y1="232" x2="1293" y2="248" stroke="#222" stroke-width="1.8"/>
+<line x1="1299" y1="232" x2="1299" y2="248" stroke="#222" stroke-width="1.8"/>
+<text x="1344" y="244" text-anchor="start" font-size="12" fill="#111">exactly one</text>
+<line x1="1284" y1="266" x2="1328" y2="266" stroke="#333" stroke-width="1.6"/>
+<line x1="1293" y1="258" x2="1293" y2="274" stroke="#222" stroke-width="1.8"/>
+<circle cx="1303.0" cy="266.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="1344" y="270" text-anchor="start" font-size="12" fill="#111">zero or one</text>
+<line x1="1284" y1="292" x2="1328" y2="292" stroke="#333" stroke-width="1.6"/>
+<line x1="1299" y1="292" x2="1284" y2="283" stroke="#222" stroke-width="1.8"/>
+<line x1="1299" y1="292" x2="1284" y2="292" stroke="#222" stroke-width="1.8"/>
+<line x1="1299" y1="292" x2="1284" y2="301" stroke="#222" stroke-width="1.8"/>
+<circle cx="1306.0" cy="292.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="1344" y="296" text-anchor="start" font-size="12" fill="#111">zero or many</text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="342" text-anchor="start" font-size="1" fill="#111"></text>
+<text x="1264" y="336" text-anchor="start" font-size="11.5" fill="#111">MongoDB stores documents in collections, not rows in tables.</text>
+<text x="1264" y="353" text-anchor="start" font-size="11.5" fill="#111">Only these constraints exist in the database:</text>
+<text x="1264" y="370" text-anchor="start" font-size="11.5" fill="#111">  unique index users.email, unique index jobs.slug,</text>
+<text x="1264" y="387" text-anchor="start" font-size="11.5" fill="#111">  unique compound index applications (job, applicant).</text>
+<text x="1264" y="404" text-anchor="start" font-size="11.5" fill="#111">Every foreign key above is a Mongoose reference that the</text>
+<text x="1264" y="421" text-anchor="start" font-size="11.5" fill="#111">code resolves with populate(); deleting a user, company or</text>
+<text x="1264" y="438" text-anchor="start" font-size="11.5" fill="#111">job removes related documents in code, not by cascade rules.</text>
+<text x="1264" y="455" text-anchor="start" font-size="11.5" fill="#111">applications.company duplicates jobs.company so a company</text>
+<text x="1264" y="472" text-anchor="start" font-size="11.5" fill="#111">can list its candidates quickly.</text>
+<text x="1264" y="489" text-anchor="start" font-size="11.5" fill="#111">statusHistory[] is embedded in each application document;</text>
+<text x="1264" y="506" text-anchor="start" font-size="11.5" fill="#111">it is not a separate collection.</text>
+<text x="1264" y="523" text-anchor="start" font-size="11.5" fill="#111">users holds all roles; the role field and the applicant /</text>
+<text x="1264" y="540" text-anchor="start" font-size="11.5" fill="#111">company / admin columns decide which fields are used.</text>
+</svg>
