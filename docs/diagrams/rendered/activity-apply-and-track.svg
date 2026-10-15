@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1700" width="1500" height="1700">
+<defs><marker id="m" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L11,4.5 L0,9 z" fill="#333"/></marker></defs>
+<rect width="1500" height="1700" fill="#fff"/>
+<text x="750.0" y="36" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#111" font-weight="bold" text-anchor="middle">Activity Diagram - Apply for a job and follow the application</text>
+<text x="750.0" y="58" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#666" font-weight="normal" text-anchor="middle">Swimlanes: Applicant, Server (Express controllers + Cloudinary + MongoDB), Company. Derived from ApplyJob, UpdateApplicationStatus and WithdrawApplication.</text>
+<rect x="40" y="80" width="440" height="1600" fill="#eef5ff" stroke="#3b82c4" stroke-width="1.5"/>
+<rect x="40" y="80" width="440" height="34" fill="#3b82c4"/>
+<text x="260.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">APPLICANT</text>
+<rect x="480" y="80" width="540" height="1600" fill="#eef8ef" stroke="#2e8b4f" stroke-width="1.5"/>
+<rect x="480" y="80" width="540" height="34" fill="#2e8b4f"/>
+<text x="750.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">SERVER</text>
+<rect x="1020" y="80" width="440" height="1600" fill="#fdf0f6" stroke="#b03a6e" stroke-width="1.5"/>
+<rect x="1020" y="80" width="440" height="34" fill="#b03a6e"/>
+<text x="1240.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">COMPANY</text>
+<circle cx="260" cy="150" r="11" fill="#222"/>
+<polyline points="260,161 260,190" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="150.0" y="190" width="220" height="50" rx="14" fill="#fff" stroke="#3b82c4" stroke-width="2"/>
+<text x="260" y="219.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Open job details</text>
+<polyline points="260,240 260,262" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polygon points="260,262.0 370.0,310 260,358.0 150.0,310" fill="#fff8e1" stroke="#c9a227" stroke-width="2"/>
+<text x="260" y="306.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">Logged in as</text>
+<text x="260" y="322.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">applicant?</text>
+<text x="270" y="368" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="start">yes</text>
+<polyline points="260,358 260,385" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="370,310 640,310" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="505" y="300" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">no</text>
+<rect x="640.0" y="285" width="220" height="50" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="305.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Log in or register</text>
+<text x="750" y="322.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">(auth flow, sets JWT cookie)</text>
+<polyline points="750,285 750,215 370,215" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="150.0" y="385" width="220" height="50" rx="14" fill="#fff" stroke="#3b82c4" stroke-width="2"/>
+<text x="260" y="405.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Choose resume file</text>
+<text x="260" y="422.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">(pdf / doc / docx)</text>
+<polyline points="260,435 260,455" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="150.0" y="455" width="220" height="50" rx="14" fill="#fff" stroke="#3b82c4" stroke-width="2"/>
+<text x="260" y="484.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Click Apply (send resume)</text>
+<polyline points="370,480 640,480" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="640.0" y="455" width="220" height="50" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="475.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Receive request</text>
+<text x="750" y="492.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">auth + role = applicant</text>
+<polyline points="750,505 750,552" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polygon points="750,552.0 870.0,600 750,648.0 630.0,600" fill="#fff8e1" stroke="#c9a227" stroke-width="2"/>
+<text x="750" y="596.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">File type and size</text>
+<text x="750" y="612.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">valid? (max 5 MB)</text>
+<text x="760" y="668" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="start">yes</text>
+<polyline points="750,648 750,692" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polygon points="750,690.0 900.0,740 750,790.0 600.0,740" fill="#fff8e1" stroke="#c9a227" stroke-width="2"/>
+<text x="750" y="736.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">Job exists and active, deadline</text>
+<text x="750" y="752.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">open, not yet applied?</text>
+<text x="760" y="810" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="start">yes</text>
+<polyline points="750,790 750,840" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="150.0" y="640" width="220" height="60" rx="14" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+<text x="260" y="665.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Show error message</text>
+<text x="260" y="682.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">(400 / 404 / 409)</text>
+<polyline points="630,600 260,600 260,640" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="450" y="590" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">no: 400</text>
+<polyline points="600,740 260,740 260,700" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="450" y="730" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="middle">no: 400 / 404 / 409</text>
+<polyline points="150,670 70,670 70,410 150,410" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<text x="78" y="545" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#777" font-weight="normal" text-anchor="start" font-style="italic">retry</text>
+<rect x="620.0" y="840" width="260" height="50" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="869.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Upload resume to Cloudinary</text>
+<polyline points="750,890 750,925" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="600.0" y="925" width="300" height="65" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="953.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Create application in MongoDB</text>
+<text x="750" y="970.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">status = pending, history [pending]</text>
+<polyline points="750,990 750,1020" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="260" y="1020" width="980" height="6" fill="#222"/>
+<polyline points="260,1026 260,1055" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="1240,1026 1240,1055" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<line x1="750" y1="1020" x2="750" y2="1026" stroke="#222" stroke-width="2"/>
+<rect x="140.0" y="1055" width="240" height="55" rx="14" fill="#fff" stroke="#3b82c4" stroke-width="2"/>
+<text x="260" y="1078.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">See "Applied" in</text>
+<text x="260" y="1095.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">My applications (pending)</text>
+<rect x="1120.0" y="1055" width="240" height="55" rx="14" fill="#fff" stroke="#b03a6e" stroke-width="2"/>
+<text x="1240" y="1078.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Review candidate list</text>
+<text x="1240" y="1095.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">(only own company)</text>
+<polyline points="1240,1110 1240,1150" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="1115.0" y="1150" width="250" height="80" rx="14" fill="#fff" stroke="#b03a6e" stroke-width="2"/>
+<text x="1240" y="1177.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Set status: shortlisted,</text>
+<text x="1240" y="1194.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">exam, interview, approved</text>
+<text x="1240" y="1211.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">or rejected (+ interview note)</text>
+<polyline points="1115,1190 900,1190" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="600.0" y="1150" width="300" height="80" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="1177.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Check own application and value,</text>
+<text x="750" y="1194.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">save status, append</text>
+<text x="750" y="1211.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">{status, changedAt} to history</text>
+<polyline points="750,1230 750,1290 370,1290" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="150.0" y="1265" width="220" height="50" rx="14" fill="#fff" stroke="#3b82c4" stroke-width="2"/>
+<text x="260" y="1285.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Track status timeline</text>
+<text x="260" y="1302.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">in My applications</text>
+<polyline points="260,1315 260,1345" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<polygon points="260,1347.0 370.0,1395 260,1443.0 150.0,1395" fill="#fff8e1" stroke="#c9a227" stroke-width="2"/>
+<text x="260" y="1391.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">Withdraw</text>
+<text x="260" y="1407.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">application?</text>
+<polyline points="150,1395 60,1395 60,1290 150,1290" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<text x="72" y="1340" font-family="Helvetica,Arial,sans-serif" font-size="11.5" fill="#777" font-weight="normal" text-anchor="start" font-style="italic">no (keep waiting)</text>
+<polyline points="370,1395 520,1395 520,1330 750,1330 750,1347" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="440" y="1385" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">yes</text>
+<polygon points="750,1347.0 860.0,1395 750,1443.0 640.0,1395" fill="#fff8e1" stroke="#c9a227" stroke-width="2"/>
+<text x="750" y="1391.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">Application status</text>
+<text x="750" y="1407.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="normal" text-anchor="middle">= approved?</text>
+<polyline points="750,1443 750,1470 370,1470" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="740" y="1463" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#c0392b" font-weight="bold" text-anchor="end">yes</text>
+<rect x="150.0" y="1445" width="220" height="50" rx="14" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+<text x="260" y="1465.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Blocked: 400 "can't withdraw</text>
+<text x="260" y="1482.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">an approved application"</text>
+<polyline points="150,1470 60,1470 60,1395" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<polyline points="860,1395 940,1395 940,1530 880,1530" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<text x="900" y="1385" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333" font-weight="bold" text-anchor="middle">no</text>
+<rect x="620.0" y="1500" width="260" height="60" rx="14" fill="#fff" stroke="#2e8b4f" stroke-width="2"/>
+<text x="750" y="1517.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Delete resume file and</text>
+<text x="750" y="1534.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">application record</text>
+<text x="750" y="1551.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">(WithdrawApplication)</text>
+<polyline points="750,1560 750,1604" fill="none" stroke="#333" stroke-width="2" marker-end="url(#m)"/>
+<rect x="1115.0" y="1370" width="250" height="60" rx="14" fill="#fff" stroke="#999" stroke-width="2"/>
+<text x="1240" y="1387.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">Also possible: company</text>
+<text x="1240" y="1404.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">DeleteCandidate (any status);</text>
+<text x="1240" y="1421.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#222" font-weight="normal" text-anchor="middle">cascade if job/account deleted</text>
+<circle cx="750" cy="1620" r="16" fill="#fff" stroke="#222" stroke-width="2.5"/><circle cx="750" cy="1620" r="8" fill="#222"/>
+</svg>
