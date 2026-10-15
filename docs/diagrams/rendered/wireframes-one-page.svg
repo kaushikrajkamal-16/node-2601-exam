@@ -1,449 +1,654 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1790" width="1300" height="1790"><rect width="1300" height="1790" fill="#fff"/>
-<text x="650.0" y="40" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#222" font-weight="bold" text-anchor="middle">Low-Fidelity Wireframes - JobPortal BD</text>
-<text x="650.0" y="62" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#555" font-weight="normal" text-anchor="middle">Grey boxes are placeholders for images, text and data. Layout follows the existing React pages.</text>
-<rect x="30" y="95" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
-<rect x="30" y="95" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
-<circle cx="44" cy="108" r="4" fill="#fff" stroke="#555"/>
-<circle cx="58" cy="108" r="4" fill="#fff" stroke="#555"/>
-<circle cx="72" cy="108" r="4" fill="#fff" stroke="#555"/>
-<rect x="100" y="100" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="110" y="112" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/</text>
-<rect x="40" y="129" width="590" height="36" rx="0" fill="#f6f6f6" stroke="#333" stroke-width="1.5"/>
-<rect x="52" y="139" width="16" height="16" rx="3" fill="#999" stroke="#333" stroke-width="1.2"/>
-<text x="74" y="152" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">JobPortal BD</text>
-<text x="230" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Home</text>
-<text x="294" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Jobs</text>
-<text x="358" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Companies</text>
-<text x="422" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">About</text>
-<text x="486" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Contact</text>
-<rect x="558" y="137" width="60" height="20" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="588.0" y="151.0" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold" text-anchor="middle">Login</text>
-<rect x="40" y="175" width="590" height="230" rx="0" fill="#f9f9f9" stroke="#999" stroke-width="1.2" stroke-dasharray="5 4"/>
-<text x="54" y="197" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#777" font-weight="bold" text-anchor="start">HERO</text>
-<rect x="54" y="209" width="200" height="10" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<rect x="54" y="227" width="250" height="10" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<rect x="54" y="251" width="260" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="54" y="263" width="260" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="54" y="275" width="156.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="54" y="299" width="110" height="28" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="109.0" y="317.0" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#fff" font-weight="bold" text-anchor="middle">Browse Jobs</text>
-<rect x="174" y="299" width="110" height="28" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="229.0" y="317.0" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="middle">For Companies</text>
-<rect x="340" y="205" width="272" height="150" rx="0" fill="#f0f0f0" stroke="#777" stroke-width="1.2"/>
-<line x1="340" y1="205" x2="612" y2="355" stroke="#999" stroke-width="1"/>
-<line x1="612" y1="205" x2="340" y2="355" stroke="#999" stroke-width="1"/>
-<rect x="450.0" y="271.0" width="52" height="18" rx="0" fill="#f0f0f0" stroke="none" stroke-width="1.5"/>
-<text x="476.0" y="284.0" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="middle">hero image</text>
-<line x1="54" y1="355" x2="616" y2="355" stroke="#bbb" stroke-width="1"/>
-<text x="80" y="378" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">500+</text>
-<text x="80" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Students Placed</text>
-<text x="260" y="378" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">100+</text>
-<text x="260" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Companies Hiring</text>
-<text x="440" y="378" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">50+</text>
-<text x="440" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Placement Drives</text>
-<text x="40" y="433" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">Latest Jobs</text>
-<text x="630" y="433" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="end">View All Jobs  ></text>
-<rect x="40.0" y="445" width="190.0" height="170" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="50.0" y="455" width="28" height="28" rx="4" fill="#ddd" stroke="#777" stroke-width="1"/>
-<rect x="86.0" y="459" width="130.0" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<rect x="86.0" y="473" width="100.0" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="50.0" y="497" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="50.0" y="508" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="50.0" y="519" width="102.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="50.0" y="537" width="52" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="76.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Full-time</text>
-<rect x="108.0" y="537" width="46" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="131.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Remote</text>
-<text x="50.0" y="579" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Salary / month</text>
-<rect x="162.0" y="567" width="58" height="24" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="191.0" y="583.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Details</text>
-<rect x="240.0" y="445" width="190.0" height="170" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="250.0" y="455" width="28" height="28" rx="4" fill="#ddd" stroke="#777" stroke-width="1"/>
-<rect x="286.0" y="459" width="130.0" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<rect x="286.0" y="473" width="100.0" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="250.0" y="497" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="250.0" y="508" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="250.0" y="519" width="102.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="250.0" y="537" width="52" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="276.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Full-time</text>
-<rect x="308.0" y="537" width="46" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="331.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Remote</text>
-<text x="250.0" y="579" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Salary / month</text>
-<rect x="362.0" y="567" width="58" height="24" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="391.0" y="583.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Details</text>
-<rect x="440.0" y="445" width="190.0" height="170" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="450.0" y="455" width="28" height="28" rx="4" fill="#ddd" stroke="#777" stroke-width="1"/>
-<rect x="486.0" y="459" width="130.0" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<rect x="486.0" y="473" width="100.0" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="450.0" y="497" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="450.0" y="508" width="170.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="450.0" y="519" width="102.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="450.0" y="537" width="52" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="476.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Full-time</text>
-<rect x="508.0" y="537" width="46" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="531.0" y="551" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Remote</text>
-<text x="450.0" y="579" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Salary / month</text>
-<rect x="562.0" y="567" width="58" height="24" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="591.0" y="583.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Details</text>
-<text x="40" y="645" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">How it works</text>
-<rect x="40.0" y="657" width="190.0" height="100" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<circle cx="64.0" cy="683" r="13" fill="#333"/>
-<text x="64.0" y="688" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">1</text>
-<text x="86.0" y="687" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Create account</text>
-<rect x="52.0" y="707" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="52.0" y="718" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="52.0" y="729" width="99.6" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="240.0" y="657" width="190.0" height="100" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<circle cx="264.0" cy="683" r="13" fill="#333"/>
-<text x="264.0" y="688" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">2</text>
-<text x="286.0" y="687" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Search and apply</text>
-<rect x="252.0" y="707" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="252.0" y="718" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="252.0" y="729" width="99.6" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="440.0" y="657" width="190.0" height="100" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<circle cx="464.0" cy="683" r="13" fill="#333"/>
-<text x="464.0" y="688" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">3</text>
-<text x="486.0" y="687" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Track your status</text>
-<rect x="452.0" y="707" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="452.0" y="718" width="166.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="452.0" y="729" width="99.6" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="40" y="771" width="590" height="70" rx="8" fill="#333" stroke="#222" stroke-width="1.5"/>
-<text x="60" y="801" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">Ready to start?</text>
-<rect x="60" y="811" width="180" height="6" rx="3" fill="#bbb" stroke="none" stroke-width="0"/>
-<rect x="490" y="791" width="120" height="30" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="550.0" y="810.0" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="middle">Register now</text>
-<rect x="40" y="847" width="590" height="38" rx="0" fill="#e6e6e6" stroke="#333" stroke-width="1.5"/>
-<text x="54" y="870" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444" font-weight="normal" text-anchor="start">Footer: About  |  Contact  |  Terms  |  (c) JobPortal BD</text>
-<text x="335.0" y="917" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 1 - Home page: hero, latest jobs, how it works</text>
-<rect x="660" y="95" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
-<rect x="660" y="95" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
-<circle cx="674" cy="108" r="4" fill="#fff" stroke="#555"/>
-<circle cx="688" cy="108" r="4" fill="#fff" stroke="#555"/>
-<circle cx="702" cy="108" r="4" fill="#fff" stroke="#555"/>
-<rect x="730" y="100" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="740" y="112" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/jobs/:slug</text>
-<rect x="670" y="129" width="590" height="36" rx="0" fill="#f6f6f6" stroke="#333" stroke-width="1.5"/>
-<rect x="682" y="139" width="16" height="16" rx="3" fill="#999" stroke="#333" stroke-width="1.2"/>
-<text x="704" y="152" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">JobPortal BD</text>
-<text x="860" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Home</text>
-<text x="924" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Jobs</text>
-<text x="988" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Companies</text>
-<text x="1052" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">About</text>
-<text x="1116" y="152" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="normal" text-anchor="start">Contact</text>
-<rect x="1188" y="137" width="60" height="20" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="1218.0" y="151.0" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold" text-anchor="middle">Login</text>
-<text x="670" y="187" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#555" font-weight="normal" text-anchor="start">Home  >  Jobs  >  Job title</text>
-<rect x="670" y="199" width="590" height="92" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="682" y="211" width="44" height="44" rx="6" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="704" y="238" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="738" y="227" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#222" font-weight="bold" text-anchor="start">Job title (h1)</text>
-<text x="738" y="247" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#555" font-weight="normal" text-anchor="start">Company name  -  Location</text>
-<rect x="738" y="259" width="60" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="768.0" y="273" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Full-time</text>
-<rect x="804" y="259" width="56" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="832.0" y="273" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">On-site</text>
-<rect x="866" y="259" width="46" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="889.0" y="273" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Active</text>
-<rect x="670" y="303" width="590" height="52" rx="6" fill="#f6f6f6" stroke="#999" stroke-width="1.2"/>
-<text x="686" y="323" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Department</text>
-<rect x="686" y="331" width="90" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<text x="831" y="323" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Experience</text>
-<rect x="831" y="331" width="90" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<text x="976" y="323" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Deadline</text>
-<rect x="976" y="331" width="90" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<text x="1121" y="323" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Salary</text>
-<rect x="1121" y="331" width="90" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<text x="670" y="385" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="start">About the job</text>
-<rect x="670" y="399" width="365.8" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="670" y="412" width="365.8" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="670" y="425" width="365.8" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="670" y="438" width="365.8" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="670" y="451" width="365.8" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="670" y="464" width="219.48" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<text x="670" y="485" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="start">Requirements</text>
-<circle cx="675" cy="508" r="3" fill="#777"/>
-<rect x="686" y="505" width="325.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<circle cx="675" cy="525" r="3" fill="#777"/>
-<rect x="686" y="522" width="305.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<circle cx="675" cy="542" r="3" fill="#777"/>
-<rect x="686" y="539" width="285.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<text x="670" y="585" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="start">Benefits</text>
-<circle cx="675" cy="608" r="3" fill="#777"/>
-<rect x="686" y="605" width="325.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<circle cx="675" cy="625" r="3" fill="#777"/>
-<rect x="686" y="622" width="305.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<circle cx="675" cy="642" r="3" fill="#777"/>
-<rect x="686" y="639" width="285.8" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="1051.8" y="371" width="208.2" height="190" rx="8" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="1155.8999999999999" y="395" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="middle">Apply for this job</text>
-<rect x="1065.8" y="407" width="180.2" height="8" rx="3" fill="#888" stroke="none" stroke-width="0"/>
-<text x="1065.8" y="435" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Salary range</text>
-<rect x="1065.8" y="449" width="180.2" height="36" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="1155.8999999999999" y="471.0" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#fff" font-weight="bold" text-anchor="middle">APPLY NOW</text>
-<text x="1155.8999999999999" y="505" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#555" font-weight="normal" text-anchor="middle" font-style="italic">Not logged in -> goes to Login</text>
-<text x="1155.8999999999999" y="519" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#555" font-weight="normal" text-anchor="middle" font-style="italic">Not an applicant -> button off</text>
-<text x="1155.8999999999999" y="533" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#555" font-weight="normal" text-anchor="middle" font-style="italic">Already applied -> "Applied"</text>
-<rect x="1051.8" y="575" width="208.2" height="110" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<text x="1063.8" y="595" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Skills</text>
-<rect x="1063.8" y="607" width="48" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1087.8" y="621" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">skill</text>
-<rect x="1115.8" y="607" width="48" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1139.8" y="621" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">skill</text>
-<rect x="1063.8" y="633" width="48" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1087.8" y="647" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">skill</text>
-<rect x="1123.8" y="633" width="48" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1147.8" y="647" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">skill</text>
-<rect x="670" y="701" width="590" height="160" rx="10" fill="#f3f3f3" stroke="#222" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="682" y="721" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="bold" text-anchor="start">Apply modal (opens after clicking Apply Now)</text>
-<rect x="795.0" y="731" width="340" height="118" rx="8" fill="#fff" stroke="#222" stroke-width="1.8"/>
-<text x="810.0" y="753" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Upload your resume (pdf / doc / docx, max 5 MB)</text>
-<rect x="810.0" y="763" width="310" height="34" rx="6" fill="#fafafa" stroke="#777" stroke-width="1.2" stroke-dasharray="5 4"/>
-<text x="965.0" y="784" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#555" font-weight="normal" text-anchor="middle">Choose file...</text>
-<rect x="810.0" y="807" width="100" height="28" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="860.0" y="825.0" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="middle">Cancel</text>
-<rect x="1020.0" y="807" width="100" height="28" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="1070.0" y="825.0" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#fff" font-weight="bold" text-anchor="middle">Submit</text>
-<text x="965.0" y="917" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 2 - Job Details page with Apply button</text>
-<rect x="30" y="935" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
-<rect x="30" y="935" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
-<circle cx="44" cy="948" r="4" fill="#fff" stroke="#555"/>
-<circle cx="58" cy="948" r="4" fill="#fff" stroke="#555"/>
-<circle cx="72" cy="948" r="4" fill="#fff" stroke="#555"/>
-<rect x="100" y="940" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="110" y="952" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/dashboard/recruiter</text>
-<rect x="30" y="963" width="110" height="772" rx="0" fill="#f2f2f2" stroke="#333" stroke-width="1.5"/>
-<text x="42" y="989" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">JobPortal BD</text>
-<rect x="38" y="1007" width="94" height="24" rx="5" fill="#333" stroke="#555" stroke-width="1.2"/>
-<text x="46" y="1023" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#fff" font-weight="bold" text-anchor="start">Dashboard</text>
-<rect x="38" y="1039" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="46" y="1055" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">My Jobs</text>
-<rect x="38" y="1071" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="46" y="1087" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Candidates</text>
-<rect x="38" y="1103" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="46" y="1119" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Profile</text>
-<rect x="38" y="1135" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="46" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Logout</text>
-<text x="152" y="987" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">Recruiter dashboard</text>
-<rect x="520" y="971" width="110" height="26" rx="6" fill="#333" stroke="#222" stroke-width="1.6"/>
-<text x="575.0" y="988.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#fff" font-weight="bold" text-anchor="middle">+ Post a job</text>
-<rect x="152.0" y="1007" width="112.0" height="62" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<text x="162.0" y="1037" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#222" font-weight="bold" text-anchor="start">12</text>
-<text x="162.0" y="1057" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Active job posts</text>
-<rect x="274.0" y="1007" width="112.0" height="62" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<text x="284.0" y="1037" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#222" font-weight="bold" text-anchor="start">48</text>
-<text x="284.0" y="1057" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Total candidates</text>
-<rect x="396.0" y="1007" width="112.0" height="62" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<text x="406.0" y="1037" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#222" font-weight="bold" text-anchor="start">9</text>
-<text x="406.0" y="1057" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Interviews</text>
-<rect x="518.0" y="1007" width="112.0" height="62" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<text x="528.0" y="1037" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#222" font-weight="bold" text-anchor="start">5</text>
-<text x="528.0" y="1057" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Students evaluated</text>
-<text x="152" y="1099" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="start">My Job Posts</text>
-<rect x="480" y="1085" width="150" height="20" rx="5" fill="#fff" stroke="#777" stroke-width="1.2"/>
-<text x="488" y="1099" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#777" font-weight="normal" text-anchor="start">Search...</text>
-<rect x="152" y="1109" width="478" height="24" rx="0" fill="#dcdcdc" stroke="#333" stroke-width="1.5"/>
-<text x="160" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="271.87234042553195" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Type &amp; mode</text>
-<text x="348.1489361702128" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Salary</text>
-<text x="409.17021276595744" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Timeline</text>
-<text x="470.1914893617021" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Status</text>
-<text x="536.2978723404256" y="1125" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Actions</text>
-<rect x="152" y="1133" width="478" height="28" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title A</text>
-<rect x="271.87234042553195" y="1144" width="31.36595744680851" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="348.1489361702128" y="1144" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="409.17021276595744" y="1144" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="468.1914893617021" y="1137" width="54.1063829787234" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="495.24468085106383" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Active</text>
-<rect x="532.2978723404256" y="1139" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="545.7978723404256" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Edit</text>
-<rect x="561.2978723404256" y="1139" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="574.7978723404256" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Pause</text>
-<rect x="590.2978723404256" y="1139" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="603.7978723404256" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Del</text>
-<rect x="152" y="1161" width="478" height="28" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title B</text>
-<rect x="271.87234042553195" y="1172" width="31.36595744680851" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="348.1489361702128" y="1172" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="409.17021276595744" y="1172" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="468.1914893617021" y="1165" width="54.1063829787234" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="495.24468085106383" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Paused</text>
-<rect x="532.2978723404256" y="1167" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="545.7978723404256" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Edit</text>
-<rect x="561.2978723404256" y="1167" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="574.7978723404256" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Pause</text>
-<rect x="590.2978723404256" y="1167" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="603.7978723404256" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Del</text>
-<rect x="152" y="1189" width="478" height="28" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title C</text>
-<rect x="271.87234042553195" y="1200" width="31.36595744680851" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="348.1489361702128" y="1200" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="409.17021276595744" y="1200" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="468.1914893617021" y="1193" width="54.1063829787234" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="495.24468085106383" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Closed</text>
-<rect x="532.2978723404256" y="1195" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="545.7978723404256" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Edit</text>
-<rect x="561.2978723404256" y="1195" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="574.7978723404256" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Pause</text>
-<rect x="590.2978723404256" y="1195" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="603.7978723404256" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Del</text>
-<rect x="152" y="1217" width="478" height="28" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1235" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title D</text>
-<rect x="271.87234042553195" y="1228" width="31.36595744680851" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="348.1489361702128" y="1228" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="409.17021276595744" y="1228" width="22.21276595744681" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
-<rect x="468.1914893617021" y="1221" width="54.1063829787234" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="495.24468085106383" y="1235" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Active</text>
-<rect x="532.2978723404256" y="1223" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="545.7978723404256" y="1235" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Edit</text>
-<rect x="561.2978723404256" y="1223" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="574.7978723404256" y="1235" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Pause</text>
-<rect x="590.2978723404256" y="1223" width="27" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="603.7978723404256" y="1235" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Del</text>
-<text x="152" y="1287" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="start">Candidates</text>
-<text x="380" y="1287" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Filter by job:</text>
-<rect x="460" y="1273" width="170" height="22" rx="5" fill="#fff" stroke="#222" stroke-width="1.5"/>
-<text x="468" y="1288" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">All job posts</text>
-<text x="616" y="1289" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="end">v</text>
-<rect x="152" y="1305" width="478" height="24" rx="0" fill="#dcdcdc" stroke="#333" stroke-width="1.5"/>
-<text x="160" y="1321" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Candidate</text>
-<text x="294.4375" y="1321" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Applied job</text>
-<text x="428.875" y="1321" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Stage status</text>
-<text x="555.84375" y="1321" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">CV</text>
-<rect x="152" y="1329" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1347" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1347" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title A</text>
-<rect x="426.875" y="1333" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1347" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Pending</text>
-<rect x="555.84375" y="1335" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1347" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<rect x="152" y="1361" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1379" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1379" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title A</text>
-<rect x="426.875" y="1365" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1379" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Shortlisted</text>
-<rect x="555.84375" y="1367" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1379" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<rect x="152" y="1393" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1411" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1411" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title B</text>
-<rect x="426.875" y="1397" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1411" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Interview</text>
-<rect x="555.84375" y="1399" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1411" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<rect x="152" y="1425" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1443" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1443" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title C</text>
-<rect x="426.875" y="1429" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1443" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Approved</text>
-<rect x="555.84375" y="1431" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1443" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<rect x="152" y="1457" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1475" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1475" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title D</text>
-<rect x="426.875" y="1461" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1475" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Rejected</text>
-<rect x="555.84375" y="1463" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1475" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<rect x="152" y="1489" width="478" height="32" rx="0" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="160" y="1507" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Student name</text>
-<text x="294.4375" y="1507" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="normal" text-anchor="start">Job title D</text>
-<rect x="426.875" y="1493" width="86" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="469.875" y="1507" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Pending</text>
-<rect x="555.84375" y="1495" width="44" height="16" rx="4" fill="#fff" stroke="#444" stroke-width="1.2"/>
-<text x="577.84375" y="1507" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="normal" text-anchor="middle">View CV</text>
-<text x="152" y="1543" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start" font-style="italic">Status can be changed per candidate (pending ... rejected) and an interview note added.</text>
-<text x="335.0" y="1757" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 3 - Recruiter dashboard: summary cards, job posts, candidates</text>
-<rect x="660" y="935" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
-<rect x="660" y="935" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
-<circle cx="674" cy="948" r="4" fill="#fff" stroke="#555"/>
-<circle cx="688" cy="948" r="4" fill="#fff" stroke="#555"/>
-<circle cx="702" cy="948" r="4" fill="#fff" stroke="#555"/>
-<rect x="730" y="940" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
-<text x="740" y="952" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/dashboard/applicant/applications</text>
-<rect x="660" y="963" width="110" height="772" rx="0" fill="#f2f2f2" stroke="#333" stroke-width="1.5"/>
-<text x="672" y="989" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">JobPortal BD</text>
-<rect x="668" y="1007" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="674" y="1023" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Dashboard</text>
-<rect x="668" y="1039" width="94" height="24" rx="5" fill="#333" stroke="#555" stroke-width="1.2"/>
-<text x="674" y="1055" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#fff" font-weight="bold" text-anchor="start">My Applications</text>
-<rect x="668" y="1071" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="674" y="1087" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Profile</text>
-<rect x="668" y="1103" width="94" height="24" rx="5" fill="#fff" stroke="#555" stroke-width="1.2"/>
-<text x="674" y="1119" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Logout</text>
-<text x="782" y="979" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">Dashboard  >  My Applications</text>
-<text x="782" y="1007" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#222" font-weight="bold" text-anchor="start">My Applications</text>
-<text x="1260" y="1007" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#555" font-weight="normal" text-anchor="end">5 applications</text>
-<rect x="782" y="1025" width="478" height="84" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="792" y="1035" width="36" height="36" rx="5" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="810" y="1057" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="838" y="1051" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="838" y="1067" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Company  -  Location</text>
-<text x="838" y="1085" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Applied on: dd Mon yyyy</text>
-<rect x="1150" y="1037" width="98" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1199.0" y="1051" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Pending</text>
-<rect x="1090" y="1079" width="70" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1125.0" y="1094.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">View CV</text>
-<rect x="1168" y="1079" width="80" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1208.0" y="1094.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
-<rect x="782" y="1119" width="478" height="176" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="792" y="1129" width="36" height="36" rx="5" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="810" y="1151" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="838" y="1145" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="838" y="1161" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Company  -  Location</text>
-<text x="838" y="1179" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Applied on: dd Mon yyyy</text>
-<rect x="1150" y="1131" width="98" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1199.0" y="1145" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Shortlisted</text>
-<rect x="1090" y="1265" width="70" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1125.0" y="1280.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">View CV</text>
-<rect x="1168" y="1265" width="80" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1208.0" y="1280.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
-<line x1="794" y1="1207" x2="1248" y2="1207" stroke="#bbb" stroke-width="1"/>
-<text x="794" y="1225" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Status timeline</text>
-<circle cx="822" cy="1249" r="8" fill="#333"/>
-<line x1="830" y1="1249" x2="934" y2="1249" stroke="#333" stroke-width="2"/>
-<text x="822" y="1275" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Pending</text>
-<text x="822" y="1287" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#555" font-weight="normal" text-anchor="middle">dd Mon</text>
-<circle cx="942" cy="1249" r="8" fill="#333"/>
-<text x="942" y="1275" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Shortlisted</text>
-<text x="942" y="1287" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#555" font-weight="normal" text-anchor="middle">dd Mon</text>
-<line x1="950" y1="1249" x2="1054" y2="1249" stroke="#333" stroke-width="1.5"/>
-<circle cx="1062" cy="1249" r="8" fill="#fff" stroke="#333" stroke-width="1.5" stroke-dasharray="3 2"/>
-<text x="1062" y="1275" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#777" font-weight="normal" text-anchor="middle" font-style="italic">next stage</text>
-<rect x="782" y="1305" width="478" height="84" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="792" y="1315" width="36" height="36" rx="5" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="810" y="1337" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="838" y="1331" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="838" y="1347" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Company  -  Location</text>
-<text x="838" y="1365" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Applied on: dd Mon yyyy</text>
-<rect x="1150" y="1317" width="98" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1199.0" y="1331" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Exam</text>
-<rect x="1090" y="1359" width="70" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1125.0" y="1374.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">View CV</text>
-<rect x="1168" y="1359" width="80" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1208.0" y="1374.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
-<rect x="782" y="1399" width="478" height="84" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="792" y="1409" width="36" height="36" rx="5" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="810" y="1431" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="838" y="1425" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="838" y="1441" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Company  -  Location</text>
-<text x="838" y="1459" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Applied on: dd Mon yyyy</text>
-<rect x="1150" y="1411" width="98" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1199.0" y="1425" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Interview</text>
-<rect x="1090" y="1453" width="70" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1125.0" y="1468.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">View CV</text>
-<rect x="1168" y="1453" width="80" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1208.0" y="1468.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
-<rect x="782" y="1493" width="478" height="84" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
-<rect x="792" y="1503" width="36" height="36" rx="5" fill="#ddd" stroke="#777" stroke-width="1.2"/>
-<text x="810" y="1525" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">logo</text>
-<text x="838" y="1519" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
-<text x="838" y="1535" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Company  -  Location</text>
-<text x="838" y="1553" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#555" font-weight="normal" text-anchor="start">Applied on: dd Mon yyyy</text>
-<rect x="1150" y="1505" width="98" height="20" rx="10" fill="#eee" stroke="#444" stroke-width="1.3"/>
-<text x="1199.0" y="1519" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="middle">Approved</text>
-<rect x="1090" y="1547" width="70" height="22" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
-<text x="1125.0" y="1562.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="middle">View CV</text>
-<text x="1248" y="1563" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#555" font-weight="normal" text-anchor="end" font-style="italic">cannot withdraw</text>
-<text x="965.0" y="1757" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 4 - Applicant My Applications page with status badges</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1900" width="1300" height="1900"><rect width="1300" height="1900" fill="#fff"/>
+<text x="650.0" y="38" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#222" font-weight="bold" text-anchor="middle">Low-Fidelity Wireframes - JobPortal BD</text>
+<text x="650.0" y="60" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#555" font-weight="normal" text-anchor="middle">Drawn from the React pages (Home, Job Details + Apply popup, Recruiter dashboard, My Applications). Grey boxes stand for images, text and data.</text>
+<rect x="30" y="90" width="610" height="890" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
+<rect x="30" y="90" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
+<circle cx="44" cy="103" r="4" fill="#fff" stroke="#555"/>
+<circle cx="58" cy="103" r="4" fill="#fff" stroke="#555"/>
+<circle cx="72" cy="103" r="4" fill="#fff" stroke="#555"/>
+<rect x="100" y="95" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
+<text x="110" y="107" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/</text>
+<rect x="40" y="124" width="590" height="40" rx="0" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="50" y="133" width="22" height="22" rx="6" fill="#999" stroke="#333" stroke-width="1.2"/>
+<text x="78" y="149" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">JobPortal</text>
+<rect x="138" y="137" width="22.96" height="14" rx="7.0" fill="#f2f2f2" stroke="#555" stroke-width="1.1"/>
+<text x="149.48" y="146.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">BD</text>
+<rect x="209" y="134" width="52" height="20" rx="5" fill="#eee" stroke="#999" stroke-width="1"/>
+<text x="215" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">Home</text>
+<text x="273" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Jobs</text>
+<text x="331" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Companies</text>
+<text x="389" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">About</text>
+<text x="447" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Contact</text>
+<rect x="488" y="134" width="46" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="511.0" y="147.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="middle">Login</text>
+<rect x="538" y="134" width="56" height="20" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="566.0" y="147.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">Register</text>
+<circle cx="612" cy="144" r="11" fill="#eee" stroke="#555" stroke-width="1.2"/>
+<rect x="40" y="170" width="590" height="198" rx="0" fill="#fafafa" stroke="#999" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text x="622" y="182" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#888" font-weight="bold" text-anchor="end">HERO</text>
+<rect x="54" y="182" width="229.04000000000002" height="16" rx="8.0" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<text x="168.52" y="192.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">BD  Bangladesh's #1 University Placement Network</text>
+<text x="54" y="210" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#666" font-weight="normal" text-anchor="start">* Active 2026 Season</text>
+<text x="54" y="238" font-family="Helvetica,Arial,sans-serif" font-size="25" fill="#222" font-weight="bold" text-anchor="start">Find Your Dream Job</text>
+<rect x="54" y="250" width="300" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="54" y="261" width="300" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="54" y="272" width="180.0" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="54" y="290" width="112" height="28" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="110.0" y="307.6" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="middle">Register Now  -></text>
+<line x1="54" y1="328" x2="370" y2="328" stroke="#bbb" stroke-width="1"/>
+<text x="54" y="348" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">500+</text>
+<text x="54" y="361" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Students Placed</text>
+<text x="160" y="348" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">100+</text>
+<text x="160" y="361" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Companies Hiring</text>
+<text x="266" y="348" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#222" font-weight="bold" text-anchor="start">50+</text>
+<text x="266" y="361" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Placement Drives</text>
+<rect x="385" y="186" width="231" height="160" rx="0" fill="#f0f0f0" stroke="#777" stroke-width="1.2"/>
+<line x1="385" y1="186" x2="616" y2="346" stroke="#999" stroke-width="1"/>
+<line x1="616" y1="186" x2="385" y2="346" stroke="#999" stroke-width="1"/>
+<rect x="474.5" y="257.0" width="52" height="18" rx="0" fill="#f0f0f0" stroke="none" stroke-width="1.5"/>
+<text x="500.5" y="270.0" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="middle">home-hero.jpg</text>
+<text x="40" y="388" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="bold" text-anchor="start">* VERIFIED OPPORTUNITIES</text>
+<text x="40" y="408" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="start">Latest Jobs</text>
+<text x="40" y="422" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Explore recently posted openings from verified employers across Bangladesh</text>
+<text x="630" y="408" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="end">View All Jobs  -></text>
+<rect x="40.0" y="432" width="290.0" height="124" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="50.0" y="442" width="26" height="26" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<text x="84.0" y="454" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<text x="84.0" y="466" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Company name</text>
+<rect x="50.0" y="476" width="54.32000000000001" height="15" rx="7.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="77.16" y="486.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Full-time</text>
+<rect x="110.32000000000001" y="476" width="54.32000000000001" height="15" rx="7.5" fill="#f5f5f5" stroke="#999" stroke-width="1.1"/>
+<text x="137.48000000000002" y="486.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Mid level</text>
+<rect x="50.0" y="498" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="64.0" y="506" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="start">Location</text>
+<rect x="50.0" y="512" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="64.0" y="520" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">50,000 / month</text>
+<rect x="160.0" y="498" width="33.375" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="176.6875" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">React</text>
+<rect x="197.375" y="498" width="28.700000000000003" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="211.725" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">Node</text>
+<rect x="230.075" y="498" width="24.025000000000002" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="242.08749999999998" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">SQL</text>
+<line x1="50.0" y1="530" x2="320.0" y2="530" stroke="#ccc" stroke-width="1"/>
+<text x="50.0" y="546" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#666" font-weight="normal" text-anchor="start">2 days ago</text>
+<rect x="250.0" y="535" width="70" height="18" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="285.0" y="547.06" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply Now</text>
+<rect x="340.0" y="432" width="290.0" height="124" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="350.0" y="442" width="26" height="26" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<text x="384.0" y="454" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<text x="384.0" y="466" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Company name</text>
+<rect x="350.0" y="476" width="54.32000000000001" height="15" rx="7.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="377.16" y="486.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Full-time</text>
+<rect x="410.32" y="476" width="54.32000000000001" height="15" rx="7.5" fill="#f5f5f5" stroke="#999" stroke-width="1.1"/>
+<text x="437.48" y="486.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Mid level</text>
+<rect x="350.0" y="498" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="364.0" y="506" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="start">Location</text>
+<rect x="350.0" y="512" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="364.0" y="520" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">50,000 / month</text>
+<rect x="460.0" y="498" width="33.375" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="476.6875" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">React</text>
+<rect x="497.375" y="498" width="28.700000000000003" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="511.725" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">Node</text>
+<rect x="530.075" y="498" width="24.025000000000002" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="542.0875000000001" y="509" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">SQL</text>
+<line x1="350.0" y1="530" x2="620.0" y2="530" stroke="#ccc" stroke-width="1"/>
+<text x="350.0" y="546" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#666" font-weight="normal" text-anchor="start">2 days ago</text>
+<rect x="550.0" y="535" width="70" height="18" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="585.0" y="547.06" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply Now</text>
+<rect x="40.0" y="564" width="290.0" height="124" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="50.0" y="574" width="26" height="26" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<text x="84.0" y="586" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<text x="84.0" y="598" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Company name</text>
+<rect x="50.0" y="608" width="54.32000000000001" height="15" rx="7.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="77.16" y="618.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Full-time</text>
+<rect x="110.32000000000001" y="608" width="54.32000000000001" height="15" rx="7.5" fill="#f5f5f5" stroke="#999" stroke-width="1.1"/>
+<text x="137.48000000000002" y="618.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Mid level</text>
+<rect x="50.0" y="630" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="64.0" y="638" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="start">Location</text>
+<rect x="50.0" y="644" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="64.0" y="652" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">50,000 / month</text>
+<rect x="160.0" y="630" width="33.375" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="176.6875" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">React</text>
+<rect x="197.375" y="630" width="28.700000000000003" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="211.725" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">Node</text>
+<rect x="230.075" y="630" width="24.025000000000002" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="242.08749999999998" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">SQL</text>
+<line x1="50.0" y1="662" x2="320.0" y2="662" stroke="#ccc" stroke-width="1"/>
+<text x="50.0" y="678" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#666" font-weight="normal" text-anchor="start">2 days ago</text>
+<rect x="250.0" y="667" width="70" height="18" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="285.0" y="679.06" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply Now</text>
+<rect x="340.0" y="564" width="290.0" height="124" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="350.0" y="574" width="26" height="26" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<text x="384.0" y="586" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<text x="384.0" y="598" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Company name</text>
+<rect x="350.0" y="608" width="54.32000000000001" height="15" rx="7.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="377.16" y="618.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Full-time</text>
+<rect x="410.32" y="608" width="54.32000000000001" height="15" rx="7.5" fill="#f5f5f5" stroke="#999" stroke-width="1.1"/>
+<text x="437.48" y="618.38" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">Mid level</text>
+<rect x="350.0" y="630" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="364.0" y="638" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="start">Location</text>
+<rect x="350.0" y="644" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="364.0" y="652" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">50,000 / month</text>
+<rect x="460.0" y="630" width="33.375" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="476.6875" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">React</text>
+<rect x="497.375" y="630" width="28.700000000000003" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="511.725" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">Node</text>
+<rect x="530.075" y="630" width="24.025000000000002" height="15" rx="3" fill="#f7f7f7" stroke="#999" stroke-width="1"/>
+<text x="542.0875000000001" y="641" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#444" font-weight="normal" text-anchor="middle">SQL</text>
+<line x1="350.0" y1="662" x2="620.0" y2="662" stroke="#ccc" stroke-width="1"/>
+<text x="350.0" y="678" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#666" font-weight="normal" text-anchor="start">2 days ago</text>
+<rect x="550.0" y="667" width="70" height="18" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="585.0" y="679.06" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply Now</text>
+<text x="335.0" y="708" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="bold" text-anchor="middle">* SEAMLESS PLACEMENT PATHWAY</text>
+<text x="335.0" y="730" font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#222" font-weight="bold" text-anchor="middle">How It Works</text>
+<text x="335.0" y="744" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle">Three simple steps to transition from campus to your corporate career</text>
+<rect x="40.0" y="752" width="191.33333333333334" height="120" rx="10" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="50.0" y="762" width="24" height="24" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<circle cx="209.33333333333334" cy="774" r="9" fill="#333" stroke="#555" stroke-width="1.2"/>
+<text x="209.33333333333334" y="777.5" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">1</text>
+<text x="50.0" y="804" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">1. Register</text>
+<text x="50.0" y="817" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="bold" text-anchor="start">Create your account</text>
+<rect x="50.0" y="826" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="50.0" y="835" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="50.0" y="844" width="102.8" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<line x1="50.0" y1="852" x2="221.33333333333334" y2="852" stroke="#ccc" stroke-width="1"/>
+<rect x="50.0" y="857" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="62.0" y="865" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="normal" text-anchor="start">Takes under 2 minutes</text>
+<rect x="239.33333333333334" y="752" width="191.33333333333334" height="120" rx="10" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="249.33333333333334" y="762" width="24" height="24" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<circle cx="408.6666666666667" cy="774" r="9" fill="#333" stroke="#555" stroke-width="1.2"/>
+<text x="408.6666666666667" y="777.5" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">2</text>
+<text x="249.33333333333334" y="804" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">2. Apply</text>
+<text x="249.33333333333334" y="817" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="bold" text-anchor="start">Apply for jobs you like</text>
+<rect x="249.33333333333334" y="826" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="249.33333333333334" y="835" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="249.33333333333334" y="844" width="102.8" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<line x1="249.33333333333334" y1="852" x2="420.6666666666667" y2="852" stroke="#ccc" stroke-width="1"/>
+<rect x="249.33333333333334" y="857" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="261.33333333333337" y="865" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="normal" text-anchor="start">Real-time status tracking</text>
+<rect x="438.6666666666667" y="752" width="191.33333333333334" height="120" rx="10" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="448.6666666666667" y="762" width="24" height="24" rx="6" fill="#ddd" stroke="#777" stroke-width="1.1"/>
+<circle cx="608.0" cy="774" r="9" fill="#333" stroke="#555" stroke-width="1.2"/>
+<text x="608.0" y="777.5" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">3</text>
+<text x="448.6666666666667" y="804" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">3. Get Placed</text>
+<text x="448.6666666666667" y="817" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="bold" text-anchor="start">Attend interviews and get hired</text>
+<rect x="448.6666666666667" y="826" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="448.6666666666667" y="835" width="171.33333333333334" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="448.6666666666667" y="844" width="102.8" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<line x1="448.6666666666667" y1="852" x2="620.0" y2="852" stroke="#ccc" stroke-width="1"/>
+<rect x="448.6666666666667" y="857" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="460.6666666666667" y="865" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="normal" text-anchor="start">Offer letter protection</text>
+<rect x="40" y="880" width="590" height="94" rx="0" fill="#444" stroke="#222" stroke-width="1.5"/>
+<text x="52" y="898" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold" text-anchor="start">JobPortal  BD</text>
+<rect x="52" y="906" width="150" height="4" rx="2" fill="#bbb" stroke="none" stroke-width="0"/>
+<rect x="52" y="914" width="110" height="4" rx="2" fill="#bbb" stroke="none" stroke-width="0"/>
+<rect x="52" y="924" width="135.8" height="14" rx="7.0" fill="#666" stroke="#bbb" stroke-width="1.1"/>
+<text x="119.9" y="933.7" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="normal" text-anchor="middle">Placement Session 2026 Active</text>
+<text x="305.5" y="898" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="start">Quick Links</text>
+<text x="305.5" y="908" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">Home</text>
+<text x="305.5" y="917" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">Jobs</text>
+<text x="305.5" y="926" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">Companies</text>
+<text x="305.5" y="935" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">About Us</text>
+<text x="305.5" y="944" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">Contact</text>
+<text x="441.20000000000005" y="898" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="start">Contact</text>
+<text x="441.20000000000005" y="909" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">info@jobportal.com</text>
+<text x="441.20000000000005" y="918" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">+880 1234-567890</text>
+<text x="441.20000000000005" y="927" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ddd" font-weight="normal" text-anchor="start">Gulshan-2, Dhaka</text>
+<rect x="441.20000000000005" y="928" width="16" height="14" rx="3" fill="#666" stroke="#bbb" stroke-width="1"/>
+<rect x="463.20000000000005" y="928" width="16" height="14" rx="3" fill="#666" stroke="#bbb" stroke-width="1"/>
+<rect x="485.20000000000005" y="928" width="16" height="14" rx="3" fill="#666" stroke="#bbb" stroke-width="1"/>
+<line x1="48" y1="954" x2="622" y2="954" stroke="#888" stroke-width="1"/>
+<text x="52" y="966" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ccc" font-weight="normal" text-anchor="start">(c) 2026 JobPortal. All rights reserved.</text>
+<text x="620" y="966" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#ccc" font-weight="normal" text-anchor="end">Privacy Policy   Terms of Service   Cookie Policy   Support</text>
+<text x="335.0" y="1002" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 1 - Home page: hero, latest jobs, how it works</text>
+<rect x="660" y="90" width="610" height="890" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
+<rect x="660" y="90" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
+<circle cx="674" cy="103" r="4" fill="#fff" stroke="#555"/>
+<circle cx="688" cy="103" r="4" fill="#fff" stroke="#555"/>
+<circle cx="702" cy="103" r="4" fill="#fff" stroke="#555"/>
+<rect x="730" y="95" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
+<text x="740" y="107" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/jobs/:slug</text>
+<rect x="670" y="124" width="590" height="40" rx="0" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="680" y="133" width="22" height="22" rx="6" fill="#999" stroke="#333" stroke-width="1.2"/>
+<text x="708" y="149" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">JobPortal</text>
+<rect x="768" y="137" width="22.96" height="14" rx="7.0" fill="#f2f2f2" stroke="#555" stroke-width="1.1"/>
+<text x="779.48" y="146.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="normal" text-anchor="middle">BD</text>
+<text x="845" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Home</text>
+<rect x="897" y="134" width="52" height="20" rx="5" fill="#eee" stroke="#999" stroke-width="1"/>
+<text x="903" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">Jobs</text>
+<text x="961" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Companies</text>
+<text x="1019" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">About</text>
+<text x="1077" y="148" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="normal" text-anchor="start">Contact</text>
+<rect x="1118" y="134" width="46" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1141.0" y="147.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="middle">Login</text>
+<rect x="1168" y="134" width="56" height="20" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="1196.0" y="147.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">Register</text>
+<circle cx="1242" cy="144" r="11" fill="#eee" stroke="#555" stroke-width="1.2"/>
+<rect x="670" y="164" width="590" height="810" rx="0" fill="#f3f3f3" stroke="none" stroke-width="0"/>
+<rect x="725" y="176" width="480" height="436" rx="8" fill="#fff" stroke="#555" stroke-width="1.5"/>
+<text x="739" y="198" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<text x="739" y="222" font-family="Helvetica,Arial,sans-serif" font-size="19" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<text x="739" y="239" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#555" font-weight="normal" text-anchor="start">Location  *  Full-time  *</text>
+<text x="849" y="239" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">50,000 / month</text>
+<line x1="739" y1="250" x2="1191" y2="250" stroke="#bbb" stroke-width="1"/>
+<rect x="739" y="258" width="452" height="20" rx="4" fill="#fafafa" stroke="#888" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="747" y="271" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start" font-style="italic">(only if paused / closed)  This job is paused. The company is not taking applications right now.</text>
+<line x1="739" y1="286" x2="1191" y2="286" stroke="#bbb" stroke-width="1"/>
+<text x="739.0" y="300" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="bold" text-anchor="start">DEPARTMENT</text>
+<rect x="739.0" y="306" width="70" height="6" rx="3" fill="#888" stroke="none" stroke-width="0"/>
+<text x="889.6666666666666" y="300" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="bold" text-anchor="start">EXPERIENCE</text>
+<rect x="889.6666666666666" y="306" width="70" height="6" rx="3" fill="#888" stroke="none" stroke-width="0"/>
+<text x="1040.3333333333333" y="300" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="bold" text-anchor="start">DEADLINE</text>
+<rect x="1040.3333333333333" y="306" width="70" height="6" rx="3" fill="#888" stroke="none" stroke-width="0"/>
+<line x1="739" y1="322" x2="1191" y2="322" stroke="#bbb" stroke-width="1"/>
+<text x="739" y="342" font-family="Helvetica,Arial,sans-serif" font-size="11.5" fill="#222" font-weight="bold" text-anchor="start">About the Role</text>
+<rect x="739" y="350" width="452" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="739" y="361" width="452" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="739" y="372" width="452" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="739" y="383" width="271.2" height="5" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<text x="739" y="406" font-family="Helvetica,Arial,sans-serif" font-size="11.5" fill="#222" font-weight="bold" text-anchor="start">Requirements &amp; Qualifications</text>
+<circle cx="745" cy="423" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="420" width="420" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<circle cx="745" cy="440" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="437" width="392" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<circle cx="745" cy="457" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="454" width="364" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<text x="739" y="482" font-family="Helvetica,Arial,sans-serif" font-size="11.5" fill="#222" font-weight="bold" text-anchor="start">What We Offer</text>
+<circle cx="745" cy="499" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="496" width="420" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<circle cx="745" cy="516" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="513" width="392" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<circle cx="745" cy="533" r="5" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="757" y="530" width="364" height="6" rx="3" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<line x1="739" y1="556" x2="1191" y2="556" stroke="#bbb" stroke-width="1"/>
+<text x="739" y="576" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#222" font-weight="bold" text-anchor="start">CTA title (if set)</text>
+<text x="739" y="590" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Applications are reviewed on a rolling basis.</text>
+<rect x="1037" y="568" width="154" height="30" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="1114.0" y="586.42" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#fff" font-weight="bold" text-anchor="middle">Apply for this Job  -></text>
+<text x="1191" y="608" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="end" font-style="italic">disabled: "Already Applied" / "Not Accepting Applications"</text>
+<rect x="670" y="626" width="590" height="308" rx="0" fill="#bdbdbd" stroke="#333" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="678" y="639" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#333" font-weight="bold" text-anchor="start">Popup (ApplyModal) - dark overlay shown after clicking the Apply button</text>
+<rect x="785.0" y="648" width="360" height="278" rx="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="799.0" y="662" width="30" height="30" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="839.0" y="676" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222" font-weight="bold" text-anchor="start">Apply for this Job</text>
+<text x="839.0" y="689" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="start">Job title at Company name</text>
+<text x="1129.0" y="670" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="end">X</text>
+<text x="799.0" y="716" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#222" font-weight="bold" text-anchor="start">Upload Resume *</text>
+<text x="1131.0" y="716" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="end">PDF, DOCX (Max 5MB)</text>
+<rect x="799.0" y="724" width="332" height="64" rx="8" fill="#fafafa" stroke="#777" stroke-width="1.3" stroke-dasharray="5 4"/>
+<circle cx="965.0" cy="742" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="965.0" y="764" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="middle">Click to browse</text>
+<text x="965.0" y="777" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="middle">Your most up-to-date CV or resume</text>
+<rect x="799.0" y="796" width="332" height="38" rx="6" fill="#f0f0f0" stroke="#999" stroke-width="1.1"/>
+<rect x="807.0" y="805" width="20" height="20" rx="3" fill="#888" stroke="#555" stroke-width="1.1"/>
+<text x="835.0" y="814" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">resume.pdf</text>
+<text x="835.0" y="826" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">1.2 MB  *  Uploaded just now</text>
+<circle cx="1093.0" cy="815" r="6" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<rect x="1107.0" y="809" width="12" height="12" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="799.0" y="842" width="332" height="30" rx="6" fill="#f6f6f6" stroke="#999" stroke-width="1.1"/>
+<rect x="807.0" y="851" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="823.0" y="854" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Make sure your contact information and graduation year are up</text>
+<text x="823.0" y="864" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">to date before submitting.</text>
+<line x1="799.0" y1="882" x2="1131.0" y2="882" stroke="#ccc" stroke-width="1"/>
+<rect x="955.0" y="890" width="62" height="24" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="986.0" y="905.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="middle">Cancel</text>
+<rect x="1025.0" y="890" width="106" height="24" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="1078.0" y="905.24" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">Submit Application</text>
+<rect x="670" y="934" width="590" height="40" rx="0" fill="#444" stroke="#222" stroke-width="1.5"/>
+<text x="965.0" y="958" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#ddd" font-weight="normal" text-anchor="middle">Footer (same as Home page)</text>
+<text x="965.0" y="1002" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 2 - Job Details page with Apply button and resume popup</text>
+<rect x="30" y="1035" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
+<rect x="30" y="1035" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
+<circle cx="44" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<circle cx="58" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<circle cx="72" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<rect x="100" y="1040" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
+<text x="110" y="1052" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/dashboard/recruiter</text>
+<rect x="30" y="1063" width="118" height="772" rx="0" fill="#f4f4f4" stroke="#333" stroke-width="1.5"/>
+<rect x="30" y="1063" width="118" height="40" rx="0" fill="#e2e2e2" stroke="#333" stroke-width="1.5"/>
+<circle cx="52" cy="1083" r="12" fill="#fff" stroke="#555" stroke-width="1.2"/>
+<text x="52" y="1085.8" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">TE</text>
+<text x="70" y="1080" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">TechSoft Ltd.</text>
+<text x="70" y="1093" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Enterprise Portal</text>
+<text x="40" y="1123" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#666" font-weight="bold" text-anchor="start">RECRUITER MENU</text>
+<rect x="36" y="1131" width="106" height="22" rx="5" fill="#333" stroke="#555" stroke-width="1.1"/>
+<rect x="41" y="1135" width="12" height="12" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<text x="58" y="1146" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="start">Dashboard</text>
+<rect x="36" y="1801" width="106" height="22" rx="5" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="41" y="1805" width="12" height="12" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="58" y="1816" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">Logout</text>
+<text x="158" y="1085" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="start">TechSoft Ltd. Management Hub</text>
+<rect x="364" y="1073" width="81.2" height="15" rx="7.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="404.6" y="1083.2" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="normal" text-anchor="middle">Live Sync Active</text>
+<rect x="454" y="1071" width="66" height="22" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="487.0" y="1084.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">Edit Profile</text>
+<rect x="526" y="1071" width="104" height="22" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="578.0" y="1084.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#fff" font-weight="bold" text-anchor="middle">+ Post a New Job</text>
+<rect x="158" y="1097" width="300" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="158" y="1107" width="180.0" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="158" y="1125" width="472" height="118" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="170" y="1137" width="40" height="40" rx="8" fill="#999" stroke="#555" stroke-width="1.3"/>
+<circle cx="208" cy="1175" r="7" fill="#fff" stroke="#555" stroke-width="1.2"/>
+<text x="218" y="1147" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<rect x="218" y="1155" width="47.6" height="14" rx="7.0" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="241.8" y="1164.7" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="normal" text-anchor="middle">Industry</text>
+<rect x="271.6" y="1155" width="114.80000000000001" height="14" rx="7.0" fill="#f5f5f5" stroke="#999" stroke-width="1.1"/>
+<text x="329.0" y="1164.7" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="normal" text-anchor="middle">Verified Campus Employer</text>
+<rect x="218" y="1177" width="200" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="218" y="1186" width="120.0" height="4" rx="2" fill="#c9c9c9" stroke="none" stroke-width="0"/>
+<rect x="170" y="1199" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="184" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="normal" text-anchor="start">Address</text>
+<rect x="290" y="1199" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="304" y="1207" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="normal" text-anchor="start">Website</text>
+<rect x="170" y="1215" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="184" y="1223" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="normal" text-anchor="start">e-mail</text>
+<rect x="290" y="1215" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="304" y="1223" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="normal" text-anchor="start">Phone</text>
+<rect x="508" y="1135" width="112" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="564.0" y="1147.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">Quick Edit Profile</text>
+<rect x="460" y="1165" width="160" height="48" rx="8" fill="#f4f4f4" stroke="#888" stroke-width="1.2"/>
+<text x="484" y="1187" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="middle">12</text>
+<text x="484" y="1201" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#555" font-weight="normal" text-anchor="middle">ACTIVE JOBS</text>
+<text x="536" y="1187" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="middle">48</text>
+<text x="536" y="1201" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#555" font-weight="normal" text-anchor="middle">APPLICANTS</text>
+<text x="588" y="1187" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222" font-weight="bold" text-anchor="middle">5</text>
+<text x="588" y="1201" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#555" font-weight="normal" text-anchor="middle">HIRED</text>
+<rect x="158" y="1251" width="472" height="190" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="170" y="1261" width="22" height="22" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="200" y="1274" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Manage Active Job Postings</text>
+<text x="200" y="1285" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">3 job posts  *  2 accepting applicant CVs</text>
+<rect x="168" y="1297" width="452" height="20" rx="0" fill="#e4e4e4" stroke="#555" stroke-width="1.1"/>
+<text x="173" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Job Title &amp; Division</text>
+<text x="277.3076923076923" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Type &amp; Mode</text>
+<text x="336.91208791208794" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Salary / Stipend</text>
+<text x="401.4835164835165" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Timeline</text>
+<text x="475.98901098901104" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Pipeline Status</text>
+<text x="570.3626373626374" y="1310" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Actions</text>
+<rect x="168" y="1317" width="452" height="32" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<rect x="173" y="1325" width="16" height="16" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="193" y="1332" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="193" y="1342" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">Division</text>
+<text x="277.3076923076923" y="1332" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Full-time</text>
+<text x="277.3076923076923" y="1342" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">On-site</text>
+<text x="336.91208791208794" y="1332" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">50,000</text>
+<text x="336.91208791208794" y="1342" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">BDT / month</text>
+<rect x="400.4835164835165" y="1321" width="57.68000000000001" height="13" rx="6.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="429.3235164835165" y="1329.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">12 Days left</text>
+<text x="401.4835164835165" y="1344" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
+<rect x="474.98901098901104" y="1325" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="518.1758241758242" y="1336.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">8 Applicants (2 Hired) -></text>
+<rect x="569.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="586.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="603.3626373626374" y="1326" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1349" width="452" height="32" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<rect x="173" y="1357" width="16" height="16" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="193" y="1364" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title B</text>
+<text x="193" y="1374" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">Division</text>
+<text x="277.3076923076923" y="1364" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Internship</text>
+<text x="277.3076923076923" y="1374" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">Remote</text>
+<text x="336.91208791208794" y="1364" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">15,000</text>
+<text x="336.91208791208794" y="1374" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">BDT / month</text>
+<rect x="400.4835164835165" y="1353" width="35.84" height="13" rx="6.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="418.4035164835165" y="1361.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">Paused</text>
+<text x="401.4835164835165" y="1376" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
+<rect x="474.98901098901104" y="1357" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="518.1758241758242" y="1368.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">3 Applicants (0 Hired) -></text>
+<rect x="569.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="586.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="603.3626373626374" y="1358" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1381" width="452" height="32" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<rect x="173" y="1389" width="16" height="16" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="193" y="1396" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title C</text>
+<text x="193" y="1406" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">Division</text>
+<text x="277.3076923076923" y="1396" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Part-time</text>
+<text x="277.3076923076923" y="1406" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">Hybrid</text>
+<text x="336.91208791208794" y="1396" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">25,000</text>
+<text x="336.91208791208794" y="1406" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#666" font-weight="normal" text-anchor="start">BDT / month</text>
+<rect x="400.4835164835165" y="1385" width="68.60000000000001" height="13" rx="6.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="434.7835164835165" y="1393.84" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="normal" text-anchor="middle">Closed by admin</text>
+<text x="401.4835164835165" y="1408" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="start">Closes dd Mon</text>
+<rect x="474.98901098901104" y="1389" width="86.37362637362638" height="17" rx="8" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="518.1758241758242" y="1400.5" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">5 Applicants (1 Hired) -></text>
+<rect x="569.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="586.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="603.3626373626374" y="1390" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<text x="394.0" y="1432" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle"><  1  2  ></text>
+<rect x="158" y="1449" width="472" height="380" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="170" y="1459" width="22" height="22" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="200" y="1472" font-family="Helvetica,Arial,sans-serif" font-size="10.5" fill="#222" font-weight="bold" text-anchor="start">Candidates &amp; Hired Pipeline per Job</text>
+<text x="200" y="1483" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#555" font-weight="normal" text-anchor="start">Real-time status for university applicants, interviewees, and hired placements</text>
+<text x="170" y="1507" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#444" font-weight="bold" text-anchor="start">Filter Role:</text>
+<rect x="224" y="1495" width="236" height="22" rx="6" fill="#f4f4f4" stroke="#222" stroke-width="1.4"/>
+<text x="232" y="1509.5" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">All Jobs Combined (48 Applicants)</text>
+<text x="452" y="1510" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="end">v</text>
+<rect x="498" y="1493" width="120" height="50" rx="8" fill="#f4f4f4" stroke="#888" stroke-width="1.2"/>
+<text x="508" y="1506" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#555" font-weight="bold" text-anchor="start">TOTAL PIPELINE</text>
+<text x="508" y="1527" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#222" font-weight="bold" text-anchor="start">48</text>
+<text x="508" y="1538" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#555" font-weight="normal" text-anchor="start">Students Evaluated</text>
+<text x="170" y="1541" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">All Jobs Combined</text>
+<text x="262" y="1541" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#666" font-weight="normal" text-anchor="start">Candidate Roster</text>
+<rect x="168" y="1553" width="452" height="20" rx="0" fill="#e4e4e4" stroke="#555" stroke-width="1.1"/>
+<text x="173" y="1566" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Student / Candidate</text>
+<text x="274.5730337078652" y="1566" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Applied Job Post</text>
+<text x="338.05617977528095" y="1566" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Stage Status</text>
+<text x="421.8539325842697" y="1566" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Portfolio / CV</text>
+<text x="472.6404494382023" y="1566" font-family="Helvetica,Arial,sans-serif" font-size="7.2" fill="#222" font-weight="bold" text-anchor="start">Manage Candidate</text>
+<rect x="168" y="1573" width="452" height="42" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<circle cx="184" cy="1594" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="184" y="1596.275" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="bold" text-anchor="middle">SN</text>
+<text x="198" y="1588" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Student name</text>
+<text x="198" y="1598" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#666" font-weight="normal" text-anchor="start">name@mail.com</text>
+<text x="198" y="1608" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Dept  *  Batch</text>
+<text x="274.5730337078652" y="1589" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="274.5730337078652" y="1600" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon</text>
+<rect x="337.05617977528095" y="1585" width="62.608000000000004" height="14" rx="7.0" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="368.3601797752809" y="1594.232" font-family="Helvetica,Arial,sans-serif" font-size="6.2" fill="#222" font-weight="bold" text-anchor="middle">Pending Review</text>
+<rect x="421.8539325842697" y="1588" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="435.8539325842697" y="1597" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Resume</text>
+<rect x="470.6404494382023" y="1585" width="36" height="17" rx="5" fill="#333" stroke="#222" stroke-width="1.4"/>
+<text x="488.6404494382023" y="1595.768" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#fff" font-weight="bold" text-anchor="middle">Approve</text>
+<rect x="508.6404494382023" y="1585" width="32" height="17" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="524.6404494382023" y="1595.768" font-family="Helvetica,Arial,sans-serif" font-size="6.3" fill="#222" font-weight="bold" text-anchor="middle">Reject</text>
+<rect x="544.6404494382023" y="1585" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
+<text x="548.6404494382023" y="1596.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
+<rect x="598.6404494382023" y="1587" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1615" width="452" height="42" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<circle cx="184" cy="1636" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="184" y="1638.275" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="bold" text-anchor="middle">SN</text>
+<text x="198" y="1630" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Student name</text>
+<text x="198" y="1640" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#666" font-weight="normal" text-anchor="start">name@mail.com</text>
+<text x="198" y="1650" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Dept  *  Batch</text>
+<text x="274.5730337078652" y="1631" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="274.5730337078652" y="1642" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon</text>
+<rect x="337.05617977528095" y="1627" width="52.19200000000001" height="14" rx="7.0" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="363.15217977528096" y="1636.232" font-family="Helvetica,Arial,sans-serif" font-size="6.2" fill="#222" font-weight="bold" text-anchor="middle">Shortlisted</text>
+<rect x="421.8539325842697" y="1630" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="435.8539325842697" y="1639" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Resume</text>
+<rect x="470.6404494382023" y="1627" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
+<text x="474.6404494382023" y="1638.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
+<rect x="524.6404494382023" y="1629" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1657" width="452" height="42" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<circle cx="184" cy="1678" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="184" y="1680.275" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="bold" text-anchor="middle">SN</text>
+<text x="198" y="1672" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Student name</text>
+<text x="198" y="1682" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#666" font-weight="normal" text-anchor="start">name@mail.com</text>
+<text x="198" y="1692" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Dept  *  Batch</text>
+<text x="274.5730337078652" y="1673" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="274.5730337078652" y="1684" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon</text>
+<rect x="337.05617977528095" y="1669" width="79.968" height="14" rx="7.0" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="377.04017977528093" y="1678.232" font-family="Helvetica,Arial,sans-serif" font-size="6.2" fill="#222" font-weight="bold" text-anchor="middle">Interview Scheduled</text>
+<rect x="421.8539325842697" y="1672" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="435.8539325842697" y="1681" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Resume</text>
+<rect x="470.6404494382023" y="1669" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
+<text x="474.6404494382023" y="1680.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
+<rect x="524.6404494382023" y="1671" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1699" width="452" height="42" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<circle cx="184" cy="1720" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="184" y="1722.275" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="bold" text-anchor="middle">SN</text>
+<text x="198" y="1714" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Student name</text>
+<text x="198" y="1724" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#666" font-weight="normal" text-anchor="start">name@mail.com</text>
+<text x="198" y="1734" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Dept  *  Batch</text>
+<text x="274.5730337078652" y="1715" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="274.5730337078652" y="1726" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon</text>
+<rect x="337.05617977528095" y="1711" width="41.776" height="14" rx="7.0" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="357.94417977528093" y="1720.232" font-family="Helvetica,Arial,sans-serif" font-size="6.2" fill="#222" font-weight="bold" text-anchor="middle">Approved</text>
+<rect x="421.8539325842697" y="1714" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="435.8539325842697" y="1723" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Resume</text>
+<rect x="470.6404494382023" y="1711" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
+<text x="474.6404494382023" y="1722.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
+<rect x="524.6404494382023" y="1713" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="168" y="1741" width="452" height="42" rx="0" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<circle cx="184" cy="1762" r="9" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="184" y="1764.275" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#222" font-weight="bold" text-anchor="middle">SN</text>
+<text x="198" y="1756" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Student name</text>
+<text x="198" y="1766" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#666" font-weight="normal" text-anchor="start">name@mail.com</text>
+<text x="198" y="1776" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Dept  *  Batch</text>
+<text x="274.5730337078652" y="1757" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Job title A</text>
+<text x="274.5730337078652" y="1768" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon</text>
+<rect x="337.05617977528095" y="1753" width="41.776" height="14" rx="7.0" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="357.94417977528093" y="1762.232" font-family="Helvetica,Arial,sans-serif" font-size="6.2" fill="#222" font-weight="bold" text-anchor="middle">Rejected</text>
+<rect x="421.8539325842697" y="1756" width="11" height="11" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="435.8539325842697" y="1765" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Resume</text>
+<rect x="470.6404494382023" y="1753" width="50" height="17" rx="5" fill="#f4f4f4" stroke="#555" stroke-width="1.1"/>
+<text x="474.6404494382023" y="1764.5" font-family="Helvetica,Arial,sans-serif" font-size="6.8" fill="#222" font-weight="bold" text-anchor="start">Stage  v</text>
+<rect x="524.6404494382023" y="1755" width="13" height="13" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<text x="394.0" y="1821" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="normal" text-anchor="middle"><  1  2  ></text>
+<text x="335.0" y="1857" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 3 - Recruiter dashboard: profile, job posts table, candidates table with job filter</text>
+<rect x="660" y="1035" width="610" height="800" rx="6" fill="#fff" stroke="#222" stroke-width="2.2"/>
+<rect x="660" y="1035" width="610" height="26" rx="6" fill="#e6e6e6" stroke="#222" stroke-width="2.2"/>
+<circle cx="674" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<circle cx="688" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<circle cx="702" cy="1048" r="4" fill="#fff" stroke="#555"/>
+<rect x="730" y="1040" width="520" height="16" rx="8" fill="#fff" stroke="#888" stroke-width="1"/>
+<text x="740" y="1052" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#555" font-weight="normal" text-anchor="start">jobportal-bd.app/dashboard/applicant/applications</text>
+<rect x="660" y="1063" width="118" height="772" rx="0" fill="#f4f4f4" stroke="#333" stroke-width="1.5"/>
+<rect x="660" y="1063" width="118" height="40" rx="0" fill="#e2e2e2" stroke="#333" stroke-width="1.5"/>
+<circle cx="682" cy="1083" r="12" fill="#fff" stroke="#555" stroke-width="1.2"/>
+<text x="682" y="1085.8" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">TA</text>
+<text x="700" y="1080" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#222" font-weight="bold" text-anchor="start">Tanvir Ahmed</text>
+<text x="700" y="1093" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Applicant Portal</text>
+<text x="670" y="1123" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#666" font-weight="bold" text-anchor="start">APPLICANT MENU</text>
+<rect x="666" y="1131" width="106" height="22" rx="5" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="671" y="1135" width="12" height="12" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="688" y="1146" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">Dashboard</text>
+<rect x="666" y="1159" width="106" height="22" rx="5" fill="#333" stroke="#555" stroke-width="1.1"/>
+<rect x="671" y="1163" width="12" height="12" rx="3" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<text x="688" y="1174" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold" text-anchor="start">My Applications</text>
+<rect x="666" y="1801" width="106" height="22" rx="5" fill="#fff" stroke="#555" stroke-width="1.1"/>
+<rect x="671" y="1805" width="12" height="12" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="688" y="1816" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#222" font-weight="bold" text-anchor="start">Logout</text>
+<rect x="788" y="1078" width="9" height="9" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="801" y="1086" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#555" font-weight="bold" text-anchor="start">Dashboard   >   My Applications</text>
+<text x="788" y="1111" font-family="Helvetica,Arial,sans-serif" font-size="17" fill="#222" font-weight="bold" text-anchor="start">My Applications</text>
+<text x="788" y="1124" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#555" font-weight="normal" text-anchor="start">Track, manage, and review your job applications and recruitment status across campus partner companies.</text>
+<rect x="788" y="1137" width="200" height="66" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<text x="800" y="1153" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#555" font-weight="bold" text-anchor="start">TOTAL APPLIED</text>
+<text x="800" y="1183" font-family="Helvetica,Arial,sans-serif" font-size="24" fill="#222" font-weight="bold" text-anchor="start">4</text>
+<rect x="828" y="1167" width="45.36" height="13" rx="6.5" fill="#eee" stroke="#777" stroke-width="1.1"/>
+<text x="850.68" y="1176.02" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#222" font-weight="normal" text-anchor="middle">All time</text>
+<text x="800" y="1197" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#555" font-weight="normal" text-anchor="start">2 still in progress</text>
+<rect x="948" y="1155" width="30" height="30" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<rect x="788" y="1213" width="472" height="82" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="788" y="1213" width="5" height="82" rx="2" fill="#333" stroke="#333" stroke-width="1"/>
+<rect x="804" y="1225" width="34" height="34" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="848" y="1236" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<rect x="904" y="1224" width="72.80000000000001" height="15" rx="7.5" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="940.4" y="1234.2" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="middle">Pending Review</text>
+<text x="848" y="1251" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<rect x="916" y="1244" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="928" y="1251" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Location</text>
+<rect x="978" y="1244" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="990" y="1251" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Full-time</text>
+<text x="1038" y="1251" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon yyyy</text>
+<rect x="848" y="1259" width="92" height="16" rx="4" fill="#f0f0f0" stroke="#888" stroke-width="1"/>
+<rect x="852" y="1262" width="10" height="10" rx="3" fill="#999" stroke="#555" stroke-width="1.1"/>
+<text x="866" y="1270.5" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">resume.pdf</text>
+<text x="930" y="1270.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
+<rect x="1128" y="1223" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1156.0" y="1235.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
+<rect x="1190" y="1223" width="60" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1220.0" y="1235.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
+<rect x="788" y="1303" width="472" height="96" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="788" y="1303" width="5" height="96" rx="2" fill="#333" stroke="#333" stroke-width="1"/>
+<rect x="804" y="1315" width="34" height="34" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="848" y="1326" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<rect x="904" y="1314" width="60.2" height="15" rx="7.5" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="934.1" y="1324.2" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="middle">Shortlisted</text>
+<text x="848" y="1341" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<rect x="916" y="1334" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="928" y="1341" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Location</text>
+<rect x="978" y="1334" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="990" y="1341" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Full-time</text>
+<text x="1038" y="1341" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon yyyy</text>
+<rect x="848" y="1349" width="92" height="16" rx="4" fill="#f0f0f0" stroke="#888" stroke-width="1"/>
+<rect x="852" y="1352" width="10" height="10" rx="3" fill="#999" stroke="#555" stroke-width="1.1"/>
+<text x="866" y="1360.5" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">resume.pdf</text>
+<text x="930" y="1360.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
+<rect x="848" y="1371" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="860" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
+<text x="948.8" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="958.8" y="1378" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Shortlisted (dd Mon)</text>
+<rect x="1128" y="1313" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1156.0" y="1325.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
+<rect x="1190" y="1313" width="60" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1220.0" y="1325.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
+<rect x="788" y="1407" width="472" height="96" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="788" y="1407" width="5" height="96" rx="2" fill="#333" stroke="#333" stroke-width="1"/>
+<rect x="804" y="1419" width="34" height="34" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="848" y="1430" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<rect x="904" y="1418" width="93.8" height="15" rx="7.5" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="950.9" y="1428.2" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="middle">Interview Scheduled</text>
+<text x="848" y="1445" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<rect x="916" y="1438" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="928" y="1445" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Location</text>
+<rect x="978" y="1438" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="990" y="1445" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Full-time</text>
+<text x="1038" y="1445" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon yyyy</text>
+<rect x="848" y="1453" width="92" height="16" rx="4" fill="#f0f0f0" stroke="#888" stroke-width="1"/>
+<rect x="852" y="1456" width="10" height="10" rx="3" fill="#999" stroke="#555" stroke-width="1.1"/>
+<text x="866" y="1464.5" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">resume.pdf</text>
+<text x="930" y="1464.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
+<rect x="948" y="1453" width="130" height="16" rx="4" fill="#e6e6e6" stroke="#888" stroke-width="1"/>
+<rect x="952" y="1456" width="10" height="10" rx="3" fill="#999" stroke="#555" stroke-width="1.1"/>
+<text x="966" y="1464.5" font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#222" font-weight="bold" text-anchor="start">Interview: dd Mon, 10:00</text>
+<rect x="848" y="1475" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="860" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
+<text x="948.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="958.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Shortlisted (dd Mon)</text>
+<text x="1036.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="1046.8" y="1482" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Interview Scheduled (dd Mon)</text>
+<rect x="1128" y="1417" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1156.0" y="1429.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
+<rect x="1190" y="1417" width="60" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1220.0" y="1429.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">Withdraw</text>
+<rect x="788" y="1511" width="472" height="96" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<rect x="788" y="1511" width="5" height="96" rx="2" fill="#333" stroke="#333" stroke-width="1"/>
+<rect x="804" y="1523" width="34" height="34" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="848" y="1534" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222" font-weight="bold" text-anchor="start">Job title</text>
+<rect x="904" y="1522" width="47.6" height="15" rx="7.5" fill="#eee" stroke="#666" stroke-width="1.1"/>
+<text x="927.8" y="1532.2" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="middle">Approved</text>
+<text x="848" y="1549" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">Company name</text>
+<rect x="916" y="1542" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="928" y="1549" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Location</text>
+<rect x="978" y="1542" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="990" y="1549" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#555" font-weight="normal" text-anchor="start">Full-time</text>
+<text x="1038" y="1549" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#777" font-weight="normal" text-anchor="start">Applied dd Mon yyyy</text>
+<rect x="848" y="1557" width="92" height="16" rx="4" fill="#f0f0f0" stroke="#888" stroke-width="1"/>
+<rect x="852" y="1560" width="10" height="10" rx="3" fill="#999" stroke="#555" stroke-width="1.1"/>
+<text x="866" y="1568.5" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">resume.pdf</text>
+<text x="930" y="1568.5" font-family="Helvetica,Arial,sans-serif" font-size="6" fill="#777" font-weight="normal" text-anchor="start">(eye)</text>
+<rect x="848" y="1579" width="8" height="8" rx="3" fill="#ddd" stroke="#555" stroke-width="1.1"/>
+<text x="860" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Pending Review (dd Mon)</text>
+<text x="948.8" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="start">></text>
+<text x="958.8" y="1586" font-family="Helvetica,Arial,sans-serif" font-size="6.6" fill="#333" font-weight="normal" text-anchor="start">Approved (dd Mon)</text>
+<rect x="1128" y="1521" width="56" height="20" rx="5" fill="#fff" stroke="#222" stroke-width="1.4"/>
+<text x="1156.0" y="1533.88" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="middle">View Job</text>
+<text x="1248" y="1555" font-family="Helvetica,Arial,sans-serif" font-size="6.5" fill="#666" font-weight="normal" text-anchor="end" font-style="italic">no Withdraw when approved</text>
+<text x="788" y="1625" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#666" font-weight="normal" text-anchor="start" font-style="italic">Other badges: Exam Scheduled, Rejected</text>
+<rect x="788" y="1633" width="472" height="44" rx="8" fill="#fff" stroke="#555" stroke-width="1.4"/>
+<circle cx="808" cy="1655" r="10" fill="#ddd" stroke="#555" stroke-width="1.2"/>
+<text x="824" y="1652" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#444" font-weight="normal" text-anchor="start">Need to update your submitted CV for an active opening?</text>
+<text x="824" y="1664" font-family="Helvetica,Arial,sans-serif" font-size="7.5" fill="#222" font-weight="bold" text-anchor="start">Contact University Placement Cell.</text>
+<text x="1248" y="1659" font-family="Helvetica,Arial,sans-serif" font-size="8" fill="#222" font-weight="bold" text-anchor="end">Showing 4 applications</text>
+<text x="965.0" y="1857" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222" font-weight="bold" text-anchor="middle">Figure 4 - Applicant My Applications page with status badges</text>
 </svg>
