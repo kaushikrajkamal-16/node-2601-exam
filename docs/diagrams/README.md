@@ -49,6 +49,7 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 | `activity-apply-for-job.puml` | PlantUML activity (swimlanes) | All business rules from click to stored application | as above |
 | `activity-job-posting-and-moderation.puml` | PlantUML activity (swimlanes) | Job creation, pause/edit/delete, admin close | `companyController.js`, `adminController.js` |
 | `state-application-status.puml` | PlantUML state | `Application.status` lifecycle | `Application.js`, `UpdateApplicationStatus`, `WithdrawApplication` |
+| `state-application-status-organized.svg` | Hand-authored SVG | Cleaner version of the application status machine: pending, shortlisted, exam, interview, approved, rejected; company can set any value from any value (no ordering); exits by WithdrawApplication (not when approved), DeleteCandidate and cascade deletes | `Server/controllers/companyController.js` (UpdateApplicationStatus, DeleteCandidate), `applicantController.js` (ApplyJob, WithdrawApplication), `model/Application.js` |
 | `state-job-status.puml` | PlantUML state | `Job.status` lifecycle | `Job.js`, `TogglePauseJob`, `UpdateJob`, `CloseJob` |
 | `state-user-account.puml` | PlantUML state | Verification and flag states | `User.js`, auth and admin controllers |
 | `dfd-level-0.mmd` | Mermaid flowchart (DFD) | Context-level data flows | whole system |
