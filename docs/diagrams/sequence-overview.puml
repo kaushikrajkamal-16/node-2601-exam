@@ -1,0 +1,89 @@
+@startuml sequence-overview
+title JobPortal BD - End-to-End Sequence (main happy path)
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign left
+skinparam maxMessageSize 220
+skinparam ParticipantPadding 14
+skinparam BoxPadding 8
+
+actor "Applicant" as A
+actor "Company" as C
+actor "Admin" as AD
+box "Client (Netlify) - React + RTK Query" #EAF1FB
+participant "React pages" as FE
+end box
+box "Server (Render) - Express 5" #EEF7EE
+participant "Router +\nauthMiddleware /\nroleMiddleware" as MW
+participant "Controllers" as CT
+end box
+box "External / Data" #FFF6E5
+database "MongoDB\nusers, jobs,\napplications" as DB
+participant "Gmail SMTP\n(Nodemailer)" as SM
+participant "Cloudinary" as CL
+end box
+
+== 1. Registration and e-mail verification ==
+A -> FE : fill register form
+FE -> MW : POST /auth/register
+MW -> CT : Registration
+CT -> DB : User.create (isVerified=false, OTP + 10 min expiry)
+CT -> SM : send verification code
+SM --> A : e-mail with 6-digit code
+A -> FE : enter code
+FE -> CT : POST /auth/verifyEmail
+CT -> DB : isVerified = true
+CT --> FE : 200 verified
+
+== 2. Login ==
+A -> FE : e-mail + password
+FE -> CT : POST /auth/login
+CT -> DB : find user, compare bcrypt hash, check isVerified
+CT --> FE : 200 + Set-Cookie accessToken (JWT, httpOnly, 1 day)
+
+== 3. Company posts a job ==
+C -> FE : fill job form
+FE -> MW : POST /company/jobs/create (cookie)
+MW -> MW : verify JWT, load user, role = company
+MW -> CT : CreateJob
+CT -> DB : Job.create (slug, status = active)
+CT --> FE : 201 job
+
+== 4. Applicant applies ==
+A -> FE : choose CV (pdf/doc/docx, max 5 MB)
+FE -> MW : POST /applicant/apply/:jobId (multipart)
+MW -> MW : JWT, role = applicant, multer (memory)
+MW -> CT : ApplyJob
+CT -> DB : job active, deadline not passed, no duplicate application
+CT -> CL : upload resume
+CL --> CT : secure_url, public_id
+CT -> DB : Application.create (status = pending, history[pending])
+CT --> FE : 201 application
+
+== 5. Company reviews the candidate ==
+C -> FE : open candidates
+FE -> MW : GET /company/candidates
+MW -> CT : GetCandidates
+CT -> DB : applications of own company
+CT --> FE : 200 candidates
+C -> FE : set status (shortlisted / exam / interview / approved / rejected)
+FE -> MW : PATCH /company/candidates/status/:id
+MW -> CT : UpdateApplicationStatus
+CT -> DB : status = new value, push statusHistory (+ interview note)
+CT --> FE : 200 updated
+
+== 6. Applicant tracks the result ==
+A -> FE : open "My applications"
+FE -> MW : GET /applicant/applications
+MW -> CT : GetMyApplications
+CT -> DB : applications of this applicant + job + company
+CT --> FE : 200 list with status timeline
+
+== 7. Admin moderation (optional) ==
+AD -> FE : close or delete a job / company
+FE -> MW : PATCH /admin/jobs/close/:id  or  DELETE /admin/companies/delete/:id
+MW -> CT : CloseJob / DeleteCompany
+CT -> DB : update status, or delete user + jobs + applications
+CT -> CL : delete stored files
+CT --> FE : 200 done
+@enduml

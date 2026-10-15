@@ -39,6 +39,7 @@ Reverse-engineered from the uploaded React client (`Client.zip`) and Node.js ser
 | `class-diagram.puml` | PlantUML class | Domain model: the three Mongoose models, enums, embedded `StatusHistoryEntry`, multiplicities | `model/*.js` |
 | `class-diagram-modules.puml` | PlantUML class | Backend function modules (controllers, middleware, helpers) and which models they use | `require()` statements across `Server/` |
 | `entity-relationship-diagram.mmd` | Mermaid ER | MongoDB collections, refs, embedded `statusHistory`, indexes | `model/User.js`, `Job.js`, `Application.js` |
+| `sequence-overview.puml` | PlantUML | One end-to-end sequence over the main path: register + e-mail code, login, company posts a job, applicant applies with CV, company updates status, applicant tracks it, admin moderation. Detailed per-flow diagrams with error branches follow below | `Server/routes/api/*.js`, `Server/controller/*.js`, `Client/src/features/**` |
 | `sequence-authentication.puml` | PlantUML sequence | Login, session check (route guard), logout | `authController.js`, `authMiddleware.js`, `ProtectedRoute.jsx` |
 | `sequence-registration.puml` | PlantUML sequence | Register, verify e-mail OTP, resend | `authController.js` |
 | `sequence-password-reset.puml` | PlantUML sequence | Forgot, verify, reset | `authController.js`, `VerifyOtp.jsx` |
