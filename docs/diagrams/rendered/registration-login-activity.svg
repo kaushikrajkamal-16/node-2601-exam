@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1610 1800" width="1610" height="1800"><defs><marker id="m" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L11,4.5 L0,9 z" fill="#000"/></marker></defs><rect width="1610" height="1800" fill="#fff"/>
+<text x="805.0" y="36" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#000" font-weight="bold" text-anchor="middle">Activity Diagram - Register, verify the e-mail code and log in</text>
+<text x="805.0" y="58" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#000" font-weight="normal" text-anchor="middle">Swimlanes: User, React client, API server, E-mail service. Derived from authController (Registration, VerifyEmail, ResendOtp, login) and Login.jsx.</text>
+<rect x="40" y="80" width="360" height="1700" fill="#fff" stroke="#000" stroke-width="1.5"/><rect x="40" y="80" width="360" height="34" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="220.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#000" font-weight="bold" text-anchor="middle">USER</text>
+<rect x="400" y="80" width="380" height="1700" fill="#fff" stroke="#000" stroke-width="1.5"/><rect x="400" y="80" width="380" height="34" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="590.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#000" font-weight="bold" text-anchor="middle">REACT CLIENT</text>
+<rect x="780" y="80" width="460" height="1700" fill="#fff" stroke="#000" stroke-width="1.5"/><rect x="780" y="80" width="460" height="34" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="1010.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#000" font-weight="bold" text-anchor="middle">API SERVER</text>
+<rect x="1240" y="80" width="330" height="1700" fill="#fff" stroke="#000" stroke-width="1.5"/><rect x="1240" y="80" width="330" height="34" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="1405.0" y="103" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#000" font-weight="bold" text-anchor="middle">EMAIL SERVICE</text>
+<polyline points="220.0,151 220.0,170" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="340.0,195.0 590,195 590.0,250.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="460.0,300.0 220,300 220.0,220" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="590.0,350.0 590.0,380" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="700.0,405.0 1080,405 1080.0,455.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="920.0,520.0 700.0,520.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="480.0,520.0 70,520 70,195 100.0,195.0" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<polyline points="1080.0,585.0 1080.0,605" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="930.0,635.0 700.0,635.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="1230.0,635.0 1290.0,635.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="590.0,665 590,690 200,690 200.07999999999998,740" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="1405.0,665 1405,705 240,705 239.92,740" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="340.0,770.0 480.0,770.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="700.0,770.0 1080,770 1080.0,830.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="930.0,880.0 700.0,880.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="480.0,880.0 70,880 70,770 100.0,770.0" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<polyline points="590.0,910 590,985 800.0,985.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="880.0,1015 880,1105 1550,1105 1550,635 1520.0,635.0" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<polyline points="1080.0,930.0 1080.0,1040" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="930.0,1065.0 700.0,1065.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="590.0,1090 590,1125 240,1125 239.92,1150" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="340.0,1175.0 480.0,1175.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="700.0,1175.0 1080,1175 1080.0,1240.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="930.0,1290.0 700.0,1290.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="480.0,1290.0 70,1290 70,1175 100.0,1175.0" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#m)"/>
+<polyline points="1080.0,1340.0 1080.0,1370" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="930.0,1400.0 780,1400 780,1555 720.0,1555.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="590.0,1500.0 590,1480 340.0,1480.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="460.0,1555.0 340.0,1555.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="590.0,1610.0 590,1630 340.0,1630.0" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="100.0,1480.0 70,1480 70.0,1694" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="100.0,1555.0 70,1555 70.0,1694" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<polyline points="100.0,1630.0 70,1630 70.0,1694" fill="none" stroke="#000" stroke-width="2" marker-end="url(#m)"/>
+<circle cx="220.0" cy="140.0" r="11.0" fill="#000"/>
+<rect x="100.0" y="170" width="240" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="190.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Enter name, e-mail,</text>
+<text x="220.0" y="207.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">password and role</text>
+<polygon points="590.0,250.0 720.0,300.0 590.0,350.0 460.0,300.0" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="296.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">Client validation</text>
+<text x="590.0" y="312.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">passed?</text>
+<rect x="480.0" y="380" width="220" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="409.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">POST /auth/register</text>
+<polygon points="1080.0,455.0 1240.0,520.0 1080.0,585.0 920.0,520.0" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="500.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">Server validation passes?</text>
+<text x="1080.0" y="516.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">valid e-mail, strong password,</text>
+<text x="1080.0" y="532.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">role = applicant / company,</text>
+<text x="1080.0" y="548.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">e-mail not used</text>
+<rect x="480.0" y="490" width="220" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="515.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Show server error</text>
+<text x="590.0" y="532.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">(400 / 409)</text>
+<rect x="930.0" y="605" width="300" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="630.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Create user: isVerified = false,</text>
+<text x="1080.0" y="647.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">OTP valid for 10 minutes</text>
+<rect x="480.0" y="605" width="220" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="630.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Redirect to</text>
+<text x="590.0" y="647.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Verify OTP page (201)</text>
+<rect x="1290.0" y="605" width="230" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1405.0" y="630.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Send OTP e-mail</text>
+<text x="1405.0" y="647.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">(Gmail SMTP)</text>
+<rect x="100.0" y="740" width="240" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="765.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Read the e-mail and enter</text>
+<text x="220.0" y="782.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">the code on Verify OTP page</text>
+<rect x="480.0" y="740" width="220" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="774.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">POST /auth/verifyEmail</text>
+<polygon points="1080.0,830.0 1230.0,880.0 1080.0,930.0 930.0,880.0" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="876.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">Code correct and</text>
+<text x="1080.0" y="892.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">not expired?</text>
+<rect x="480.0" y="850" width="220" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="875.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Show error:</text>
+<text x="590.0" y="892.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">wrong or expired code</text>
+<rect x="800.0" y="955" width="160" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="880.0" y="980.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Resend: new OTP</text>
+<text x="880.0" y="997.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">(10 minutes)</text>
+<rect x="930.0" y="1040" width="300" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="1069.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Mark isVerified = true</text>
+<rect x="480.0" y="1040" width="220" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="1060.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Show success,</text>
+<text x="590.0" y="1077.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">go to Login page</text>
+<rect x="100.0" y="1150" width="240" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="1179.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Enter e-mail and password</text>
+<rect x="480.0" y="1150" width="220" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="1179.0" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">POST /auth/login</text>
+<polygon points="1080.0,1240.0 1230.0,1290.0 1080.0,1340.0 930.0,1290.0" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="1286.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">Verified and password</text>
+<text x="1080.0" y="1302.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">correct?</text>
+<rect x="480.0" y="1260" width="220" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="1285.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Show error: not verified</text>
+<text x="590.0" y="1302.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">or wrong password</text>
+<rect x="930.0" y="1370" width="300" height="60" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="1080.0" y="1395.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Issue JWT (1 day) in httpOnly</text>
+<text x="1080.0" y="1412.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">cookie and return the user</text>
+<polygon points="590.0,1500.0 720.0,1555.0 590.0,1610.0 460.0,1555.0" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="590.0" y="1559.0" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#000" font-weight="normal" text-anchor="middle">Role?</text>
+<rect x="100.0" y="1455" width="240" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="1475.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Applicant dashboard</text>
+<text x="220.0" y="1492.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">/dashboard/applicant</text>
+<rect x="100.0" y="1530" width="240" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="1550.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Recruiter dashboard</text>
+<text x="220.0" y="1567.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">/dashboard/recruiter</text>
+<rect x="100.0" y="1605" width="240" height="50" rx="14" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="220.0" y="1625.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">Admin dashboard</text>
+<text x="220.0" y="1642.5" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#000" font-weight="normal" text-anchor="middle">/dashboard/admin</text>
+<circle cx="70.0" cy="1710.0" r="16.0" fill="#fff" stroke="#000" stroke-width="2.5"/><circle cx="70.0" cy="1710.0" r="8.0" fill="#000"/>
+<rect x="1290" y="1260" width="230" height="70" rx="10" fill="#fff" stroke="#000" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="1405.0" y="1290.5" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle">Note: Login.jsx also redirects an</text>
+<text x="1405.0" y="1307.5" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle">unverified user to /verifyOtp</text>
+<text x="340" y="290" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">no: show field errors</text>
+<text x="604" y="358" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">yes</text>
+<text x="800" y="510" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">no</text>
+<text x="102" y="360" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">retry</text>
+<text x="1094" y="593" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">yes</text>
+<text x="800" y="870" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">no</text>
+<text x="112" y="830" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">enter again</text>
+<text x="662" y="975" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">resend code (/auth/resendOtp)</text>
+<text x="1300" y="1097" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">new OTP e-mail</text>
+<text x="1094" y="985" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">yes</text>
+<text x="800" y="1280" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">no</text>
+<text x="106" y="1240" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">try again</text>
+<text x="1094" y="1345" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="bold" text-anchor="middle">yes</text>
+<text x="470" y="1470" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">applicant</text>
+<text x="400" y="1546" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">recruiter</text>
+<text x="470" y="1648" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#000" font-weight="normal" text-anchor="middle" font-style="italic">admin</text>
+</svg>
