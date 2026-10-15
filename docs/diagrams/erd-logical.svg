@@ -1,0 +1,653 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2340 1674" width="2340" height="1674" font-family="Arial, Helvetica, sans-serif">
+<rect width="2340" height="1674" fill="#fff"/>
+<text x="1030.0" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#111">Logical Entity-Relationship Diagram - JobPortal BD</text>
+<text x="1030.0" y="56" text-anchor="middle" font-size="12" fill="#555">Derived from the backend (models, controllers) and the frontend (forms, pages). The database physically stores 3 collections; each box says where its data lives.</text>
+<text x="1930" y="88" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f4e79">REFERENCE VALUE SETS (enumerations)</text>
+<rect x="1930" y="100" width="330" height="110" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,105 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ROLE</text>
+<text x="2095.0" y="137" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">users.role</text>
+<rect x="1931" y="144" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="159" text-anchor="start" font-size="12.2" fill="#111">applicant</text>
+<text x="2172" y="159" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="159" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="181" text-anchor="start" font-size="12.2" fill="#111">company</text>
+<text x="2172" y="181" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="181" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="188" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="203" text-anchor="start" font-size="12.2" fill="#111">admin</text>
+<text x="2172" y="203" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="203" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1930" y="232" width="330" height="110" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,237 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="252" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_STATUS</text>
+<text x="2095.0" y="269" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">jobs.status</text>
+<rect x="1931" y="276" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="291" text-anchor="start" font-size="12.2" fill="#111">active</text>
+<text x="2172" y="291" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="291" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="313" text-anchor="start" font-size="12.2" fill="#111">paused</text>
+<text x="2172" y="313" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="313" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="320" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="335" text-anchor="start" font-size="12.2" fill="#111">closed</text>
+<text x="2172" y="335" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="335" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1930" y="364" width="330" height="176" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,369 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="384" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">APPLICATION_STATUS</text>
+<text x="2095.0" y="401" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">applications.status, statusHistory</text>
+<rect x="1931" y="408" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="423" text-anchor="start" font-size="12.2" fill="#111">pending</text>
+<text x="2172" y="423" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="423" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="445" text-anchor="start" font-size="12.2" fill="#111">shortlisted</text>
+<text x="2172" y="445" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="445" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="452" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="467" text-anchor="start" font-size="12.2" fill="#111">exam</text>
+<text x="2172" y="467" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="467" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="489" text-anchor="start" font-size="12.2" fill="#111">interview</text>
+<text x="2172" y="489" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="489" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="496" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="511" text-anchor="start" font-size="12.2" fill="#111">approved</text>
+<text x="2172" y="511" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="511" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="533" text-anchor="start" font-size="12.2" fill="#111">rejected</text>
+<text x="2172" y="533" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="533" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1930" y="562" width="330" height="88" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,567 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="582" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">OTP_PURPOSE</text>
+<text x="2095.0" y="599" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">users.otpPurpose</text>
+<rect x="1931" y="606" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="621" text-anchor="start" font-size="12.2" fill="#111">verify</text>
+<text x="2172" y="621" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="621" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="643" text-anchor="start" font-size="12.2" fill="#111">reset</text>
+<text x="2172" y="643" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="643" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1930" y="672" width="330" height="132" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,677 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="692" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_TYPE</text>
+<text x="2095.0" y="709" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">jobs.type - list is in the frontend</text>
+<rect x="1931" y="716" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="731" text-anchor="start" font-size="12.2" fill="#111">Full-time</text>
+<text x="2172" y="731" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="731" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="753" text-anchor="start" font-size="12.2" fill="#111">Part-time</text>
+<text x="2172" y="753" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="753" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="760" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="775" text-anchor="start" font-size="12.2" fill="#111">Internship</text>
+<text x="2172" y="775" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="775" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="797" text-anchor="start" font-size="12.2" fill="#111">Contract</text>
+<text x="2172" y="797" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="797" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1930" y="826" width="330" height="110" rx="5" fill="#fff" stroke="#8a7a2a" stroke-width="2" stroke-dasharray="5 3"/>
+<path d="M1930,831 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#8a7a2a"/>
+<text x="2095.0" y="846" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">WORK_MODE</text>
+<text x="2095.0" y="863" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">jobs.mode - list is in the frontend</text>
+<rect x="1931" y="870" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="885" text-anchor="start" font-size="12.2" fill="#111">On-site (Gulshan-2)</text>
+<text x="2172" y="885" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="885" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1942" y="907" text-anchor="start" font-size="12.2" fill="#111">Hybrid (3 Days Office)</text>
+<text x="2172" y="907" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="907" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1931" y="914" width="328" height="22" fill="#f6f8fb"/>
+<text x="1942" y="929" text-anchor="start" font-size="12.2" fill="#111">Remote</text>
+<text x="2172" y="929" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="2172" y="929" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="860" y="100" width="400" height="314" rx="5" fill="#fff" stroke="#2f6aa8" stroke-width="2"/>
+<path d="M860,105 a5,5 0 0 1 5,-5 h390 a5,5 0 0 1 5,5 v39 h-400 z" fill="#2f6aa8"/>
+<text x="1060.0" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">USER_ACCOUNT</text>
+<text x="1060.0" y="137" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">base entity: login identity</text>
+<rect x="861" y="144" width="398" height="22" fill="#f6f8fb"/>
+<rect x="865" y="148" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="879" y="159" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="914" y="159" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="1064" y="159" text-anchor="start" font-size="11" fill="#555">uuid-like</text>
+<text x="1138" y="159" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">ObjectId _id</text>
+<rect x="865" y="170" width="28" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0" stroke-width="1"/>
+<text x="879" y="181" text-anchor="middle" font-size="9" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="914" y="181" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">email</text>
+<text x="1064" y="181" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1138" y="181" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">unique, lowercase</text>
+<rect x="861" y="188" width="398" height="22" fill="#f6f8fb"/>
+<text x="914" y="203" text-anchor="start" font-size="12.2" fill="#111">name</text>
+<text x="1064" y="203" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1138" y="203" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">person or company name</text>
+<text x="914" y="225" text-anchor="start" font-size="12.2" fill="#111">initials</text>
+<text x="1064" y="225" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1138" y="225" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">derived</text>
+<rect x="861" y="232" width="398" height="22" fill="#f6f8fb"/>
+<text x="914" y="247" text-anchor="start" font-size="12.2" fill="#111">password_hash</text>
+<text x="1064" y="247" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1138" y="247" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">bcrypt</text>
+<text x="914" y="269" text-anchor="start" font-size="12.2" fill="#111">phone</text>
+<text x="1064" y="269" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1138" y="269" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="861" y="276" width="398" height="22" fill="#f6f8fb"/>
+<text x="914" y="291" text-anchor="start" font-size="12.2" fill="#111">role</text>
+<text x="1064" y="291" text-anchor="start" font-size="11" fill="#555">-&gt; ROLE</text>
+<text x="1138" y="291" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">applicant|company|admin</text>
+<text x="914" y="313" text-anchor="start" font-size="12.2" fill="#111">is_verified</text>
+<text x="1064" y="313" text-anchor="start" font-size="11" fill="#555">boolean</text>
+<text x="1138" y="313" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default false</text>
+<rect x="861" y="320" width="398" height="22" fill="#f6f8fb"/>
+<rect x="865" y="324" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="879" y="335" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="914" y="335" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">added_by</text>
+<text x="1064" y="335" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1138" y="335" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">admin, optional</text>
+<text x="914" y="357" text-anchor="start" font-size="12.2" fill="#111">created_at</text>
+<text x="1064" y="357" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="1138" y="357" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="861" y="364" width="398" height="22" fill="#f6f8fb"/>
+<text x="914" y="379" text-anchor="start" font-size="12.2" fill="#111">updated_at</text>
+<text x="1064" y="379" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="1138" y="379" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="860" y1="386" x2="1260" y2="386" stroke="#2f6aa8" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="868" y="404" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users (all roles)</text>
+<rect x="330" y="130" width="330" height="160" rx="5" fill="#fff" stroke="#c26a1f" stroke-width="2"/>
+<path d="M330,135 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#c26a1f"/>
+<text x="495.0" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">OTP_CODE</text>
+<text x="495.0" y="167" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">one-time password (up to 2 per user)</text>
+<rect x="331" y="174" width="328" height="22" fill="#f6f8fb"/>
+<rect x="335" y="178" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="357" y="189" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="384" y="189" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="474" y="189" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="586" y="189" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="335" y="200" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="349" y="211" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="384" y="211" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">purpose</text>
+<text x="474" y="211" text-anchor="start" font-size="11" fill="#555">-&gt; OTP_PURPOSE</text>
+<text x="586" y="211" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">verify | reset</text>
+<rect x="331" y="218" width="328" height="22" fill="#f6f8fb"/>
+<text x="384" y="233" text-anchor="start" font-size="12.2" fill="#111">code</text>
+<text x="474" y="233" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="586" y="233" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">6 digits</text>
+<text x="384" y="255" text-anchor="start" font-size="12.2" fill="#111">expires_at</text>
+<text x="474" y="255" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="586" y="255" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">10 minutes</text>
+<line x1="330" y1="262" x2="660" y2="262" stroke="#c26a1f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="338" y="280" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users.emailverifyotp / resetotp (+ Expiry)</text>
+<rect x="1500" y="130" width="330" height="138" rx="5" fill="#fff" stroke="#3b8f8f" stroke-width="2"/>
+<path d="M1500,135 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#3b8f8f"/>
+<text x="1665.0" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">PROFILE_IMAGE</text>
+<text x="1665.0" y="167" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">profile photo / company logo</text>
+<rect x="1501" y="174" width="328" height="22" fill="#f6f8fb"/>
+<rect x="1505" y="178" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1527" y="189" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1554" y="189" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="1654" y="189" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1714" y="189" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1554" y="211" text-anchor="start" font-size="12.2" fill="#111">url</text>
+<text x="1654" y="211" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1714" y="211" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">Cloudinary</text>
+<rect x="1501" y="218" width="328" height="22" fill="#f6f8fb"/>
+<text x="1554" y="233" text-anchor="start" font-size="12.2" fill="#111">public_id</text>
+<text x="1654" y="233" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1714" y="233" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">for delete</text>
+<line x1="1500" y1="240" x2="1830" y2="240" stroke="#3b8f8f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1508" y="258" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users.photo, photoPublicId</text>
+<rect x="280" y="534" width="340" height="160" rx="5" fill="#fff" stroke="#3a7d44" stroke-width="2"/>
+<path d="M280,539 a5,5 0 0 1 5,-5 h330 a5,5 0 0 1 5,5 v39 h-340 z" fill="#3a7d44"/>
+<text x="450.0" y="554" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">APPLICANT_PROFILE</text>
+<text x="450.0" y="571" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">role = applicant</text>
+<rect x="281" y="578" width="338" height="22" fill="#f6f8fb"/>
+<rect x="285" y="582" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="307" y="593" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="334" y="593" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="444" y="593" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="514" y="593" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="334" y="615" text-anchor="start" font-size="12.2" fill="#111">department</text>
+<text x="444" y="615" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="514" y="615" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="281" y="622" width="338" height="22" fill="#f6f8fb"/>
+<text x="334" y="637" text-anchor="start" font-size="12.2" fill="#111">batch</text>
+<text x="444" y="637" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="514" y="637" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="334" y="659" text-anchor="start" font-size="12.2" fill="#111">is_flagged</text>
+<text x="444" y="659" text-anchor="start" font-size="11" fill="#555">boolean</text>
+<text x="514" y="659" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default false</text>
+<line x1="280" y1="666" x2="620" y2="666" stroke="#3a7d44" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="288" y="684" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users (role = applicant)</text>
+<rect x="780" y="534" width="340" height="182" rx="5" fill="#fff" stroke="#b03a6e" stroke-width="2"/>
+<path d="M780,539 a5,5 0 0 1 5,-5 h330 a5,5 0 0 1 5,5 v39 h-340 z" fill="#b03a6e"/>
+<text x="950.0" y="554" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">COMPANY_PROFILE</text>
+<text x="950.0" y="571" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">role = company (recruiter)</text>
+<rect x="781" y="578" width="338" height="22" fill="#f6f8fb"/>
+<rect x="785" y="582" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="807" y="593" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="834" y="593" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="944" y="593" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1014" y="593" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="834" y="615" text-anchor="start" font-size="12.2" fill="#111">industry</text>
+<text x="944" y="615" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1014" y="615" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">admin filter</text>
+<rect x="781" y="622" width="338" height="22" fill="#f6f8fb"/>
+<text x="834" y="637" text-anchor="start" font-size="12.2" fill="#111">description</text>
+<text x="944" y="637" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1014" y="637" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="834" y="659" text-anchor="start" font-size="12.2" fill="#111">address</text>
+<text x="944" y="659" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1014" y="659" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">job location</text>
+<rect x="781" y="666" width="338" height="22" fill="#f6f8fb"/>
+<text x="834" y="681" text-anchor="start" font-size="12.2" fill="#111">website</text>
+<text x="944" y="681" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1014" y="681" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="780" y1="688" x2="1120" y2="688" stroke="#b03a6e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="788" y="706" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users (role = company)</text>
+<rect x="1280" y="534" width="340" height="116" rx="5" fill="#fff" stroke="#8a2f2f" stroke-width="2"/>
+<path d="M1280,539 a5,5 0 0 1 5,-5 h330 a5,5 0 0 1 5,5 v39 h-340 z" fill="#8a2f2f"/>
+<text x="1450.0" y="554" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ADMIN_PROFILE</text>
+<text x="1450.0" y="571" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">role = admin</text>
+<rect x="1281" y="578" width="338" height="22" fill="#f6f8fb"/>
+<rect x="1285" y="582" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1307" y="593" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1334" y="593" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">user_id</text>
+<text x="1444" y="593" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1514" y="593" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1334" y="615" text-anchor="start" font-size="12.2" fill="#111">office</text>
+<text x="1444" y="615" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1514" y="615" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="1280" y1="622" x2="1620" y2="622" stroke="#8a2f2f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1288" y="640" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: users (role = admin)</text>
+<rect x="100" y="806" width="480" height="248" rx="5" fill="#fff" stroke="#b8902a" stroke-width="2"/>
+<path d="M100,811 a5,5 0 0 1 5,-5 h470 a5,5 0 0 1 5,5 v39 h-480 z" fill="#b8902a"/>
+<text x="340.0" y="826" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">APPLICATION</text>
+<text x="340.0" y="843" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">applicant applies to one job</text>
+<rect x="101" y="850" width="478" height="22" fill="#f6f8fb"/>
+<rect x="105" y="854" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="119" y="865" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="154" y="865" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">application_id</text>
+<text x="274" y="865" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="434" y="865" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">ObjectId _id</text>
+<rect x="105" y="876" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="119" y="887" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="154" y="887" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">company_id</text>
+<text x="274" y="887" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="434" y="887" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">copy of job.company</text>
+<rect x="101" y="894" width="478" height="22" fill="#f6f8fb"/>
+<rect x="105" y="898" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="119" y="909" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="154" y="909" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">job_id</text>
+<text x="274" y="909" text-anchor="start" font-size="11" fill="#555">job_id</text>
+<text x="434" y="909" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">required</text>
+<rect x="105" y="920" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="119" y="931" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="154" y="931" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">applicant_id</text>
+<text x="274" y="931" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="434" y="931" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">required</text>
+<rect x="101" y="938" width="478" height="22" fill="#f6f8fb"/>
+<text x="154" y="953" text-anchor="start" font-size="12.2" fill="#111">status</text>
+<text x="274" y="953" text-anchor="start" font-size="11" fill="#555">-&gt; APPLICATION_STATUS</text>
+<text x="434" y="953" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default pending</text>
+<text x="154" y="975" text-anchor="start" font-size="12.2" fill="#111">interview_note</text>
+<text x="274" y="975" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="434" y="975" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">interview info</text>
+<rect x="101" y="982" width="478" height="22" fill="#f6f8fb"/>
+<text x="154" y="997" text-anchor="start" font-size="12.2" fill="#111">applied_at</text>
+<text x="274" y="997" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="434" y="997" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="154" y="1019" text-anchor="start" font-size="12.2" fill="#111">updated_at</text>
+<text x="274" y="1019" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="434" y="1019" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="100" y1="1026" x2="580" y2="1026" stroke="#b8902a" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="108" y="1044" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: applications  |  UK (job_id, applicant_id)</text>
+<rect x="1020" y="806" width="460" height="468" rx="5" fill="#fff" stroke="#3f8f3f" stroke-width="2"/>
+<path d="M1020,811 a5,5 0 0 1 5,-5 h450 a5,5 0 0 1 5,5 v39 h-460 z" fill="#3f8f3f"/>
+<text x="1250.0" y="826" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_POST</text>
+<text x="1250.0" y="843" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">job advertised by a company</text>
+<rect x="1021" y="850" width="458" height="22" fill="#f6f8fb"/>
+<rect x="1025" y="854" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1039" y="865" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="1074" y="865" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">job_id</text>
+<text x="1204" y="865" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="1316" y="865" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">ObjectId _id</text>
+<rect x="1025" y="876" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="1039" y="887" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="1074" y="887" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">company_id</text>
+<text x="1204" y="887" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1316" y="887" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">posting company</text>
+<rect x="1021" y="894" width="458" height="22" fill="#f6f8fb"/>
+<rect x="1025" y="898" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4" stroke-width="1"/>
+<text x="1039" y="909" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="1074" y="909" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">moderated_by</text>
+<text x="1204" y="909" text-anchor="start" font-size="11" fill="#555">user_id</text>
+<text x="1316" y="909" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">admin, optional</text>
+<text x="1074" y="931" text-anchor="start" font-size="12.2" fill="#111">title</text>
+<text x="1204" y="931" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="931" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">required</text>
+<rect x="1021" y="938" width="458" height="22" fill="#f6f8fb"/>
+<rect x="1025" y="942" width="28" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0" stroke-width="1"/>
+<text x="1039" y="953" text-anchor="middle" font-size="9" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="1074" y="953" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">slug</text>
+<text x="1204" y="953" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="953" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">title + company + random</text>
+<text x="1074" y="975" text-anchor="start" font-size="12.2" fill="#111">department</text>
+<text x="1204" y="975" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="975" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">UI label: Division</text>
+<rect x="1021" y="982" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="997" text-anchor="start" font-size="12.2" fill="#111">job_type</text>
+<text x="1204" y="997" text-anchor="start" font-size="11" fill="#555">-&gt; JOB_TYPE</text>
+<text x="1316" y="997" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">free text in DB</text>
+<text x="1074" y="1019" text-anchor="start" font-size="12.2" fill="#111">work_mode</text>
+<text x="1204" y="1019" text-anchor="start" font-size="11" fill="#555">-&gt; WORK_MODE</text>
+<text x="1316" y="1019" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">free text in DB</text>
+<rect x="1021" y="1026" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="1041" text-anchor="start" font-size="12.2" fill="#111">location</text>
+<text x="1204" y="1041" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1041" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default: company address</text>
+<text x="1074" y="1063" text-anchor="start" font-size="12.2" fill="#111">experience_level</text>
+<text x="1204" y="1063" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1063" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">UI: Experience</text>
+<rect x="1021" y="1070" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="1085" text-anchor="start" font-size="12.2" fill="#111">salary</text>
+<text x="1204" y="1085" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1085" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">required</text>
+<text x="1074" y="1107" text-anchor="start" font-size="12.2" fill="#111">salary_period</text>
+<text x="1204" y="1107" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1107" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default month</text>
+<rect x="1021" y="1114" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="1129" text-anchor="start" font-size="12.2" fill="#111">deadline</text>
+<text x="1204" y="1129" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="1316" y="1129" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">future date</text>
+<text x="1074" y="1151" text-anchor="start" font-size="12.2" fill="#111">about</text>
+<text x="1204" y="1151" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1151" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">UI: Description</text>
+<rect x="1021" y="1158" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="1173" text-anchor="start" font-size="12.2" fill="#111">cta_title</text>
+<text x="1204" y="1173" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1316" y="1173" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="1074" y="1195" text-anchor="start" font-size="12.2" fill="#111">status</text>
+<text x="1204" y="1195" text-anchor="start" font-size="11" fill="#555">-&gt; JOB_STATUS</text>
+<text x="1316" y="1195" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">default active</text>
+<rect x="1021" y="1202" width="458" height="22" fill="#f6f8fb"/>
+<text x="1074" y="1217" text-anchor="start" font-size="12.2" fill="#111">created_at</text>
+<text x="1204" y="1217" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="1316" y="1217" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">posted date</text>
+<text x="1074" y="1239" text-anchor="start" font-size="12.2" fill="#111">updated_at</text>
+<text x="1204" y="1239" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="1316" y="1239" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="1020" y1="1246" x2="1480" y2="1246" stroke="#3f8f3f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1028" y="1264" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: jobs</text>
+<rect x="40" y="1134" width="390" height="138" rx="5" fill="#fff" stroke="#7a4fb0" stroke-width="2"/>
+<path d="M40,1139 a5,5 0 0 1 5,-5 h380 a5,5 0 0 1 5,5 v39 h-390 z" fill="#7a4fb0"/>
+<text x="235.0" y="1154" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">APPLICATION_STATUS_EVENT</text>
+<text x="235.0" y="1171" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">status timeline (UI: ApplicantApplication)</text>
+<rect x="41" y="1178" width="388" height="22" fill="#f6f8fb"/>
+<rect x="45" y="1182" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="67" y="1193" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="94" y="1193" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">application_id</text>
+<text x="194" y="1193" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="344" y="1193" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="45" y="1204" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="59" y="1215" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="94" y="1215" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">changed_at</text>
+<text x="194" y="1215" text-anchor="start" font-size="11" fill="#555">datetime</text>
+<text x="344" y="1215" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">when changed</text>
+<rect x="41" y="1222" width="388" height="22" fill="#f6f8fb"/>
+<text x="94" y="1237" text-anchor="start" font-size="12.2" fill="#111">status</text>
+<text x="194" y="1237" text-anchor="start" font-size="11" fill="#555">-&gt; APPLICATION_STATUS</text>
+<text x="344" y="1237" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">new status</text>
+<line x1="40" y1="1244" x2="430" y2="1244" stroke="#7a4fb0" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="48" y="1262" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: applications.statusHistory[]</text>
+<rect x="470" y="1134" width="330" height="182" rx="5" fill="#fff" stroke="#3b8f8f" stroke-width="2"/>
+<path d="M470,1139 a5,5 0 0 1 5,-5 h320 a5,5 0 0 1 5,5 v39 h-330 z" fill="#3b8f8f"/>
+<text x="635.0" y="1154" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">RESUME_FILE</text>
+<text x="635.0" y="1171" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">CV uploaded when applying</text>
+<rect x="471" y="1178" width="328" height="22" fill="#f6f8fb"/>
+<rect x="475" y="1182" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="497" y="1193" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="524" y="1193" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">application_id</text>
+<text x="624" y="1193" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="690" y="1193" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="524" y="1215" text-anchor="start" font-size="12.2" fill="#111">url</text>
+<text x="624" y="1215" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="690" y="1215" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">Cloudinary URL</text>
+<rect x="471" y="1222" width="328" height="22" fill="#f6f8fb"/>
+<text x="524" y="1237" text-anchor="start" font-size="12.2" fill="#111">public_id</text>
+<text x="624" y="1237" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="690" y="1237" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<text x="524" y="1259" text-anchor="start" font-size="12.2" fill="#111">resource_type</text>
+<text x="624" y="1259" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="690" y="1259" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">image | raw</text>
+<rect x="471" y="1266" width="328" height="22" fill="#f6f8fb"/>
+<text x="524" y="1281" text-anchor="start" font-size="12.2" fill="#111">file_name</text>
+<text x="624" y="1281" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="690" y="1281" text-anchor="start" font-size="10.2" font-style="italic" fill="#666">shown in UI</text>
+<line x1="470" y1="1288" x2="800" y2="1288" stroke="#3b8f8f" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="478" y="1306" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: applications.resume*</text>
+<rect x="960" y="1354" width="210" height="116" rx="5" fill="#fff" stroke="#2f6aa8" stroke-width="2"/>
+<path d="M960,1359 a5,5 0 0 1 5,-5 h200 a5,5 0 0 1 5,5 v39 h-210 z" fill="#2f6aa8"/>
+<text x="1065.0" y="1374" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_SKILL</text>
+<text x="1065.0" y="1391" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">tag on the job card</text>
+<rect x="961" y="1398" width="208" height="22" fill="#f6f8fb"/>
+<rect x="965" y="1402" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="987" y="1413" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1014" y="1413" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">job_id</text>
+<text x="1084" y="1413" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="1140" y="1413" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="965" y="1424" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="979" y="1435" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="1014" y="1435" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">skill</text>
+<text x="1084" y="1435" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1140" y="1435" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="960" y1="1442" x2="1170" y2="1442" stroke="#2f6aa8" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="968" y="1460" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: jobs.skills[]</text>
+<rect x="1200" y="1354" width="220" height="116" rx="5" fill="#fff" stroke="#2f6aa8" stroke-width="2"/>
+<path d="M1200,1359 a5,5 0 0 1 5,-5 h210 a5,5 0 0 1 5,5 v39 h-220 z" fill="#2f6aa8"/>
+<text x="1310.0" y="1374" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_REQUIREMENT</text>
+<text x="1310.0" y="1391" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">UI: Requirements list</text>
+<rect x="1201" y="1398" width="218" height="22" fill="#f6f8fb"/>
+<rect x="1205" y="1402" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1227" y="1413" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1254" y="1413" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">job_id</text>
+<text x="1344" y="1413" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="1400" y="1413" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1205" y="1424" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1219" y="1435" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="1254" y="1435" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">requirement</text>
+<text x="1344" y="1435" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1400" y="1435" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="1200" y1="1442" x2="1420" y2="1442" stroke="#2f6aa8" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1208" y="1460" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: jobs.requirements[]</text>
+<rect x="1450" y="1354" width="210" height="116" rx="5" fill="#fff" stroke="#2f6aa8" stroke-width="2"/>
+<path d="M1450,1359 a5,5 0 0 1 5,-5 h200 a5,5 0 0 1 5,5 v39 h-210 z" fill="#2f6aa8"/>
+<text x="1555.0" y="1374" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JOB_BENEFIT</text>
+<text x="1555.0" y="1391" text-anchor="middle" font-size="10.5" font-style="italic" fill="#fff">UI: Benefits list</text>
+<rect x="1451" y="1398" width="208" height="22" fill="#f6f8fb"/>
+<rect x="1455" y="1402" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1477" y="1413" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1504" y="1413" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">job_id</text>
+<text x="1574" y="1413" text-anchor="start" font-size="11" fill="#555"></text>
+<text x="1630" y="1413" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<rect x="1455" y="1424" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e" stroke-width="1"/>
+<text x="1469" y="1435" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="1504" y="1435" text-anchor="start" font-size="12.2" font-weight="700" fill="#111">benefit</text>
+<text x="1574" y="1435" text-anchor="start" font-size="11" fill="#555">text</text>
+<text x="1630" y="1435" text-anchor="start" font-size="10.2" font-style="italic" fill="#666"></text>
+<line x1="1450" y1="1442" x2="1660" y2="1442" stroke="#2f6aa8" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1458" y="1460" text-anchor="start" font-size="10.5" font-style="italic" fill="#333">stored in: jobs.benefits[]</text>
+<polyline points="860,155.0 720,155.0 720,185.0 660,185.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="851" y1="163.0" x2="851" y2="147.0" stroke="#222" stroke-width="1.8"/>
+<line x1="845" y1="163.0" x2="845" y2="147.0" stroke="#222" stroke-width="1.8"/>
+<line x1="675" y1="185.0" x2="660" y2="176.0" stroke="#222" stroke-width="1.8"/>
+<line x1="675" y1="185.0" x2="660" y2="185.0" stroke="#222" stroke-width="1.8"/>
+<line x1="675" y1="185.0" x2="660" y2="194.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="682.0" cy="185.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="680.0" y="128.0" width="80" height="17" rx="3" fill="#fff"/>
+<text x="720" y="141.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">has (0..2)</text>
+<polyline points="1260,155.0 1440,155.0 1440,185.0 1500,185.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1269" y1="147.0" x2="1269" y2="163.0" stroke="#222" stroke-width="1.8"/>
+<line x1="1275" y1="147.0" x2="1275" y2="163.0" stroke="#222" stroke-width="1.8"/>
+<line x1="1491" y1="193.0" x2="1491" y2="177.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="1481.0" cy="185.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="1385.0" y="128.0" width="110" height="17" rx="3" fill="#fff"/>
+<text x="1440" y="141.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">has photo (0..1)</text>
+<polyline points="1260,331.0 1296,331.0 1296,185.0 1260,185.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1275" y1="331.0" x2="1260" y2="322.0" stroke="#222" stroke-width="1.8"/>
+<line x1="1275" y1="331.0" x2="1260" y2="331.0" stroke="#222" stroke-width="1.8"/>
+<line x1="1275" y1="331.0" x2="1260" y2="340.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="1282.0" cy="331.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="1269" y1="177.0" x2="1269" y2="193.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="1279.0" cy="185.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="1302" y="258.0" text-anchor="start" font-size="10.8" font-style="italic" fill="#222">added_by</text>
+<polygon points="1046.0,436 1074.0,436 1060.0,414" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="1060.0" y1="436" x2="1060.0" y2="476" stroke="#333" stroke-width="1.6"/>
+<line x1="450.0" y1="476" x2="1450.0" y2="476" stroke="#333" stroke-width="1.6"/>
+<line x1="450.0" y1="476" x2="450.0" y2="534" stroke="#333" stroke-width="1.6"/>
+<line x1="950.0" y1="476" x2="950.0" y2="534" stroke="#333" stroke-width="1.6"/>
+<line x1="1450.0" y1="476" x2="1450.0" y2="534" stroke="#333" stroke-width="1.6"/>
+<rect x="1066.0" y="453" width="160" height="17" rx="3" fill="#fff"/>
+<text x="1146.0" y="466" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">specializes, disjoint by role</text>
+<polyline points="1010.0,716 1010.0,806" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1018.0" y1="725" x2="1002.0" y2="725" stroke="#222" stroke-width="1.8"/>
+<line x1="1018.0" y1="731" x2="1002.0" y2="731" stroke="#222" stroke-width="1.8"/>
+<line x1="1010.0" y1="791" x2="1001.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="1010.0" y1="791" x2="1010.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="1010.0" y1="791" x2="1019.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<circle cx="1010.0" cy="784.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="1021.0" y="750.0" width="50" height="17" rx="3" fill="#fff"/>
+<text x="1046.0" y="763.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">posts</text>
+<polyline points="1430.0,650 1430.0,778 1400,778 1400,806" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1438.0" y1="659" x2="1422.0" y2="659" stroke="#222" stroke-width="1.8"/>
+<circle cx="1430.0" cy="669.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="1400" y1="791" x2="1391" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="1400" y1="791" x2="1400" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="1400" y1="791" x2="1409" y2="806" stroke="#222" stroke-width="1.8"/>
+<circle cx="1400.0" cy="784.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="1431.0" y="755" width="118" height="17" rx="3" fill="#fff"/>
+<text x="1490.0" y="768" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">moderates (closes)</text>
+<polyline points="410.0,694 410.0,806" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="418.0" y1="703" x2="402.0" y2="703" stroke="#222" stroke-width="1.8"/>
+<line x1="418.0" y1="709" x2="402.0" y2="709" stroke="#222" stroke-width="1.8"/>
+<line x1="410.0" y1="791" x2="401.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="410.0" y1="791" x2="410.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<line x1="410.0" y1="791" x2="419.0" y2="806" stroke="#222" stroke-width="1.8"/>
+<circle cx="410.0" cy="784.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="423.0" y="739.0" width="58" height="17" rx="3" fill="#fff"/>
+<text x="452.0" y="752.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">submits</text>
+<polyline points="840,716 840,883.0 580,883.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="848" y1="725" x2="832" y2="725" stroke="#222" stroke-width="1.8"/>
+<line x1="848" y1="731" x2="832" y2="731" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="883.0" x2="580" y2="874.0" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="883.0" x2="580" y2="883.0" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="883.0" x2="580" y2="892.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="602.0" cy="883.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="851.0" y="858.0" width="58" height="17" rx="3" fill="#fff"/>
+<text x="880" y="871.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">receives</text>
+<polyline points="1020,861.0 960,861.0 960,917.0 580,917.0" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1011" y1="869.0" x2="1011" y2="853.0" stroke="#222" stroke-width="1.8"/>
+<line x1="1005" y1="869.0" x2="1005" y2="853.0" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="917.0" x2="580" y2="908.0" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="917.0" x2="580" y2="917.0" stroke="#222" stroke-width="1.8"/>
+<line x1="595" y1="917.0" x2="580" y2="926.0" stroke="#222" stroke-width="1.8"/>
+<circle cx="602.0" cy="917.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="705.0" y="924.0" width="150" height="17" rx="3" fill="#fff"/>
+<text x="780.0" y="937.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">job receives applications</text>
+<polyline points="160,1054 160,1134" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="168" y1="1063" x2="152" y2="1063" stroke="#222" stroke-width="1.8"/>
+<line x1="168" y1="1069" x2="152" y2="1069" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1119" x2="151" y2="1134" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1119" x2="160" y2="1134" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1119" x2="169" y2="1134" stroke="#222" stroke-width="1.8"/>
+<line x1="152" y1="1113" x2="168" y2="1113" stroke="#222" stroke-width="1.8"/>
+<rect x="173.0" y="1083.0" width="86" height="17" rx="3" fill="#fff"/>
+<text x="216" y="1096.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">history (1..*)</text>
+<polyline points="560,1054 560,1134" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="568" y1="1063" x2="552" y2="1063" stroke="#222" stroke-width="1.8"/>
+<line x1="568" y1="1069" x2="552" y2="1069" stroke="#222" stroke-width="1.8"/>
+<line x1="552" y1="1125" x2="568" y2="1125" stroke="#222" stroke-width="1.8"/>
+<line x1="552" y1="1119" x2="568" y2="1119" stroke="#222" stroke-width="1.8"/>
+<rect x="577.0" y="1083.0" width="70" height="17" rx="3" fill="#fff"/>
+<text x="612" y="1096.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">resume (1)</text>
+<polyline points="1070,1274 1070,1354" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1078" y1="1283" x2="1062" y2="1283" stroke="#222" stroke-width="1.8"/>
+<line x1="1078" y1="1289" x2="1062" y2="1289" stroke="#222" stroke-width="1.8"/>
+<line x1="1070" y1="1339" x2="1061" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1070" y1="1339" x2="1070" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1070" y1="1339" x2="1079" y2="1354" stroke="#222" stroke-width="1.8"/>
+<circle cx="1070.0" cy="1332.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<polyline points="1300,1274 1300,1354" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1308" y1="1283" x2="1292" y2="1283" stroke="#222" stroke-width="1.8"/>
+<line x1="1308" y1="1289" x2="1292" y2="1289" stroke="#222" stroke-width="1.8"/>
+<line x1="1300" y1="1339" x2="1291" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1300" y1="1339" x2="1300" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1300" y1="1339" x2="1309" y2="1354" stroke="#222" stroke-width="1.8"/>
+<circle cx="1300.0" cy="1332.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<polyline points="1440,1274 1440,1354" fill="none" stroke="#333" stroke-width="1.6"/>
+<line x1="1448" y1="1283" x2="1432" y2="1283" stroke="#222" stroke-width="1.8"/>
+<line x1="1448" y1="1289" x2="1432" y2="1289" stroke="#222" stroke-width="1.8"/>
+<line x1="1440" y1="1339" x2="1431" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1440" y1="1339" x2="1440" y2="1354" stroke="#222" stroke-width="1.8"/>
+<line x1="1440" y1="1339" x2="1449" y2="1354" stroke="#222" stroke-width="1.8"/>
+<circle cx="1440.0" cy="1332.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<rect x="1145.0" y="1305.0" width="80" height="17" rx="3" fill="#fff"/>
+<text x="1185" y="1318.0" text-anchor="middle" font-size="10.8" font-style="italic" fill="#222">lists (0..*)</text>
+<rect x="1930" y="974" width="330" height="660" rx="6" fill="#fffde7" stroke="#bfb36b"/>
+<text x="1942" y="998" text-anchor="start" font-size="14" font-weight="700" fill="#111">Legend and notes</text>
+<rect x="1942" y="1008" width="28" height="14" rx="3" fill="#fde8e6" stroke="#b3261e"/>
+<text x="1956" y="1019" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK</text>
+<text x="1994" y="1020" text-anchor="start" font-size="11.5" fill="#111">primary key</text>
+<rect x="1942" y="1030" width="28" height="14" rx="3" fill="#e3eefb" stroke="#1a5fb4"/>
+<text x="1956" y="1041" text-anchor="middle" font-size="9" font-weight="700" fill="#1a5fb4">FK</text>
+<text x="1994" y="1042" text-anchor="start" font-size="11.5" fill="#111">foreign key (reference)</text>
+<rect x="1942" y="1052" width="28" height="14" rx="3" fill="#f0e8fa" stroke="#7a4fb0"/>
+<text x="1956" y="1063" text-anchor="middle" font-size="9" font-weight="700" fill="#7a4fb0">UK</text>
+<text x="1994" y="1064" text-anchor="start" font-size="11.5" fill="#111">unique index</text>
+<rect x="1942" y="1074" width="44" height="14" rx="3" fill="#fde8e6" stroke="#b3261e"/>
+<text x="1964" y="1085" text-anchor="middle" font-size="9" font-weight="700" fill="#b3261e">PK FK</text>
+<text x="1994" y="1086" text-anchor="start" font-size="11.5" fill="#111">key that is also a reference</text>
+<line x1="1960" y1="1124" x2="2004" y2="1124" stroke="#333" stroke-width="1.6"/>
+<line x1="1969" y1="1116" x2="1969" y2="1132" stroke="#222" stroke-width="1.8"/>
+<line x1="1975" y1="1116" x2="1975" y2="1132" stroke="#222" stroke-width="1.8"/>
+<text x="2018" y="1128" text-anchor="start" font-size="11.5" fill="#111">exactly one</text>
+<line x1="1960" y1="1148" x2="2004" y2="1148" stroke="#333" stroke-width="1.6"/>
+<line x1="1969" y1="1140" x2="1969" y2="1156" stroke="#222" stroke-width="1.8"/>
+<circle cx="1979.0" cy="1148.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="2018" y="1152" text-anchor="start" font-size="11.5" fill="#111">zero or one</text>
+<line x1="1960" y1="1172" x2="2004" y2="1172" stroke="#333" stroke-width="1.6"/>
+<line x1="1975" y1="1172" x2="1960" y2="1163" stroke="#222" stroke-width="1.8"/>
+<line x1="1975" y1="1172" x2="1960" y2="1172" stroke="#222" stroke-width="1.8"/>
+<line x1="1975" y1="1172" x2="1960" y2="1181" stroke="#222" stroke-width="1.8"/>
+<circle cx="1982.0" cy="1172.0" r="5" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="2018" y="1176" text-anchor="start" font-size="11.5" fill="#111">zero or many</text>
+<line x1="1960" y1="1196" x2="2004" y2="1196" stroke="#333" stroke-width="1.6"/>
+<line x1="1975" y1="1196" x2="1960" y2="1187" stroke="#222" stroke-width="1.8"/>
+<line x1="1975" y1="1196" x2="1960" y2="1196" stroke="#222" stroke-width="1.8"/>
+<line x1="1975" y1="1196" x2="1960" y2="1205" stroke="#222" stroke-width="1.8"/>
+<line x1="1981" y1="1188" x2="1981" y2="1204" stroke="#222" stroke-width="1.8"/>
+<text x="2018" y="1200" text-anchor="start" font-size="11.5" fill="#111">one or many</text>
+<polygon points="1972,1238 1994,1238 1983,1222" fill="#fff" stroke="#222" stroke-width="1.6"/>
+<text x="2018" y="1236" text-anchor="start" font-size="11.5" fill="#111">specialization (is-a)</text>
+<text x="1942" y="1266.0" text-anchor="start" font-size="11" fill="#111">This is a LOGICAL model: it splits what the code</text>
+<text x="1942" y="1282.5" text-anchor="start" font-size="11" fill="#111">stores in 3 collections into the concepts the backend</text>
+<text x="1942" y="1299.0" text-anchor="start" font-size="11" fill="#111">and frontend actually use.</text>
+<text x="1942" y="1315.5" text-anchor="start" font-size="11" fill="#111"></text>
+<text x="1942" y="1332.0" text-anchor="start" font-size="11" fill="#111">Evidence used:</text>
+<text x="1942" y="1348.5" text-anchor="start" font-size="11" fill="#111">- UpdateProfile: one allowed-field list per role</text>
+<text x="1942" y="1365.0" text-anchor="start" font-size="11" fill="#111">  (applicant / company / admin) -&gt; 3 profiles.</text>
+<text x="1942" y="1381.5" text-anchor="start" font-size="11" fill="#111">- OTP fields on users -&gt; OTP_CODE.</text>
+<text x="1942" y="1398.0" text-anchor="start" font-size="11" fill="#111">- photo / resume url + publicId -&gt; 2 file entities.</text>
+<text x="1942" y="1414.5" text-anchor="start" font-size="11" fill="#111">- jobs.skills / requirements / benefits arrays, shown</text>
+<text x="1942" y="1431.0" text-anchor="start" font-size="11" fill="#111">  as tags and lists in the UI -&gt; 3 small entities.</text>
+<text x="1942" y="1447.5" text-anchor="start" font-size="11" fill="#111">- statusHistory[] shown as a timeline in the UI.</text>
+<text x="1942" y="1464.0" text-anchor="start" font-size="11" fill="#111">- Enumerations: status, role and OTP purpose are in</text>
+<text x="1942" y="1480.5" text-anchor="start" font-size="11" fill="#111">  the schemas; job types and work modes are fixed</text>
+<text x="1942" y="1497.0" text-anchor="start" font-size="11" fill="#111">  lists in PostJobModal only (the DB stores free text).</text>
+<text x="1942" y="1513.5" text-anchor="start" font-size="11" fill="#111"></text>
+<text x="1942" y="1530.0" text-anchor="start" font-size="11" fill="#111">Physical reality: only users, jobs and applications</text>
+<text x="1942" y="1546.5" text-anchor="start" font-size="11" fill="#111">are collections. Foreign keys are Mongoose references</text>
+<text x="1942" y="1563.0" text-anchor="start" font-size="11" fill="#111">resolved in code, not enforced by MongoDB. Unique</text>
+<text x="1942" y="1579.5" text-anchor="start" font-size="11" fill="#111">indexes: users.email, jobs.slug, applications (job,</text>
+<text x="1942" y="1596.0" text-anchor="start" font-size="11" fill="#111">applicant). No notification, bookmark or message</text>
+<text x="1942" y="1612.5" text-anchor="start" font-size="11" fill="#111">entity exists in the code, so none is drawn.</text>
+</svg>
